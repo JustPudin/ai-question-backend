@@ -104,8 +104,9 @@ JSON Structure:
 }}"""
 
     try:
-        response = await client.chat.completions.create(
-            model="deepseek-r1-distill-llama-70b-specdec", 
+            response = await client.chat.completions.create(
+            # Cambiamos a Llama 3.3 que es el modelo más estable y actual de Groq
+            model="llama-3.3-70b-versatile", 
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": request.text}
