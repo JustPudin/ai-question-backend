@@ -7,30 +7,23 @@ import json
 import re
 from pydantic import BaseModel
 from typing import Optional
-import anthropic  # ← CAMBIA: antes era "from openai import AsyncOpenAI"
+import anthropic
 
-# ── Configuración de rutas ────────────────────────────────────────────────────
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# ── Carga del conocimiento teórico ───────────────────────────────────────────
+# ── Carga del documento completo ──────────────────────────────────────────────
 def cargar_conocimiento_teorico():
     ruta_archivo = os.path.join(BASE_DIR, "teoria.txt")
     logger.info(f"Intentando cargar conocimiento desde: {ruta_archivo}")
-
     if not os.path.exists(ruta_archivo):
-        logger.error(f"¡ERROR CRÍTICO! No se encontró teoria.txt en {ruta_archivo}")
         ruta_archivo_alt = os.path.join(os.getcwd(), "teoria.txt")
         if not os.path.exists(ruta_archivo_alt):
-            return "No hay información teórica cargada. Archivo no encontrado."
+            return "No hay información teórica cargada."
         ruta_archivo = ruta_archivo_alt
-
     try:
         with open(ruta_archivo, "r", encoding="utf-8") as f:
             contenido = f.read()
@@ -38,9 +31,69 @@ def cargar_conocimiento_teorico():
             return contenido
     except Exception as e:
         logger.error(f"Error al leer el archivo: {e}")
-        return f"Error al cargar la base de conocimiento: {str(e)}"
+        return f"Error: {str(e)}"
 
 CONOCIMIENTO_BASE = cargar_conocimiento_teorico()
+
+# ── Dividir documento en bloques de ~1000 caracteres ─────────────────────────
+def dividir_en_bloques(texto: str, tamanio: int = 1000) -> list[str]:
+    parrafos = texto.split('\n\n')
+    bloques = []
+    bloque_actual = ""
+
+    for parrafo in parrafos:
+        if len(bloque_actual) + len(parrafo) < tamanio:
+            bloque_actual += parrafo + "\n\n"
+        else:
+            if bloque_actual.strip():
+                bloques.append(bloque_actual.strip())
+            bloque_actual = parrafo + "\n\n"
+
+    if bloque_actual.strip():
+        bloques.append(bloque_actual.strip())
+
+    return bloques
+
+# ── Buscar bloques relevantes por palabras clave ──────────────────────────────
+def buscar_contexto_relevante(pregunta: str, bloques: list[str], max_bloques: int = 8) -> str:
+    # Limpiamos la pregunta y extraemos palabras clave (más de 4 letras)
+    palabras = re.findall(r'\b\w{4,}\b', pregunta.lower())
+    
+    # Palabras irrelevantes a ignorar
+    stopwords = {
+        'para', 'como', 'este', 'esta', 'cual', 'cuál', 'qué', 'que',
+        'los', 'las', 'una', 'uno', 'con', 'por', 'del', 'según',
+        'segun', 'entre', 'cuando', 'donde', 'sobre', 'tiene', 'puede',
+        'valor', 'formula', 'fórmula', 'calcular', 'determinar', 'obtener'
+    }
+    palabras_clave = [p for p in palabras if p not in stopwords]
+
+    # Puntuamos cada bloque según cuántas palabras clave contiene
+    puntuaciones = []
+    for i, bloque in enumerate(bloques):
+        bloque_lower = bloque.lower()
+        score = sum(1 for palabra in palabras_clave if palabra in bloque_lower)
+        if score > 0:
+            puntuaciones.append((score, i, bloque))
+
+    # Ordenamos por relevancia descendente
+    puntuaciones.sort(key=lambda x: x[0], reverse=True)
+
+    # Tomamos los mejores bloques
+    mejores_bloques = [bloque for _, _, bloque in puntuaciones[:max_bloques]]
+
+    if not mejores_bloques:
+        # Si no encuentra nada relevante, devuelve el inicio del documento
+        logger.warning("No se encontraron bloques relevantes, usando inicio del documento")
+        return "\n\n".join(bloques[:max_bloques])
+
+    contexto = "\n\n---\n\n".join(mejores_bloques)
+    logger.info(f"Contexto seleccionado: {len(mejores_bloques)} bloques / {len(contexto)} caracteres (antes: {len(CONOCIMIENTO_BASE)})")
+    return contexto
+
+# Pre-dividimos el documento una sola vez al iniciar el servidor
+BLOQUES_DOCUMENTO = dividir_en_bloques(CONOCIMIENTO_BASE)
+logger.info(f"Documento dividido en {len(BLOQUES_DOCUMENTO)} bloques")
 
 # ── FastAPI App ───────────────────────────────────────────────────────────────
 app = FastAPI(title="Physics Expert Assistant - Claude Edition")
@@ -55,7 +108,6 @@ app.add_middleware(
 
 api_router = APIRouter(prefix="/api")
 
-# ── Modelos de datos ──────────────────────────────────────────────────────────
 class QuestionRequest(BaseModel):
     text: str
     context: Optional[str] = None
@@ -66,7 +118,6 @@ class QuestionResponse(BaseModel):
     confidence: str
     question_type: str
 
-# ── Endpoint de diagnóstico ───────────────────────────────────────────────────
 @api_router.get("/")
 async def root():
     return {
@@ -74,10 +125,10 @@ async def root():
         "model": "claude-sonnet-4-20250514",
         "knowledge_loaded": len(CONOCIMIENTO_BASE) > 100,
         "bytes_loaded": len(CONOCIMIENTO_BASE),
+        "bloques_totales": len(BLOQUES_DOCUMENTO),
         "path_checked": os.path.join(BASE_DIR, "teoria.txt")
     }
 
-# ── Endpoint principal ────────────────────────────────────────────────────────
 @api_router.post("/analyze-question", response_model=QuestionResponse)
 async def analyze_question(request: QuestionRequest):
     if not request.text or not request.text.strip():
@@ -85,25 +136,18 @@ async def analyze_question(request: QuestionRequest):
 
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
-        logger.error("ANTHROPIC_API_KEY faltante en variables de entorno")
-        raise HTTPException(status_code=500, detail="Configuración incompleta: falta ANTHROPIC_API_KEY")
+        raise HTTPException(status_code=500, detail="Falta ANTHROPIC_API_KEY")
 
-    # ── Cliente Anthropic ─────────────────────────────────────────────────────
     client = anthropic.AsyncAnthropic(api_key=api_key)
 
-    # ── Contexto de conocimiento ──────────────────────────────────────────────
-    contexto_inyectado = (
-        CONOCIMIENTO_BASE
-        if len(CONOCIMIENTO_BASE) > 50
-        else "Usa tus conocimientos generales de física a nivel PhD."
-    )
+    # ── Aquí está la optimización: solo enviamos lo relevante ─────────────────
+    contexto_relevante = buscar_contexto_relevante(request.text, BLOQUES_DOCUMENTO)
 
-    # ── System prompt ─────────────────────────────────────────────────────────
     system_prompt = f"""Eres un Profesor PhD en Física e Ingeniería Mecatrónica.
 Tu única fuente de verdad es la siguiente base de conocimiento técnico:
 
 <knowledge_base>
-{contexto_inyectado}
+{contexto_relevante}
 </knowledge_base>
 
 REGLAS ESTRICTAS:
@@ -121,27 +165,19 @@ ESTRUCTURA JSON OBLIGATORIA:
 }}"""
 
     try:
-        # ── Llamada a Claude ──────────────────────────────────────────────────
         response = await client.messages.create(
             model="claude-sonnet-4-20250514",
             max_tokens=2000,
-            temperature=0.1,           # Respuestas deterministas y precisas
-            system=system_prompt,      # ← En Claude, system va SEPARADO del array messages
-            messages=[
-                {"role": "user", "content": request.text}
-            ]
+            temperature=0.1,
+            system=system_prompt,
+            messages=[{"role": "user", "content": request.text}]
         )
 
-        # ── Extracción del contenido ──────────────────────────────────────────
         raw_content = response.content[0].text.strip()
-        logger.info(f"Respuesta cruda de Claude (primeros 200 chars): {raw_content[:200]}")
+        logger.info(f"Respuesta Claude: {raw_content[:200]}")
 
-        # ── Parseo del JSON ───────────────────────────────────────────────────
-        # Claude normalmente devuelve JSON limpio, pero por seguridad
-        # extraemos el bloque JSON si hubiera texto alrededor
         json_match = re.search(r'\{.*\}', raw_content, re.DOTALL)
         clean_json = json_match.group(0) if json_match else raw_content
-
         result = json.loads(clean_json)
 
         return QuestionResponse(
@@ -152,18 +188,18 @@ ESTRUCTURA JSON OBLIGATORIA:
         )
 
     except json.JSONDecodeError as e:
-        logger.error(f"Error al parsear JSON de Claude: {e} | Contenido: {raw_content[:300]}")
+        logger.error(f"Error JSON: {e}")
         return QuestionResponse(
             correct_answer="Error de formato",
-            explanation=f"Claude no devolvió un JSON válido: {str(e)}",
+            explanation=f"Claude no devolvió JSON válido: {str(e)}",
             confidence="Low",
             question_type="error"
         )
     except anthropic.APIStatusError as e:
-        logger.error(f"Error de API Anthropic: {e.status_code} - {e.message}")
+        logger.error(f"Error Anthropic API: {e.status_code} - {e.message}")
         return QuestionResponse(
             correct_answer="Error de API",
-            explanation=f"Error al conectar con Anthropic: {e.message}",
+            explanation=f"Error Anthropic: {e.message}",
             confidence="Low",
             question_type="error"
         )
