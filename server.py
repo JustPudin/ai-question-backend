@@ -10,7 +10,6 @@ from typing import Optional
 from openai import AsyncOpenAI
 
 # 1. Configuración de Rutas Robustas
-# Usamos os.path para asegurar compatibilidad total con el sistema de archivos de Railway
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 
@@ -18,14 +17,11 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 def cargar_conocimiento_teorico():
-    # Buscamos el archivo exactamente en la raíz del proyecto
     ruta_archivo = os.path.join(BASE_DIR, "teoria.txt")
-    
     logger.info(f"Intentando cargar conocimiento desde: {ruta_archivo}")
     
     if not os.path.exists(ruta_archivo):
         logger.error(f"¡ERROR CRÍTICO! No se encontró teoria.txt en {ruta_archivo}")
-        # Intentamos una búsqueda secundaria en el directorio de trabajo actual
         ruta_archivo_alt = os.path.join(os.getcwd(), "teoria.txt")
         if not os.path.exists(ruta_archivo_alt):
             return "No hay información teórica cargada. Archivo no encontrado."
@@ -40,7 +36,6 @@ def cargar_conocimiento_teorico():
         logger.error(f"Error al leer el archivo: {e}")
         return f"Error al cargar la base de conocimiento: {str(e)}"
 
-# Inicialización del conocimiento
 CONOCIMIENTO_BASE = cargar_conocimiento_teorico()
 
 # 2. Configuración FastAPI
@@ -68,7 +63,6 @@ class QuestionResponse(BaseModel):
 
 @api_router.get("/")
 async def root():
-    # Endpoint de diagnóstico mejorado
     return {
         "status": "ok", 
         "knowledge_loaded": len(CONOCIMIENTO_BASE) > 100,
@@ -91,8 +85,7 @@ async def analyze_question(request: QuestionRequest):
         base_url="https://api.groq.com/openai/v1"
     )
 
-    # Inyección de conocimiento con respaldo
-    contexto_inyectado = CONOCIMIENTO_BASE if len(CONOCIMIENTO_BASE) > 50 else "Usa tus conocimientos generales de física (PhD level)."
+    contexto_inyectado = CONOCIMIENTO_BASE if len(CONOCIMIENTO_BASE) > 50 else "Usa tus conocimientos generales de física."
 
     system_prompt = f"""You are a Ph.D. Professor in Physics. 
 Analyze using ONLY this knowledge base:
@@ -100,8 +93,7 @@ Analyze using ONLY this knowledge base:
 
 STRICT RULES:
 1. Use formulas from the base. 
-2. For transformers, use 'a' ratio (N1/N2).
-3. Respond ONLY with a valid JSON object. No prose.
+2. Respond ONLY with a valid JSON object.
 
 JSON Structure:
 {{
@@ -111,9 +103,8 @@ JSON Structure:
   "question_type": "theoretical/calculation"
 }}"""
 
-try:
+    try:
         response = await client.chat.completions.create(
-            # MODELO ACTUALIZADO PARA EVITAR EL ERROR 400
             model="deepseek-r1-distill-llama-70b-specdec", 
             messages=[
                 {"role": "system", "content": system_prompt},
@@ -124,22 +115,14 @@ try:
         )
 
         raw_content = response.choices[0].message.content.strip()
-
-        # Limpieza de etiquetas de razonamiento (DeepSeek R1)
         raw_content = re.sub(r'<think>.*?</think>', '', raw_content, flags=re.DOTALL).strip()
 
-        # Extracción de bloque JSON
         json_match = re.search(r'(\{.*\})', raw_content, re.DOTALL)
-        if json_match:
-            clean_json = json_match.group(1)
-        else:
-            clean_json = raw_content
+        clean_json = json_match.group(1) if json_match else raw_content
 
         try:
             result = json.loads(clean_json)
         except json.JSONDecodeError:
-            # Si falla el parseo, intentamos limpiar posibles comas extras o caracteres raros
-            logger.warning(f"Fallo en parseo inicial, intentando limpiar contenido: {clean_json[:100]}")
             raise ValueError("El modelo no generó un JSON válido")
 
         return QuestionResponse(
@@ -151,7 +134,6 @@ try:
 
     except Exception as e:
         logger.error(f"Error procesando la pregunta: {str(e)}")
-        # Devolvemos un error 200 con mensaje estructurado para que el Front no explote
         return QuestionResponse(
             correct_answer="Error en el análisis",
             explanation=f"Hubo un problema técnico: {str(e)}",
