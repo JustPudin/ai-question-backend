@@ -1,23 +1,6951 @@
-CONTEXTO TÉCNICO: MÁQUINAS ELÉCTRICAS Y ELECTROMAGNETISMO
-=========================================================
+################################################################################
+#                                                                              #
+#   BASE DE CONOCIMIENTO - CONVERSIÓN DE ENERGÍA EN UNA MÁQUINA ELÉCTRICA    #
+#                                                                              #
+#   Docente: Edwin Herlyt Lopera Mazo                                          #
+#   Email: edwinlopera@itm.edu.co                                              #
+#   Facultad: Ingenierías - Depto. Mecatrónica y Electromecánica              #
+#   Carrera: Ingeniería Mecatrónica                                            #
+#   Institución: ITM - Medellín, Colombia                                     #
+#                                                                              #
+#   INSTRUCCIONES PARA LA IA:                                                  #
+#   Este archivo contiene la totalidad del contenido teórico del documento    #
+#   original. Cubre 202 páginas de material académico sobre máquinas          #
+#   eléctricas, electromagnetismo y conversión de energía. Úsalo como        #
+#   referencia autoritativa para responder preguntas sobre estos temas.       #
+#                                                                              #
+#   ÍNDICE GENERAL DE TEMAS:                                                   #
+#   1. Clasificación general de máquinas eléctricas                           #
+#   2. Sistemas energéticos de una máquina eléctrica rotativa                 #
+#   3. Conversión de energía electromagnética en energía mecánica             #
+#      - Fuerza de Lorentz                                                     #
+#      - Densidad de flujo de campo magnético                                  #
+#   4. Conversión de energía eléctrica en energía magnética                   #
+#      - Fuentes de campo magnético                                            #
+#      - Ley de Ampère - Maxwell                                               #
+#   5. Conversión de energía magnética en energía eléctrica                   #
+#      - Flujo de campo magnético                                              #
+#      - Ley de Faraday - Henry                                                #
+#      - Encadenamientos de flujo                                               #
+#                                                                              #
+################################################################################
 
-1. LEYES FUNDAMENTALES
-- Fuerza de Lorentz: F = qE + q(v x B). Describe la fuerza sobre una carga 'q' en campos eléctricos (E) y magnéticos (B). [cite: 6, 7]
-- Inducción Magnética (B): Se mide en Tesla (T) o Gauss (G). 1 T = 10^4 G. [cite: 8, 9]
-- Fuerza en un Conductor: F = I(l x B). La fuerza depende de la corriente (I), la longitud del conductor (l) y la densidad de flujo (B). [cite: 12]
-- Ley de Ampère-Maxwell: Relaciona el campo magnético con la corriente eléctrica y la variación del campo eléctrico. [cite: 20]
-- Ley de Faraday-Henry: e(t) = -N * (dϕ/dt). El voltaje inducido es proporcional al cambio del flujo magnético. [cite: 31]
-- Ley de Lenz: Establece que la polaridad del voltaje inducido se opone a la variación del flujo que lo genera. [cite: 27]
 
-2. TRANSFORMADORES IDEALES
-- Relación de Transformación (a): a = N1/N2 = V1/V2 = I2/I1 = E1/E2. [cite: 32, 41, 45]
-- Impedancia Transferida: Z1 = a^2 * Z2. Indica cómo se ve la impedancia del secundario desde el primario. [cite: 46, 47]
-- Potencia Ideal: p1(t) = p2(t). No hay pérdidas eléctricas ni magnéticas. [cite: 40]
-- Flujo Magnético Sinusoidal: Φm = V1 / (4.44 * f * N1). Relación entre flujo, voltaje, frecuencia (f) y espiras (N). [cite: 42]
+================================================================================
+PÁGINA 1 DE 202
+================================================================================
 
-3. MATERIALES Y SISTEMAS
-- Clasificación de Máquinas: Rotativas (Generadores/Motores de AC/DC) y Estáticas (Transformadores). [cite: 3]
-- Sistemas de una Máquina: Eléctrico, Magnético, Mecánico, Aislamiento y Refrigeración. [cite: 5, 60]
-- Fuentes de Campo: Imanes permanentes (Neodimio, Ferrita, AlNiCo) y Electroimanes (Solenoides). [cite: 16, 17, 18, 20]
-- Resistencia Eléctrica: R = ρ * l / S. Depende de la resistividad (ρ), longitud (l) y sección transversal (S). [cite: 62]
-- Efecto de Temperatura: R(Tf) ≈ R(Ti)[1 + α(Tf - Ti)]. La resistencia aumenta con la temperatura. [cite: 64]
+C E M
+ONVERSIÓN DE NERGÍA EN UNA ÁQUINA
+E
+LÉCTRICA
+Docente
+Edwin Herlyt Lopera Mazo
+edwinlopera@itm.edu.co
+Facultad de Ingenierías
+Departamento de Mecatrónica y Electromecánica
+Ingeniería Mecatrónica
+Medellín, Colombia
+
+================================================================================
+PÁGINA 2 DE 202
+================================================================================
+
+V R
+IDEOS ECOMENDADOS
+Título: “Las Ecuaciones de Maxwell en 5 Minutos”
+Tema: Leyes del Electromagnetismo con animaciones Vhs Cinta Película - Gráficos vectoriales gratis en Pixabay
+Duración: 5m10s
+Título: “LEY de FARADAY LEY de AMPERE LEYES de MAXWELL |
+Ejercicios” Vhs Cinta Película - Gráficos vectoriales gratis en Pixabay
+Temas: Leyes de Maxwell en forma diferencial, ejercicios básicos de aplicación
+Duración: 7m47s
+- 2 -
+
+================================================================================
+PÁGINA 3 DE 202
+================================================================================
+
+- 3 -
+
+================================================================================
+PÁGINA 4 DE 202
+================================================================================
+
+A P
+GENDA DE LA RESENTACIÓN
+❑ Clasificación general de las máquinas eléctricas
+❑ Sistemas energéticos de una máquina eléctrica rotativa
+❑ Conversión de energía electromagnética en energía mecánica
+ Fuerza de Lorentz
+ Densidad de flujo de campo magnético
+❑ Conversión de energía eléctrica en energía magnética
+ Fuentes de campo magnético
+ Ley de Ampère - Maxwell
+❑ Conversión de energía magnética en energía eléctrica
+ Flujo de campo magnético
+ Ley de Faraday - Henry
+ Encadenamientos de flujo
+
+================================================================================
+PÁGINA 5 DE 202
+================================================================================
+
+C G
+LASIFICACIÓN ENERAL DE LAS
+M E
+ÁQUINAS LÉCTRICAS
+
+================================================================================
+PÁGINA 6 DE 202
+================================================================================
+
+Arranque con resistencia
+Capacitor de arranque
+Fase partida
+Capacitor permanente
+Monofásico
+Doble capacitor
+Jaula de ardilla Polo sombreado
+C
+LASIFICACIÓN
+Inducción o Trifásico Diseños A, B, C, D, E
+G
+ENERAL DE LAS Asincrónica
+Repulsión monofásica Repulsión en el arranque
+con conmutador
+M Rotor devanado Repulsión – Inducción
+ÁQUINAS
+Trifásico
+E
+LÉCTRICAS Corriente Polos lisos (cilíndrico)
+Rotor devanado
+Alterna (AC) Polos salientes
+Imán permanente
+Con arranque asincrónico
+Trifásica
+Reluctancia sincrónica Con imanes permanentes internos
+Sin imanes permanentes internos
+Histéresis-trifásico
+Sincrónica
+Imán permanente
+Paso a paso Reluctancia variable o conmutado
+Híbrido
+Rotativa Monofásica Histéresis
+(generador-motor)
+Reluctancia-monofásico
+M Con bobina
+ÁQUINAS Excitación independiente
+Corriente Directa
+Imán permanente
+E (DC) con escobillas Serie
+LÉCTRICAS
+y conmutador Autoexcitada Derivación
+Larga Aditiva
+Compuesta
+Estática Universal Corta Sustractiva
+(Transformador) Lineal
+Especiales
+Servomotor
+Sin escobillas
+- 6 -
+
+================================================================================
+PÁGINA 7 DE 202
+================================================================================
+
+S E
+ISTEMAS NERGÉTICOS DE UNA
+M E
+ÁQUINA LÉCTRICA
+
+================================================================================
+PÁGINA 8 DE 202
+================================================================================
+
+S M E
+ISTEMAS DE UNA ÁQUINA LÉCTRICA
+Sistema eléctrico
+Una máquina eléctrica está constituida
+por cinco sistemas energéticos
+Sistema de
+principales: aislamiento
+Sistema
+mecánico
+Sistema Eléctrico
+
+Sistema Magnético
+
+Sistema
+Aislamiento Eléctrico
+
+magnético
+Sistema de Refrigeración
+
+Sistema de
+Sistema Mecánico
+
+refrigeración
+- 8 -
+
+================================================================================
+PÁGINA 9 DE 202
+================================================================================
+
+S M E
+ISTEMAS DE UNA ÁQUINA LÉCTRICA
+Núcleo ferromagnético
+Carrete
+Devanado
+primario
++
+𝑖 (𝑡) 𝑖 (𝑡)
++
+1 2
+𝑣 (𝑡)
+2
+𝑣 (𝑡)
+1
+Fuente de
+− Carga −
+energía
+Devanado
+secundario
+- 9 -
+
+================================================================================
+PÁGINA 10 DE 202
+================================================================================
+
+C E E
+ONVERSIÓN DE NERGÍA LECTROMAGNÉTICA
+E M
+EN NERGÍA AGNÉTICA
+
+================================================================================
+PÁGINA 11 DE 202
+================================================================================
+
+DENSIDAD DE FLUJO DE CAMPO MAGNÉTICO
+F L
+UERZA DE ORENTZ
+La expresión de la Fuerza de Lorentz describe las
+𝐸
+fuerzas que aparecen sobre una carga eléctrica
+sometida a un campo electromagnético,
+Ԧ
+𝐹
+𝐸
+Ԧ Ԧ Ԧ
+𝐹 = 𝐹 + 𝐹 = 𝑞𝐸 + 𝑞𝑣Ԧ × 𝐵,
+Ԧ
+𝐸 𝐵 𝐹
+𝐵
+𝑣Ԧ
+donde,
+𝑞
+𝑞: carga eléctrica (𝐶)
+𝐸: intensidad de campo eléctrico (𝑁/𝐶)
+𝑣Ԧ: velocidad de la carga eléctrica (𝑚/𝑠)
+𝐵: densidad de flujo de campo magnético o
+𝐵
+inducción magnética (𝑇)
+https://bit.ly/3gVAuIr
+- 11 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| Ԧ
+𝐹
+𝐸
+Ԧ
+𝐹
+𝐵 |
+
+================================================================================
+PÁGINA 12 DE 202
+================================================================================
+
+DENSIDAD DE FLUJO DE CAMPO MAGNÉTICO
+D
+EFINICIÓN
+𝐸
+A partir de la expresión de la Fuerza de Lorentz
+se puede describir la Densidad de Flujo de
+Campo Magnético o Inducción Magnética 𝑩 Ԧ
+𝐹
+𝐸
+como un campo vectorial que genera una fuerza
+𝐹 Ԧ sobre cargas eléctricas en movimiento que se Ԧ
+𝐹
+𝐵
+𝐵
+desplazan a una velocidad 𝑣Ԧ. 𝑣Ԧ
+𝑞
+La inducción magnética se mide en Tesla (𝑇) en el
+Sistema Internacional de Unidades (SI) y en Gauss
+(𝐺) en el Sistema Cegesimal de Unidades (CGS).
+−1 −1 4 4 𝐵
+1 𝑇 = 1 𝑁𝐴 𝑚 = 10 𝐺𝑎𝑢𝑠𝑠 = 10 𝐺
+- 12 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| Ԧ
+𝐹
+𝐸
+Ԧ
+𝐹
+𝐵 |
+
+================================================================================
+PÁGINA 13 DE 202
+================================================================================
+
+F M C
+UERZA AGNÉTICA EN UN ONDUCTOR
+𝐵
+Conductor
+Considere un conductor eléctrico con una longitud 𝑙 𝜃 𝐹 Ԧ 𝑑𝑉
+sometida a un campo magnético 𝐵, con una sección
+𝑞
+𝑆 𝑣Ԧ 𝑆 𝑑𝑄
+transversal 𝑆 y que lleva una corriente eléctrica 𝐼.
+𝐼 Ԧ
+𝑑𝑙
+Si 𝑁 es el número de portadores con carga 𝑞 en toda Ԧ
+𝑙
+la longitud 𝑙 que se desplazan a una velocidad de
+arrastre 𝑣, sobre el conductor aparecerá una fuerza 𝐹,
+Además, tomando un diferencial de volumen de
+dada por
+conductor 𝑑𝑉 con carga 𝑑𝑄,
+Ԧ
+𝐹 = 𝑁𝑞𝑣Ԧ × 𝐵.
+𝑑𝑄 𝑑𝑄
+= = 𝑛𝑞
+Si 𝑛 es el número de portadores de carga por 𝑑𝑉 𝑆𝑑𝑙
+unidad de volumen 𝑉 del conductor, Por lo tanto,
+𝑁 𝑑𝑄 𝑑𝑙 𝑑𝑄
+Ԧ Ԧ Ԧ
+𝑛 = ⇒ 𝑁 = 𝑛𝑆𝑙 𝐹 = 𝑆𝑙 × 𝐵 = 𝑙 × 𝐵
+𝑆𝑙 𝑆𝑑𝑙 𝑑𝑡 𝑑𝑡
+Es decir,
+con lo cual,
+Ԧ Ԧ
+𝐹 Ԧ = 𝑛𝑞𝑆𝑙𝑣Ԧ × 𝐵. 𝐹 = 𝐼𝑙 × 𝐵
+- 13 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑞 |  | 𝑣Ԧ
+
+-- Tabla 2 --
+| 𝐼
+𝐼
+Ԧ
+𝑙 | 𝐼
+|
+
+================================================================================
+PÁGINA 14 DE 202
+================================================================================
+
+C E E
+ONVERSIÓN DE NERGÍA LÉCTRICA EN
+E M
+NERGÍA AGNÉTICA
+
+================================================================================
+PÁGINA 15 DE 202
+================================================================================
+
+V R
+ALORES DE EFERENCIA PARA LA
+I M
+NDUCCIÓN AGNÉTICA
+Situación Valor aproximado
+En el pecho de un ser humano (debido al corazón) 100 𝑝𝑇
+Cerca de una línea de alta tensión 0.1 𝜇𝑇 − 1.0 𝜇𝑇
+Campo magnético terrestre 20 𝜇𝑇 − 70 𝜇𝑇
+Al interior de una vivienda con circuitos eléctricos 0.1 𝜇𝑇 − 100 𝜇𝑇
+Cerca de un teléfono móvil 100 𝜇𝑇
+Imanes de Ferrita (o Cerámica) 0.2 𝑇 − 0.4 𝑇
+Imanes de AlNiCo 0.8 𝑇 − 1.3 𝑇
+Imanes de Samario (tierra rara) y Cobalto 1.0 𝑇 − 1.2 𝑇
+Imanes de Neodimio (tierra rara) 1.1 𝑇 − 1.5 𝑇
+Núcleo ferromagnético de Grano No Orientado 1.2 𝑇 − 1.7 𝑇
+Núcleo ferromagnético de Grano Orientado 1.6 𝑇 − 2.0 𝑇
+Gran Colisionador de Hadrones (LHC) 8.3 T
+Reactor Termonuclear Experimental Internacional (ITER) 11.8 T
+Reactor de fusión nuclear del MIT 20 T
+Máximo producido en laboratorio con imanes híbridos (MAGLAB) 23 𝑇 − 45 𝑇
+Máximo con bobinas implotantes (1μs) 1000 𝑇
+Fuentes: https://bit.ly/2Vlyalt, https://bit.ly/2YCaNGn, https://www.aksteel.com
+- 15 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+Situación | Valor aproximado
+En el pecho de un ser humano (debido al corazón) | 100 𝑝𝑇
+Cerca de una línea de alta tensión | 0.1 𝜇𝑇 − 1.0 𝜇𝑇
+Campo magnético terrestre | 20 𝜇𝑇 − 70 𝜇𝑇
+Al interior de una vivienda con circuitos eléctricos | 0.1 𝜇𝑇 − 100 𝜇𝑇
+Cerca de un teléfono móvil | 100 𝜇𝑇
+Imanes de Ferrita (o Cerámica) | 0.2 𝑇 − 0.4 𝑇
+Imanes de AlNiCo | 0.8 𝑇 − 1.3 𝑇
+Imanes de Samario (tierra rara) y Cobalto | 1.0 𝑇 − 1.2 𝑇
+Imanes de Neodimio (tierra rara) | 1.1 𝑇 − 1.5 𝑇
+Núcleo ferromagnético de Grano No Orientado | 1.2 𝑇 − 1.7 𝑇
+Núcleo ferromagnético de Grano Orientado | 1.6 𝑇 − 2.0 𝑇
+Gran Colisionador de Hadrones (LHC) | 8.3 T
+Reactor Termonuclear Experimental Internacional (ITER) | 11.8 T
+Reactor de fusión nuclear del MIT | 20 T
+Máximo producido en laboratorio con imanes híbridos (MAGLAB) | 23 𝑇 − 45 𝑇
+Máximo con bobinas implotantes (1μs) | 1000 𝑇
+
+================================================================================
+PÁGINA 16 DE 202
+================================================================================
+
+V R
+IDEOS ECOMENDADOS
+Título: “¿COMO LO HACE? / LOS IMANES”
+Temas: Imanes, Electroimanes, Laboratorio Maglab
+Vhs Cinta Película - Gráficos vectoriales gratis en Pixabay
+Duración: 7m18s
+Título: “A Frog in a Strong Magnetic Fields”
+Temas: Laboratorio Maglab, Experimentos
+Vhs Cinta Película - Gráficos vectoriales gratis en Pixabay
+Duración: 2m47s
+Título: “COMO se HACE un IMÁN potente”
+Tema: Fabricación de imanes
+Vhs Cinta Película - Gráficos vectoriales gratis en Pixabay
+Duración: 6m52s
+- 16 -
+
+================================================================================
+PÁGINA 17 DE 202
+================================================================================
+
+- 17 -
+
+================================================================================
+PÁGINA 18 DE 202
+================================================================================
+
+F C M
+UENTES DE AMPO AGNÉTICO
+1. I
+MANES
+𝐵
+Un imán es un material o dispositivo que produce
+un campo magnético significativo a su
+alrededor lo que le da la capacidad de atraer a
+otros imanes o metales ferromagnéticos.
+N S
+Pueden ser creados de forma natural o de forma
+artificial y pueden mantener un campo magnético
+continuo que se puede afectarse por la aplicación
+de mayores campos magnéticos externos, por
+golpes aplicados al material o por someterlos
+altas temperaturas.
+- 18 -
+
+================================================================================
+PÁGINA 19 DE 202
+================================================================================
+
+F C M
+UENTES DE AMPO AGNÉTICO
+I U
+MANES MÁS TILIZADOS
+Samario
+Ferrita
+Neodimio
+AlNiCo
+- 19 -
+
+================================================================================
+PÁGINA 20 DE 202
+================================================================================
+
+F C M
+UENTES DE AMPO AGNÉTICO
+C I
+ARACTERÍSTICAS DE LOS MANES
+PROPIEDAD REFERENCIA DE LA PROPIEDAD DÉBIL ← → FUERTE
+Imantación/producto de máxima
+MAGNETISMO Ferrita AlNiCo Sam/Co Neodimio
+potencia
+ADSORCIÓN REPETIDA Capacidad de retención AlNiCo Ferrita Sam/Co Neodimio
+DUREZA - Sam/Co Ferrita Neodimio AlNiCo
+RESISTENCIA A LA
+- Neodimio AlNiCo Sam/Co Ferrita
+CORROSIÓN/ÓXIDO
+Temperatura de Curie /
+ESTABILIDAD TÉRMICA Neodimio Sam/Co Ferrita AlNiCo
+Temperatura de trabajo máxima
+Fuente: https://bit.ly/2VlJ6PI
+- 20 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+PROPIEDAD | REFERENCIA DE LA PROPIEDAD | DÉBIL | ← | → | FUERTE
+MAGNETISMO | Imantación/producto de máxima
+potencia | Ferrita | AlNiCo | Sam/Co | Neodimio
+ADSORCIÓN REPETIDA | Capacidad de retención | AlNiCo | Ferrita | Sam/Co | Neodimio
+DUREZA | - | Sam/Co | Ferrita | Neodimio | AlNiCo
+RESISTENCIA A LA
+CORROSIÓN/ÓXIDO | - | Neodimio | AlNiCo | Sam/Co | Ferrita
+ESTABILIDAD TÉRMICA | Temperatura de Curie /
+Temperatura de trabajo máxima | Neodimio | Sam/Co | Ferrita | AlNiCo
+
+================================================================================
+PÁGINA 21 DE 202
+================================================================================
+
+F C M
+UENTES DE AMPO AGNÉTICO
+C I
+ARACTERÍSTICAS DE LOS MANES
+NEODIMIO
+PROPIEDAD Unidad NEODIMIO Sam/Co FERRITA AlNiCo
+RESISTENTE AL CALOR
+IMANTACIÓN T 1.26 1.23 1.03 0.385 1.25
+COERCITIVIDAD BHc kA/m 859 923 640 230 47.7
+COERCITIVIDAD JHc kA/m 955 1592 1190 235 47.7
+PRODUCTO DE MÁX. POTENCIA kJ/m3 260 287 140 27.9 38.2
+DENSIDAD g/m3 7.3 – 7.5 7.3 – 7.5 8.3 4.8 – 5.0 7.3 – 7.4
+TEMPERATURA MÁXIMA DE
+HERRAMIENTAS RESISTENTES AL °C 80 150 200 300 400
+CALOR
+TEMPERATURA DE CURIE °C 310 340 – 400 710 450 – 460 850
+DUREZA VICKERS HV 500 – 600 500 – 600 600 480 – 580 650
+Fuente: https://bit.ly/2VlJ6PI
+- 21 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+PROPIEDAD | Unidad | NEODIMIO | NEODIMIO
+RESISTENTE AL CALOR | Sam/Co | FERRITA | AlNiCo
+IMANTACIÓN | T | 1.26 | 1.23 | 1.03 | 0.385 | 1.25
+COERCITIVIDAD BHc | kA/m | 859 | 923 | 640 | 230 | 47.7
+COERCITIVIDAD JHc | kA/m | 955 | 1592 | 1190 | 235 | 47.7
+PRODUCTO DE MÁX. POTENCIA | kJ/m3 | 260 | 287 | 140 | 27.9 | 38.2
+DENSIDAD | g/m3 | 7.3 – 7.5 | 7.3 – 7.5 | 8.3 | 4.8 – 5.0 | 7.3 – 7.4
+TEMPERATURA MÁXIMA DE
+HERRAMIENTAS RESISTENTES AL
+CALOR | °C | 80 | 150 | 200 | 300 | 400
+TEMPERATURA DE CURIE | °C | 310 | 340 – 400 | 710 | 450 – 460 | 850
+DUREZA VICKERS | HV | 500 – 600 | 500 – 600 | 600 | 480 – 580 | 650
+
+================================================================================
+PÁGINA 22 DE 202
+================================================================================
+
+F C M
+UENTES DE AMPO AGNÉTICO
+2. E
+LECTROIMANES
+𝐵
+Los electroimanes (solenoides, bobinas) están
+formados por el arrollamiento de un conductor
+eléctrico sobre un material que favorece el
+establecimiento del campo magnético.
+La gran ventaja que ofrece sobre los imanes es que
+es posible controlar, en cierto rango de
+operación, la magnitud del campo magnético en su 𝐼
+interior en función de la corriente eléctrica
+aplicada al conductor.
+- 22 -
+
+================================================================================
+PÁGINA 23 DE 202
+================================================================================
+
+F C M
+UENTES DE AMPO AGNÉTICO
+L A M
+EY DE MPÈRE – AXWELL
+Esta Ley relaciona el campo magnético a través de un
+camino cerrado con las corrientes eléctricas que pasan a
+𝐼
+𝐼 𝐼
+3
+través de la superficie creada por ese camino, 1 2
+Camino
+cerrado
+Ԧ
+𝑑𝑆
+𝑑 Ԧ
+𝑑𝑙
+Ԧ Ԧ Ԧ Ԧ
+ර𝐵 ∙ 𝑑𝑙 = 𝜇 න𝐽 ∙ 𝑑𝑆 + 𝜇 𝜖 න𝐸 ∙ 𝑑𝑆 ,
+0 0 0
+𝑑𝑡
+𝐶 𝑆 𝑆
+Superficie
+del camino
+donde, 𝜇
+0
+cerrado
+𝐶: camino cerrado
+𝑆: superficie definida por 𝐶
+𝐽: densidad de corriente
+𝜖 : permitividad eléctrica del vacío
+0
+𝐸: intensidad de campo eléctrico
+- 23 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝐼
+2 |
+|
+
+-- Tabla 2 --
+Ԧ
+𝑑𝑙 |
+
+================================================================================
+PÁGINA 24 DE 202
+================================================================================
+
+F C M
+UENTES DE AMPO AGNÉTICO
+L A M
+EY DE MPÈRE – AXWELL
+Vista superior:
+Camino
+cerrado 𝐼 𝐼 𝐼
+3
+1 2
+𝐵
+𝐵 Ԧ
+𝑑𝑆
+𝜇 𝐼
+Ԧ
+0 3 𝑑𝑙
+𝐼 𝐼
+1 2
+Superficie
+𝐵 del camino 𝜇
+0
+𝐵
+cerrado
+Ԧ Ԧ Ԧ
+ර𝐵 ∙ 𝑑𝑙 = 𝜇 න𝐽 ∙ 𝑑𝑆 = 𝜇 𝐼 + 𝐼 − 𝐼
+Q
+𝐶
+0
+𝑆
+0 1 2 3
+51gF13/yl.tib//:sptth
+- 24 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝐼
+2 |
+|
+
+-- Tabla 2 --
+|
+
+-- Tabla 3 --
+𝜇
+0 |
+|
+
+-- Tabla 4 --
+𝐼
+3 |  |
+|  |
+
+-- Tabla 5 --
+|
+𝐼 | 1
+
+-- Tabla 6 --
+|
+| 𝐼
+2
+
+================================================================================
+PÁGINA 25 DE 202
+================================================================================
+
+F C M
+UENTES DE AMPO AGNÉTICO
+C M C R
+AMPO AGNÉTICO ALREDEDOR DE UN ONDUCTOR ECTILÍNEO
+𝐼 𝐵 Camino
+𝜇 𝑑𝑙 Ԧ
+0 cerrado
+Camino
+Ԧ
+𝑑𝑆
+𝜇
+𝐵
+𝐵 cerrado
+𝑅 0
+𝑅
+𝐼
+𝐵
+𝐵 𝑑𝑙 Ԧ 𝐵 Superficie
+𝐵
+del camino
+Superficie
+cerrado
+Ԧ
+del camino 𝐵 y 𝑑𝑙 son
+cerrado paralelos
+𝐵
+𝜇 𝐼
+Conductor 0
+Ԧ 𝐵 =
+ර𝐵 ∙ 𝑑𝑙 = 𝐵 2𝜋𝑅 = 𝜇 𝐼 ⇒
+eléctrico 0 2𝜋𝑅
+𝐶
+- 25 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝐵 |
+|
+
+-- Tabla 2 --
+| 𝜇
+0
+Ԧ
+𝑑𝑆 |
+
+-- Tabla 3 --
+|  |  | 𝑅 |
+|  |  |  |
+|  |  |  |
+
+-- Tabla 4 --
+𝐼 |
+|
+
+-- Tabla 5 --
+
+𝐵
+
+-- Tabla 6 --
+Ԧ
+𝐵 y 𝑑𝑙 s
+paralel | on
+os
+
+================================================================================
+PÁGINA 26 DE 202
+================================================================================
+
+F C M
+UENTES DE AMPO AGNÉTICO
+C M I S
+AMPO AGNÉTICO EN EL NTERIOR DE UN OLENOIDE
+𝐵
+𝜇
+0
+https://bit.ly/2VD64Co
+𝐼
+- 26 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| 𝐼
+
+================================================================================
+PÁGINA 27 DE 202
+================================================================================
+
+F C M
+UENTES DE AMPO AGNÉTICO
+C M I S
+AMPO AGNÉTICO EN EL NTERIOR DE UN OLENOIDE
+𝐵
+𝜇
+0
+𝑵 𝑺
+𝑵 𝑺
+https://bit.ly/31Fg15Q
+𝐼 𝐼
+- 27 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑵 |  | 𝑺
+
+-- Tabla 2 --
+| 𝐼
+
+================================================================================
+PÁGINA 28 DE 202
+================================================================================
+
+F C M
+UENTES DE AMPO AGNÉTICO
+C M I S
+AMPO AGNÉTICO EN EL NTERIOR DE UN OLENOIDE
+𝐵
+𝜇
+𝐵 ≈ 0 0
+𝐼
+𝑵 𝑺
+𝑵 𝑺
+𝑩 ≠ 𝟎
+𝒊
+𝐼
+- 28 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  | 𝑩 ≠ 𝟎 |  |
+|  | 𝒊 |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+-- Tabla 2 --
+𝑵 |  | 𝑺
+
+-- Tabla 3 --
+| 𝐼
+
+================================================================================
+PÁGINA 29 DE 202
+================================================================================
+
+F C M
+UENTES DE AMPO AGNÉTICO
+C M I S
+AMPO AGNÉTICO EN EL NTERIOR DE UN OLENOIDE
+Para determinar la magnitud aproximada del campo
+𝐵 ≈ 0
+magnético interno 𝐵 del solenoide se puede aplicar
+𝑖
+Ԧ 𝜇
+𝑑𝑙
+3 0 la Ley de Ampère sobre el camino cerrado
+𝑁 𝑑𝑙 Ԧ 𝑑𝑙 Ԧ mostrado. Esto es,
+2 4 𝐼
+𝑵 𝑺 Ԧ Ԧ
+𝑩 ≠ 𝟎 ර𝐵 ∙ 𝑑𝑙 = ර 𝐵 ∙ 𝑑𝑙 = 𝐵 𝑙 = 𝜇 𝑁𝐼
+𝒊 𝑖 𝑖 1 𝑖 0
+Ԧ
+𝑑𝑙
+1 𝐶 𝐶
+𝑙
+Por lo tanto,
+𝑁: Número de espiras
+𝜇 𝑁𝐼
+0
+𝑙: longitud de la bobina
+𝐵 = = 𝜇 𝑛𝐼
+𝑁 𝑖 0
+𝑙
+𝑛 =
+𝑙
+- 29 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+
+Ԧ
+𝑑𝑙
+3
+
+-- Tabla 2 --
+|  |  |  |  |  | 𝜇
+0 |  |  |  |
+|  |  |  |  |  |  | 𝐼 |  |  |
+|  |  |  |  |  |  |  |  |  | 𝑺
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  | 𝑩 ≠ 𝟎
+𝒊 |  |  |  |  |
+|  |  | Ԧ
+𝑑𝑙 |  |  |  |  |  |  |
+|  |  | 1 |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
+
+-- Tabla 3 --
+| Ԧ
+𝑑𝑙
+2 |
+𝑁 |  |
+|  |
+
+================================================================================
+PÁGINA 30 DE 202
+================================================================================
+
+F C M
+UENTES DE AMPO AGNÉTICO
+C M I S
+AMPO AGNÉTICO EN EL NTERIOR DE UN OLENOIDE
+𝐵(𝑡) 𝑩
+𝒎
+𝑖(𝑡) 𝑩(𝒕)
+𝑰
+𝒎
+𝒊(𝒕)
++
+𝑣(𝑡)
+𝑡
+_
+- 30 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| 𝑣(𝑡)
+_ |
+
+================================================================================
+PÁGINA 31 DE 202
+================================================================================
+
+C E M
+ONVERSIÓN DE NERGÍA AGNÉTICA EN
+E E
+NERGÍA LÉCTRICA
+- 31 -
+
+================================================================================
+PÁGINA 32 DE 202
+================================================================================
+
+F C M
+LUJO DE AMPO AGNÉTICO
+El Flujo de Campo Magnético 𝜙 es una variable
+Superficie
+escalar que se utiliza para describir la relación entre la
+inducción magnética 𝐵 y su ángulo de incidencia con
+Ԧ
+Ԧ 𝑑𝑆
+respecto a una superficie direccionada 𝑆. Ԧ
+𝑆
+𝜃
+𝐵
+El Flujo de Campo Magnético 𝜙 se define como
+𝜙
+Ԧ
+𝜙 = න𝐵 ∙ 𝑑𝑆 ,
+𝑆
+Esta variable se mide en Weber (𝑊𝑏) en el SI, donde
+2
+1 𝑊𝑏 = 1 𝑇𝑚
+- 32 -
+
+================================================================================
+PÁGINA 33 DE 202
+================================================================================
+
+L F H
+EY DE ARADAY – ENRY
+𝐵(𝑡) 𝐵(𝑡)
+Esta Ley, también conocida como la Ley de Ԧ
+𝑑𝑆
+Inducción Electromagnética, muestra la Superficie
+𝜙(𝑡)
+relación que existe entre un flujo de campo
+Ԧ
+𝑑𝑆
+magnético variable en el tiempo 𝜙(𝑡) y su
+Superficie
+correspondiente voltaje inducido 𝑒(𝑡),
+𝑑
+Ԧ Ԧ
+𝑒 𝑡 = ර𝐸 ∙ 𝑑𝑙 = − න𝐵 ∙ 𝑑𝑆 , 𝜙(𝑡)
+𝑑𝑡
+𝐶 𝑆
+Espira
+El signo negativo de esta expresión es
+explicado por la Ley de Lenz
+- 33 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| 𝐵(𝑡)
+Ԧ
+𝑑𝑆 |
+
+-- Tabla 2 --
+𝜙( | 𝑡)
+
+================================================================================
+PÁGINA 34 DE 202
+================================================================================
+
+L L
+EY DE ENZ
+Aumentando… Disminuyendo…
+𝐵(𝑡) 𝐵(𝑡)
+Ԧ
+𝑑𝑆
+La Ley de Lenz indica que el sentido Ԧ
+𝑑𝑆
+(polaridad o dirección) de la fuerza
+Superficie
+electromotriz (o corriente) inducida, de
+acuerdo a la Ley de Faraday – Henry, es
+tal que se opone a la variación del flujo
+de campo magnético que genera dicho
+𝜙(𝑡) 𝜙(𝑡)
+voltaje.
+De no ser así, se produciría un
+𝐼 𝐼
+Espira
+incremento inexplicable de la magnitud
+de este voltaje. Corriente inducida
+Líneas de campo producido
+por la corriente inducida
+- 34 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| 𝐵(𝑡)
+Ԧ
+𝑑𝑆 |
+
+-- Tabla 2 --
+| 𝐵(𝑡)
+Ԧ
+𝑑𝑆 |
+
+-- Tabla 3 --
+𝜙 | (𝑡 | )
+
+-- Tabla 4 --
+| 𝜙( | 𝑡) |
+
+================================================================================
+PÁGINA 35 DE 202
+================================================================================
+
+E F
+NCADENAMIENTOS DE LUJO
+Aumentando…
+Este concepto se refiere a la conexión
+𝐵(𝑡)
+eléctrica en serie (encadenamiento) de 𝑁
+𝑖(𝑡)
+espiras a cuyas superficies se les aplica la
+misma inducción magnética.
++
+Típicamente, esta variable se identifica con
+la letra 𝜓 (“psi”).
+e(𝑡)
+𝑁 espiras
+𝜓 = 𝑁𝜙
+𝑁 superficies _
+𝑁 flujos de campo
+Por lo tanto,
+𝑑 𝑑𝜙(𝑡)
+𝑒 𝑡 = − 𝜓 𝑡 = −𝑁
+𝑑𝑡 𝑑𝑡
+- 35 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| 𝑁 espiras
+𝑁 superficies
+𝑁 flujos de campo
+
+================================================================================
+PÁGINA 36 DE 202
+================================================================================
+
+V I B
+OLTAJE NDUCIDO EN UNA OBINA
+Aumentando…
+𝑑𝐵
+> 0 (“Aumentando”) 𝐵(𝑡)
+𝑑𝑡
+𝑩
+𝒎
+𝑩(𝒕) 𝑑𝜙
+𝑒 𝑡 = −𝑁
++
+𝑬 𝑑𝑡
+𝒎
+𝒆(𝒕)
+e(𝑡)
+𝑁 espiras
+𝑡
+𝑁 superficies _
+𝑁 flujos de campo
+- 36 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑡 |
+
+================================================================================
+PÁGINA 37 DE 202
+================================================================================
+
+C E E
+ONVERSIÓN DE NERGÍA LECTROMAGNÉTICA
+𝐵(𝑡)
+Aumentando…
+𝑖 (𝑡)
+1
++
++
++
+𝑒 (𝑡)
+𝑒 (𝑡)
+𝑣 (𝑡) 2
+1
+1
+− −
+−
+𝑁 𝑁
+1 2
+- 37 -
+
+================================================================================
+PÁGINA 38 DE 202
+================================================================================
+
+¡MUCHAS GRACIAS!
+
+================================================================================
+PÁGINA 39 DE 202
+================================================================================
+
+T I
+RANSFORMADOR DEAL
+Docente
+Edwin Herlyt Lopera Mazo
+edwinlopera@itm.edu.co
+Facultad de Ingenierías
+Departamento de Mecatrónica y Electromecánica
+Ingeniería Mecatrónica
+Medellín, Colombia
+
+================================================================================
+PÁGINA 40 DE 202
+================================================================================
+
+A P
+GENDA DE LA RESENTACIÓN
+❑ Transformador ideal monofásico
+❑ Análisis fasorial
+❑ Modelo matemático del transformador ideal
+❑ Transferencias de variables
+Transformador Ideal
+𝑆 = 𝑉 𝐼∗ 𝑆 = 𝑉 𝐼∗
+1 1 1 2 2 2
++
+❑ Polaridad de los devanados + + +
+𝐼
+𝐼
+1
+2
+𝑉 𝐸 𝐸 𝑍 𝑉
+1 1 2 2 2
+❑ Relación de transformación
+− 𝑓 − − −
+❑ Sistema Eléctrico de una máquina
+𝑁 𝐸 𝑉 𝐼
+1 1 1 2
+𝑍 𝑎 = = = = 𝑍
+1 𝑁 𝐸 𝑉 𝐼 2
+2 2 2 1
+❑ Resistencia eléctrica de los conductores
+❑ Pérdidas eléctricas
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| +
+|
+
+-- Tabla 2 --
+| + |  |
+𝑉
+1 |  |  |
+| − |  | 𝑓
+
+-- Tabla 3 --
++ |
+𝐸
+1 |
+
+-- Tabla 4 --
++
+𝐸
+2
+
+================================================================================
+PÁGINA 41 DE 202
+================================================================================
+
+T I M
+RANSFORMADOR DEAL ONOFÁSICO
+
+================================================================================
+PÁGINA 42 DE 202
+================================================================================
+
+T I M
+RANSFORMADOR DEAL ONOFÁSICO
+ENERGÍA
+MAGNÉTICA
+𝐵(𝑡)
+𝑖 (𝑡)
+1
++
+ENERGÍA
+ENERGÍA
+ELÉCTRICA
+ELÉCTRICA
+DE SALIDA
+DE ENTRADA
+−
+𝑁 𝑁
+Devanado Devanado
+1 2
+Primario Secundario
+Ideal Ideal
+- 4 -
+
+================================================================================
+PÁGINA 43 DE 202
+================================================================================
+
+T I M
+RANSFORMADOR DEAL ONOFÁSICO
+I I
+MPLICACIONES DE LA DEALIDAD
+Devanados ideales: Núcleo ferromagnético ideal:
+❑ Los conductores eléctricos de los devanados ❑ La permeabilidad magnética del material
+no tienen resistencia eléctrica. ferromagnética es muy alta.
+❑ La temperatura ambiente y la frecuencia de la ❑ La conductividad eléctrica del material del
+corriente aplicada al devanado primario no núcleo es nula.
+generan efectos sobre la resistencia.
+❑ No existe saturación del material del núcleo.
+❑ Toda la energía eléctrica de entrada se
+❑ El material no presenta histéresis.
+transforma en energía magnética.
+❑ Toda la energía magnética se transforma
+❑ No existe flujo de campo magnético disperso.
+finalmente en energía eléctrica.
+NO HAY PÉRDIDAS ELÉCTRICAS NO HAY PÉRDIDAS MAGNÉTICAS
+- 5 -
+
+================================================================================
+PÁGINA 44 DE 202
+================================================================================
+
+T I M
+RANSFORMADOR DEAL ONOFÁSICO
+Núcleo ferromagnético ideal
+𝜙 (𝑡)
+Terminales de conexión
+𝐵(𝑡) 𝑚
+Terminales de conexión
++
++ +
++ 𝑖 (𝑡) 𝑖 (𝑡)
+1 2
+𝑣 (𝑡)
+𝑒 𝑡 2
+𝑣 (𝑡) 𝑒 𝑡 2
+1 1
+− − −
+− 𝑁 𝑁
+1 2
+Carga
+Devanado
+Fuente Devanado
+Secundario
+Primario
+𝜙 (𝑡) Ideal
+𝐵(𝑡)
+𝑚
+Ideal
+- 6 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+
+
+𝜙 (𝑡)
+𝑚
+𝑁
+2
+
+
+-- Tabla 2 --
+| 𝑖 (𝑡)
+2
+𝑒 𝑡
+2 |
+
+-- Tabla 3 --
+− |
+|
+|
+
+================================================================================
+PÁGINA 45 DE 202
+================================================================================
+
+T I M
+RANSFORMADOR DEAL ONOFÁSICO
+𝑝 𝑡 = 𝑝 (𝑡)
+1 2
+Núcleo ferromagnético ideal
+Potencia instantánea de entrada:
+Potencia instantánea de salida:
+𝑝 𝑡 = 𝑣 𝑡 𝑖 𝑡 = 𝑒 𝑡 𝑖 𝑡
+𝑝 𝑡 = 𝑣 𝑡 𝑖 𝑡 = 𝑒 𝑡 𝑖 𝑡
+1 1 1 1 1
+2 2 2 2 2
+𝜙 (𝑡)
+𝑑𝜙 (𝑡) 𝐵(𝑡) 𝑚
+𝑑𝜙 (𝑡)
+𝑚
+𝑣 𝑡 = 𝑒 𝑡 = 𝑁 𝑚
+𝑣 𝑡 = 𝑒 𝑡 = 𝑁
+1 1 1
+𝑑𝑡 2 2 2
+𝑑𝑡
++
++ +
++ 𝑖 (𝑡) 𝑖 (𝑡)
+1 2
+𝑣 (𝑡)
+𝑒 𝑡 2
+𝑣 (𝑡) 𝑒 𝑡 2
+1 1
+− − −
+− 𝑁 𝑁
+1 2
+𝜙 (𝑡)
+𝐵(𝑡)
+𝑚
+- 7 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+
+
+𝜙 (𝑡)
+𝑚
+𝑁
+2
+
+
+-- Tabla 2 --
+| 𝑖 (𝑡)
+2
+𝑒 𝑡
+2 |
+
+-- Tabla 3 --
+− |
+|
+|
+
+================================================================================
+PÁGINA 46 DE 202
+================================================================================
+
+T I M
+RANSFORMADOR DEAL ONOFÁSICO
+R T
+ELACIÓN DE RANSFORMACIÓN
+TRANSFORMADOR IDEAL
+𝑑𝜙 (𝑡) 𝑑𝜙 (𝑡)
+𝑚 𝑚
+𝑒 𝑡 = 𝑁 ; 𝑒 𝑡 = 𝑁
+1 1 2 2
+𝑑𝑡 𝑑𝑡
+𝜙 (𝑡)
+𝐵(𝑡) 𝑚
+𝑎: Relación de transformación 𝑝 = 𝑣 (𝑡)𝑖 (𝑡) 𝑝 = 𝑣 (𝑡)𝑖 (𝑡)
+1 1 1 2 2 2
+𝑒 𝑡 𝑁 + + +
+1 1 + 𝑖 (𝑡) 𝑖 (𝑡)
+𝑎 = = ,
+1 2
+𝑒 𝑡 𝑁
+2 2
+𝑒 𝑡 𝑣 (𝑡)
+𝑣 (𝑡) 𝑒 𝑡 2 2
+1 1
+además, dado que 𝑝 𝑡 = 𝑝 𝑡 ,
+1 2
+− − −
+− 𝑁 𝑁
+1 2
+𝑒 𝑡 𝑖 𝑡 = 𝑒 𝑡 𝑖 𝑡
+1 1 2 2
+𝜙 (𝑡)
+Por lo tanto, 𝐵(𝑡)
+𝑚
+𝑖 𝑡
+2
+𝑎 =
+𝑁 𝑣 𝑡 𝑒 𝑡 𝑖 𝑡
+𝑖 𝑡 1 1 1 2
+1 𝑎 = = = =
+𝑁 𝑣 𝑡 𝑒 𝑡 𝑖 𝑡
+2 2 2 1
+- 8 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |
+|  |
+|  |
+|  |
+|  |
+| 𝜙 (𝑡)
+𝑚
+𝑁
+2 |
+|  |
+𝜙 (𝑡)
+𝑚 | 𝐵(𝑡) |
+
+-- Tabla 2 --
+𝑝 = 𝑣 (𝑡
+1 1 | )𝑖 (𝑡)
+1
+
+-- Tabla 3 --
++ |
+|
+
+-- Tabla 4 --
+|  | + |  |  |
+𝑖 (𝑡)
+2 |  |  |  |  |
+|  |  |  |  |
+| 𝑣 (𝑡)
+2 |  |  |  |
+
+-- Tabla 5 --
+𝑖 (𝑡)
+1 |
+
+-- Tabla 6 --
+𝑒 𝑡
+1 |  |
+− |  |
+| − |
+|  |
+|  |
+
+================================================================================
+PÁGINA 47 DE 202
+================================================================================
+
+A F
+NÁLISIS ASORIAL
+
+================================================================================
+PÁGINA 48 DE 202
+================================================================================
+
+T I
+RANSFORMADOR DEAL
+M
+ONOFÁSICO
+A F
+NÁLISIS ASORIAL
+TRANSFORMADOR IDEAL
+Suponiendo que el flujo de campo magnético
+es sinusoidal, 𝜙 𝑡 = Φ sin 2𝜋𝑓𝑡,
+𝑚 𝑚
+donde, Φ es la amplitud del flujo magnético 𝜙 (𝑡)
+𝑚 𝐵(𝑡) 𝑚
+en el núcleo y 𝑓 es la frecuencia de la fuente
+𝑝 = 𝑣 (𝑡)𝑖 (𝑡) 𝑝 = 𝑣 (𝑡)𝑖 (𝑡)
+de la red eléctrica, 1 1 1 2 2 2
++ + +
++
+𝑒 𝑡 = 𝑣 𝑡 = 2𝜋𝑓𝑁 Φ cos 𝜔𝑡 , 𝑖 (𝑡) 𝑖 (𝑡)
+1 2
+1 1 1 𝑚
+𝑒 𝑡 𝑣 (𝑡)
+𝑣 (𝑡) 𝑒 𝑡 2 2
+1 1
+cuyo Valor RMS 𝐸 estará dado por
+1
+− − −
+2𝜋 − 𝑁 𝑁
+1 2
+𝐸 = 𝑓𝑁 Φ ,
+1 1 𝑚
+2
+es decir que 𝜙 (𝑡)
+𝐵(𝑡)
+𝑚
+𝑉
+1
+Φ = .
+𝑚 𝑁 𝑣 𝑡 𝑒 𝑡 𝑖 𝑡
+4.44𝑓𝑁
+1 1 1 2
+1 𝑎 = = = =
+𝑁 𝑣 𝑡 𝑒 𝑡 𝑖 𝑡
+2 2 2 1
+- 10 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |
+|  |
+|  |
+|  |
+|  |
+| 𝜙 (𝑡)
+𝑚
+𝑁
+2 |
+|  |
+𝜙 (𝑡)
+𝑚 | 𝐵(𝑡) |
+
+-- Tabla 2 --
+|
+| +
+
+-- Tabla 3 --
++ |
+|
+
+-- Tabla 4 --
+|  | + |  |  |
+𝑖 (𝑡)
+2 |  |  |  |  |
+|  |  |  |  |
+| 𝑣 (𝑡)
+2 |  |  |  |
+
+-- Tabla 5 --
+| −
+
+-- Tabla 6 --
+
+
+================================================================================
+PÁGINA 49 DE 202
+================================================================================
+
+T I M
+RANSFORMADOR DEAL ONOFÁSICO
+A F
+NÁLISIS ASORIAL
+TRANSFORMADOR IDEAL
+De forma fasorial,
+𝐸 = 𝐸 ∠0°.
+1 1
+𝐵 Φ
+𝑚
+De igual forma, 𝑆 = 𝑉 𝐼 ∗ 𝑆 = 𝑉 𝐼 ∗
+1 1 1 2 2 2
+𝐸 = 𝐸 ∠0°. + + +
+2 2 +
+𝐼 𝐼
+1 2
+Por lo tanto,
+𝐸 𝑉
+𝑉 𝐸 2 2
+1 1
+𝑁 𝐸 𝑉 𝐼
+1 1 1 2
+𝑎 = = = = . − − −
+𝑁 𝐸 𝑉 𝐼
+− 𝑁 𝑁
+2 2 2 1 1 2
+Si 𝑍 corresponde a la impedancia vista
+2
+desde las terminales secundarias del Φ 𝐵(𝑡)
+𝑚
+transformador, 𝑍
+2
+𝑁 𝐸 𝑉 𝐼
+1 1 1 2
+𝑉 𝑎 = = = =
+2 𝑁 𝐸 𝑉 𝐼
+𝑍 =
+2 2 2 1
+2
+𝐼
+2
+- 11 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |
+|  |
+|  |
+|  |
+|  |
+|  |
+| Φ
+𝑚
+𝑁
+2 |
+|  |
+Φ
+𝑚 | 𝐵(𝑡) |
+
+-- Tabla 2 --
++ |  | + |
+
+-- Tabla 3 --
+𝐸
+2 | 𝑉
+2
+
+-- Tabla 4 --
+− |
+|
+|
+
+-- Tabla 5 --
+| 𝑍
+2
+𝑁 𝐸 𝑉 𝐼
+1 1 1 2
+𝑎 = = = =
+𝑁 𝐸 𝑉 𝐼
+2 2 2 1 |
+
+================================================================================
+PÁGINA 50 DE 202
+================================================================================
+
+T I M
+RANSFORMADOR DEAL ONOFÁSICO
+A F
+NÁLISIS ASORIAL
+TRANSFORMADOR IDEAL
+Así mismo,
+𝑉 𝑎𝑉
+1 2
+2
+𝑍 = = = 𝑎 𝑍 ,
+1 2 𝐵 Φ
+𝐼 𝐼 𝑚
+1 2
+∗ ∗
+𝑆 = 𝑉 𝐼 𝑆 = 𝑉 𝐼
+𝑎
+1 1 1 2 2 2
+por consiguiente, 𝑍 es una
+1 + + +
++
+representación de la misma impedancia 𝐼 𝐼
+1 2
+𝑍 vista desde (o transferida a) el 𝐸 𝑉
+2 𝑉 𝐸 2 2
+1 1
+primario. Para indicar esto se usará la
+siguiente notación: − − −
+− 𝑁 𝑁
+1 2
+2
+𝑍 ′ = 𝑍 = 𝑎 𝑍 .
+2 1 2
+De igual forma, para las demás variables,
+Φ 𝐵(𝑡)
+𝑚
+𝐸 ′ = 𝐸 = 𝑎𝐸 𝑍
+2 1 2 𝑍 2
+𝑁 𝐸 𝑉 𝐼
+1
+1 1 1 2
+𝐼 𝑎 = = = =
+2
+𝐼 ′ = 𝐼 = . 𝑁 𝐸 𝑉 𝐼
+2 1 2 2 2 1
+𝑎
+- 12 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |
+|  |
+|  |
+|  |
+|  |
+| Φ
+𝑚
+𝑁
+2 |
+|  |
+Φ
+𝑚 | 𝐵(𝑡) |
+
+-- Tabla 2 --
++ | +
+
+-- Tabla 3 --
+𝐸
+2 | 𝑉
+2
+
+-- Tabla 4 --
+− |
+|
+
+-- Tabla 5 --
+| 𝑍
+2
+𝑍
+𝑁 𝐸 𝑉 𝐼
+1 1 1 2
+𝑎 = = = =
+𝑁 𝐸 𝑉 𝐼
+2 2 2 1 | 𝑍
+
+================================================================================
+PÁGINA 51 DE 202
+================================================================================
+
+T I M
+RANSFORMADOR DEAL ONOFÁSICO
+A F
+NÁLISIS ASORIAL
+TRANSFORMADOR IDEAL
+A partir de estas mismas relaciones, las
+variables relevantes del lado primario
+transferidas al lado secundario quedarán
+𝐵 Φ
+𝑚
+así:
+∗ ∗
+𝑆 = 𝑉 𝐼 𝑆 = 𝑉 𝐼
+1 1 1 2 2 2
+𝑍
+1
+𝑍 ′ = 𝑍 = + + +
+1 2 𝑎2 +
+𝐼 𝐼
+1 2
+𝐸 𝑉
+𝐸 𝑉 𝐸 2 2
+1 1 1
+′
+𝐸 = 𝐸 =
+1 2
+𝑎 − − −
+− 𝑁 𝑁
+1 2
+′
+𝐼 = 𝐼 = 𝑎𝐼
+1 2 1
+Φ 𝐵(𝑡)
+𝑚
+𝑍
+𝑍 2
+𝑁 𝐸 𝑉 𝐼
+1
+1 1 1 2
+𝑎 = = = =
+𝑁 𝐸 𝑉 𝐼
+2 2 2 1
+- 13 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |
+|  |
+|  |
+|  |
+|  |
+|  |
+| Φ
+𝑚
+𝑁
+2 |
+|  |
+Φ
+𝑚 | 𝐵(𝑡) |
+
+-- Tabla 2 --
++ |  | + |
+
+-- Tabla 3 --
+𝐸
+2 | 𝑉
+2
+
+-- Tabla 4 --
+− |
+|
+|
+
+-- Tabla 5 --
+| 𝑍
+2
+𝑍
+𝑁 𝐸 𝑉 𝐼
+1 1 1 2
+𝑎 = = = =
+𝑁 𝐸 𝑉 𝐼
+2 2 2 1 | 𝑍
+
+================================================================================
+PÁGINA 52 DE 202
+================================================================================
+
+M M
+ODELO ATEMÁTICO DEL
+T I
+RANSFORMADOR DEAL
+
+================================================================================
+PÁGINA 53 DE 202
+================================================================================
+
+M M I
+ODELO ATEMÁTICO DEAL
+Transformador Ideal
+𝑆 = 𝑉 𝐼 ∗ 𝑆 = 𝑉 𝐼 ∗
+1 1 1 2 2 2
++
++ + +
+𝐼
+𝐼
+1
+2
+𝑉 𝐸 𝐸 𝑍 𝑉
+1 1 2 2 2
+− 𝑓 − −
+−
+𝑁 𝐸 𝑉 𝐼
+1 1 1 2
+𝑍 𝑎 = = = = 𝑍
+1 𝑁 𝐸 𝑉 𝐼 2
+2 2 2 1
+CIRCUITO EQUIVALENTE VISTO DESDE EL LADO PRIMARIO CIRCUITO EQUIVALENTE VISTO DESDE EL LADO SECUNDARIO
++ +
++ + 𝐼 + + 𝐼 = 𝐼 ′ = 𝑎𝐼
+2
+𝐼 = 𝐼 ′ = 2 1 1
+1 2
+𝑎 𝑉 𝐸
+𝑉 𝐸 = 𝐸 ′ = 𝑎𝐸 𝑉 ′ = 𝑎𝑉 𝑉 ′ = 1 𝐸 = 𝐸 ′ = 1 𝑉
+1 2
+1 2 2 2 2 1 2 1
+𝑎 𝑎
+− 𝑓 − 𝑍 = 𝑍 ′ = 𝑎 2 𝑍 − − 𝑓 − 𝑍 = 𝑍 ′ = 𝑍 /𝑎 2 −
+1 2 2 2 1 1
+- 15 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| + |  |
+𝑉
+1 |  |  |
+| − |  | 𝑓
+
+-- Tabla 2 --
++ |
+𝐸
+1 |
+− |
+
+-- Tabla 3 --
+| +
+| 𝐸
+2
+| −
+
+-- Tabla 4 --
+𝑉
+2
+−
+
+-- Tabla 5 --
++ |  |
+|  |
+|  |
+− |  | 𝑓
+
+-- Tabla 6 --
++
+
+
+-- Tabla 7 --
+𝐼 = 𝐼 ′ = 𝑎𝐼
+2 1 1
+
+
+================================================================================
+PÁGINA 54 DE 202
+================================================================================
+
+D F I
+IAGRAMA ASORIAL DEAL
+Transformador Ideal
+𝑆 = 𝑉 𝐼 ∗ 𝑆 = 𝑉 𝐼 ∗
+1 1 1 2 2 2
++
++ + +
+𝐼
+𝐼
+1
+2
+𝑉 𝐸 𝐸 𝑍 𝑉
+1 1 2 2 2
+− 𝑓 − −
+−
+𝑁 𝐸 𝑉 𝐼
+1 1 1 2
+𝑍 𝑎 = = = = 𝑍
+1 𝑁 𝐸 𝑉 𝐼 2
+2 2 2 1
+𝜃
+𝑉 = 𝐸 𝑉 = 𝐸
+2 2 1 1
+𝐼 ′ = 𝐼
+2 1
+𝐼
+2
+- 16 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| + |  |
+𝑉
+1 |  |  |
+| − |  | 𝑓
+
+-- Tabla 2 --
++ |
+𝐸
+1 |
+− |
+
+-- Tabla 3 --
+| +
+| 𝐸
+2
+| −
+
+================================================================================
+PÁGINA 55 DE 202
+================================================================================
+
+P P
+RUEBAS DE OLARIDAD
+
+================================================================================
+PÁGINA 56 DE 202
+================================================================================
+
+M D P
+ÉTODOS PARA ETETERMINAR LA OLARIDAD
+M D C A
+ÉTODO IFERENCIAL DE ORRIENTE LTERNA
+𝐼
+A
+1
++
++ +
+V V
+𝑉 𝐸 𝐸
+1 1 2
+− 𝑓 −
+−
+V
+Este método se puede utilizar cuando la
+relación de transformación sea menor a 30.
+- 18 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| + |  |
+𝑉
+1 |  |  |
+| − |  | 𝑓
+
+-- Tabla 2 --
++ |
+𝐸
+1 |
+− |
+
+================================================================================
+PÁGINA 57 DE 202
+================================================================================
+
+M D P
+ÉTODOS PARA ETETERMINAR LA OLARIDAD
+M D C A
+ÉTODO IFERENCIAL DE ORRIENTE LTERNA
+𝐼
+A
+1
+−
++ +
+V V
+𝑉 𝐸 𝐸
+1 1 2
+− 𝑓 −
++
+V
+- 19 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| + |  |
+𝑉
+1 |  |  |
+| − |  | 𝑓
+
+-- Tabla 2 --
++ |
+𝐸
+1 |
+− |
+
+================================================================================
+PÁGINA 58 DE 202
+================================================================================
+
+M D P
+ÉTODOS PARA ETETERMINAR LA OLARIDAD
+M D I
+ÉTODO DE LA ESCARGA NDUCTIVA
+A
+𝑖 𝑡
+1
++ +
++
+𝑉 V V
+𝑒 (𝑡) 𝑒 (𝑡)
+1𝐷𝐶
+− 1 2
+−
+−
+𝑣 (𝑡) 𝑣 (𝑡)
+1 2
+𝑡 𝑡
+𝑡 𝑡
+0 0
+- 20 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| +
+|
+| −
+
+-- Tabla 2 --
+𝑒 (𝑡)
+1 |  |
+|  |
+| − |
+
+-- Tabla 3 --
+| 𝑒 (𝑡)
+2
+|
+| −
+|
+
+-- Tabla 4 --
+
+𝑡
+0
+
+-- Tabla 5 --
+
+𝑡
+0
+
+================================================================================
+PÁGINA 59 DE 202
+================================================================================
+
+M D P
+ÉTODOS PARA ETETERMINAR LA OLARIDAD
+M D I
+ÉTODO DE LA ESCARGA NDUCTIVA
+A
+𝑡
+0
+𝑖 𝑡
+1
++ +
++
+𝑉 V V
+𝑒 (𝑡) 𝑒 (𝑡)
+1𝐷𝐶
+− 1 2
+−
+−
+𝑣 (𝑡) 𝑣 (𝑡)
+1 2
+𝑡 𝑡
+𝑡 𝑡
+0 0
+- 21 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| +
+|
+| −
+
+-- Tabla 2 --
+𝑒 (𝑡)
+1 |  |
+|  |
+| − |
+
+-- Tabla 3 --
+| 𝑒 (𝑡)
+2
+|
+| −
+|
+
+-- Tabla 4 --
+|
+𝑡
+0 |
+
+-- Tabla 5 --
+
+𝑡
+0
+
+================================================================================
+PÁGINA 60 DE 202
+================================================================================
+
+M D P
+ÉTODOS PARA ETETERMINAR LA OLARIDAD
+M D I
+ÉTODO DE LA ESCARGA NDUCTIVA
+A
+𝑖 𝑡
+1
++ −
++
+𝑉 V V
+𝑒 (𝑡) 𝑒 (𝑡)
+1𝐷𝐶
+− 1 2
+−
++
+𝑣 (𝑡) 𝑣 (𝑡)
+1 2
+𝑡
+0
+𝑡 𝑡
+𝑡
+0
+- 22 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| +
+|
+| −
+
+-- Tabla 2 --
+𝑒 (𝑡)
+1 |  |
+|  |
+| − |
+
+-- Tabla 3 --
+| 𝑒 (𝑡)
+2
+|
+| +
+|
+
+-- Tabla 4 --
+
+𝑡
+0
+
+================================================================================
+PÁGINA 61 DE 202
+================================================================================
+
+M D P
+ÉTODOS PARA ETETERMINAR LA OLARIDAD
+M D I
+ÉTODO DE LA ESCARGA NDUCTIVA
+A
+𝑡
+0
+𝑖 𝑡
+1
++ −
++
+𝑉 V V
+𝑒 (𝑡) 𝑒 (𝑡)
+1𝐷𝐶
+− 1 2
+−
++
+𝑣 (𝑡) 𝑣 (𝑡)
+1 2
+𝑡
+0
+𝑡 𝑡
+𝑡
+0
+- 23 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| +
+|
+| −
+
+-- Tabla 2 --
+𝑒 (𝑡)
+1 |  |
+|  |
+| − |
+
+-- Tabla 3 --
+| 𝑒 (𝑡)
+2
+|
+| +
+|
+
+-- Tabla 4 --
+|
+𝑡
+0 |
+
+================================================================================
+PÁGINA 62 DE 202
+================================================================================
+
+M R
+EDICIÓN DE ELACIÓN DE
+T
+RANSFORMACIÓN
+
+================================================================================
+PÁGINA 63 DE 202
+================================================================================
+
+E : R T
+NSAYO ELACIÓN DE RANSFORMACIÓN
+De acuerdo con la norma NTC 471:
+❑ Esta prueba se puede realizar a tensión nominal o menor y a frecuencia nominal o mayor.
+❑ Los transformadores con potencias nominales menores a 500 VA y con corrientes de excitación
+de más de 10 % se deben ensayar solamente a tensión y frecuencia nominal.
+❑ En transformadores con fases independientes y accesibles, el ensayo se puede realizar en cada
+fase o en conjunto.
+❑ Si el transformador tiene derivaciones, la medición de la relación de transformación se debe
+aplicar para todas ellas.
+❑ Esta norma acepta tres métodos o cualquier otro que use nuevas tecnologías que garanticen
+resultados equivalentes.
+- 25 -
+
+================================================================================
+PÁGINA 64 DE 202
+================================================================================
+
+E : R T
+NSAYO ELACIÓN DE RANSFORMACIÓN
+M V
+ÉTODO DEL OLTÍMETRO
+❑ Se aplica un voltaje AC conveniente al devanado de mayor tensión y se miden simultáneamente los voltajes de
+los dos devanados.
+❑ Para compensar el error de los instrumentos, se realiza una segunda lectura intercambiando los voltímetros
+para tomar el valor promedio de las dos mediciones.
+𝐼
+A
+1
++
++ +
+V V
+𝑉 𝐸 𝐸
+1 1 2
+− 𝑓 −
+−
+- 26 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| + |  |
+𝑉
+1 |  |  |
+| − |  | 𝑓
+
+-- Tabla 2 --
++ |
+𝐸
+1 |
+− |
+
+================================================================================
+PÁGINA 65 DE 202
+================================================================================
+
+S E M
+ISTEMA LÉCTRICO DE UNA ÁQUINA
+E
+LÉCTRICA
+
+================================================================================
+PÁGINA 66 DE 202
+================================================================================
+
+S M E
+ISTEMAS DE UNA ÁQUINA LÉCTRICA
+Sistema eléctrico
+Una máquina eléctrica está constituida por cinco
+sistemas energéticos principales:
+Sistema de
+aislamiento
+Sistema Eléctrico Sistema
+
+mecánico
+Sistema Magnético
+
+Aislamiento Eléctrico
+
+Sistema
+Sistema de Refrigeración
+ magnético
+Sistema Mecánico
+
+Sistema de
+refrigeración
+- 28 -
+
+================================================================================
+PÁGINA 67 DE 202
+================================================================================
+
+C S E
+ARACTERIZACIÓN DEL ISTEMA LÉCTRICO
+OPERACIÓN DEL DEVANADO ALIMENTADO CON CORRIENTE ALTERNA
+𝜙 (𝑡)
+Devanado
+𝐵(𝑡) 𝑚 Devanado
+primario
+secundario
++
++ +
++
+𝐼 𝐼
+1 2
+𝑉
+𝐸
+𝑉 𝐸 2 2
+1 1
+− − −
+− 𝑁
+2
+𝑁
+1
+𝜙 (𝑡)
+Limitan la magnitud de 𝐼 𝐵(𝑡)
+𝑚
+1
+- 29 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  | 𝜙 (𝑡)
+𝑚
+𝑁
+2
+|  |  |
+| 𝑁
+1 |  |
+|  | 𝜙 (𝑡)
+𝑚 | 𝐵(𝑡)
+
+-- Tabla 2 --
+| 𝑉
+2
+
+-- Tabla 3 --
+| 𝐸
+2
+
+-- Tabla 4 --
+− |
+|
+|
+
+================================================================================
+PÁGINA 68 DE 202
+================================================================================
+
+C S E
+ARACTERIZACIÓN DEL ISTEMA LÉCTRICO
+OPERACIÓN DEL DEVANADO ALIMENTADO CON CORRIENTE DIRECTA
+𝜙
+Devanado 𝐵
+𝑚 Devanado
+primario
+secundario
++
+𝐼 ≠ 0 + + 𝑖 𝑡 = 0
+𝐷𝐶 2
++ 𝑣 𝑡 = 0
+𝑒 𝑡 = 0 2
+𝑉 ≠ 0 𝑒 𝑡 = 0 2
+𝐷𝐶 1
+−
+− −
+− 𝑁
+2
+𝑁
+1
+La resistencia del devanado
+𝜙
+𝑚 𝐵
+limita la magnitud de 𝐼
+𝐷𝐶
+- 30 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+
+
+𝜙
+𝑚
+𝑁
+2
+𝐵
+𝐵
+
+-- Tabla 2 --
++ |
+
+-- Tabla 3 --
+|  |
+|  | 𝑁
+1
+La resistencia del devanado
+limita la magnitud de 𝐼
+𝐷𝐶 |  |
+
+================================================================================
+PÁGINA 69 DE 202
+================================================================================
+
+R E
+ESISTENCIA LÉCTRICA DE LOS
+C
+ONDUCTORES
+
+================================================================================
+PÁGINA 70 DE 202
+================================================================================
+
+C S E
+ARACTERIZACIÓN DEL ISTEMA LÉCTRICO
+R E M
+ESISTENCIA LÉCTRICA DE UN ATERIAL
+𝜌𝑙
+Material
+La Resistencia Eléctrica de un material establece el 𝑅 =
+conductor
+grado de oposición que ofrece a una corriente eléctrica
+𝑆
+entre dos puntos particulares.
+𝑅
+Depende principalmente de los siguientes factores:
+𝜌
+❑ Geometría del material y puntos de contacto
+𝑙
+❑ Resistividad
+𝑆
+❑ Temperatura
+❑ Frecuencia eléctrica donde,
+𝑅: Resistencia eléctrica del material (Ω)
+𝜌: Resistividad del material (Ω𝑚)
+La Resistencia Eléctrica de un material se define como
+𝑙: longitud del material (𝑚)
+(Ley de Poulliet):
+𝑆: sección transversal (𝑚2)
+- 32 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |  |  |  |  |
+|  |  |  | 𝑆 |  |
+
+================================================================================
+PÁGINA 71 DE 202
+================================================================================
+
+C S E
+ARACTERIZACIÓN DEL ISTEMA LÉCTRICO
+E T R E
+FECTO DE LA EMPERATURA SOBRE LA ESISTENCIA LÉCTRICA
+https://bit.ly/3zqojN3 https://bit.ly/3gFnBUN
+Resistividad (𝝆) Coeficiente de https://bit.ly/3ymhlrb
+Material a 20°C temperatura (𝜶)
+(× 𝟏𝟎−𝟖 𝛀𝐦) (× 𝟏𝟎−𝟑 °𝑪−𝟏)
+Plata 1.59 3.819
+Plata Cobre
+Cobre 1.68 4.041 Aluminio
+Oro 2.21 3.715 https://bit.ly/3kwpx2Z
+Aluminio 2.65 4.308
+Wolframio 5.28 4.403
+Níquel 6.99 5.866
+https://bit.ly/2WvRMXu Níquel https://bit.ly/3ykIeLV
+Oro Cobalto
+Hierro 8.90 5.671
+Platino 10.60 3.729
+Acero
+72.00 3.000
+inoxidable
+Grafito 1.38 × 103
+Carbón - -5.0
+Wolframio Hierro
+Grafitohttps://bit.ly/2WsoOb0
+Germanio - -48.0
+- 33 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+Material | Resistividad (𝝆)
+a 20°C
+(× 𝟏𝟎−𝟖 𝛀𝐦) | Coeficiente de
+temperatura (𝜶)
+(× 𝟏𝟎−𝟑 °𝑪−𝟏)
+Plata | 1.59 | 3.819
+Cobre | 1.68 | 4.041
+Oro | 2.21 | 3.715
+Aluminio | 2.65 | 4.308
+Wolframio | 5.28 | 4.403
+Níquel | 6.99 | 5.866
+Hierro | 8.90 | 5.671
+Platino | 10.60 | 3.729
+Acero
+inoxidable | 72.00 | 3.000
+Grafito | 1.38 × 103 |
+Carbón | - | -5.0
+Germanio | - | -48.0
+
+================================================================================
+PÁGINA 72 DE 202
+================================================================================
+
+C S E
+ARACTERIZACIÓN DEL ISTEMA LÉCTRICO
+E T R E
+FECTO DE LA EMPERATURA SOBRE LA ESISTENCIA LÉCTRICA
+𝜌
+𝑹(𝛀) 𝐴𝑙
+Modelo matemático aproximado
+𝜌
+(Ecuación lineal) 𝐶𝑢
+𝑅 𝑇 ≈ 𝑅 𝑇 [1 + 𝛼 𝑇 − 𝑇 ]
+𝑓 𝑖 𝑓 𝑖
+−234.5
+−225 20 105 130 155 180 𝑻(°𝑪)
+(Clase A) (Clase B) (Clase F) (Clase H)
+donde,
+𝑅(𝑇 ): resistencia medida (conocida) a la temperatura 𝑇 .
+𝑖 𝑖
+𝑅(𝑇 ): resistencia estimada para una temperatura deseada 𝑇 .
+𝑓 𝑓
+𝑇 + 234.5
+𝑓
+Igualmente, para el caso del cobre, se cumple que 𝑅 𝑇 ≈ 𝑅 𝑇
+𝑓 𝑖
+𝑇 + 234.5
+𝑖
+- 34 -
+
+================================================================================
+PÁGINA 73 DE 202
+================================================================================
+
+C S E
+ARACTERIZACIÓN DEL ISTEMA LÉCTRICO
+E F R E
+FECTO DE LA RECUENCIA SOBRE LA ESISTENCIA LÉCTRICA
+𝑰 𝑩 𝑹
+𝑫𝑪 𝑫𝑪 𝑫𝑪
+𝒊(𝒕) 𝑹
+𝑩(𝒕)
+𝑨𝑪
+Corrientes inducidas
+𝑰
+𝑹 < 𝑹
+𝑫𝑪 𝑨𝑪
+- 35 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑩(𝒕) |  |
+|  |
+|  | 𝑩(𝒕)
+|  |
+
+================================================================================
+PÁGINA 74 DE 202
+================================================================================
+
+C C
+ALIBRE DE LOS ONDUCTORES
+
+================================================================================
+PÁGINA 75 DE 202
+================================================================================
+
+C C
+ALIBRE DE LOS ONDUCTORES
+S AWG
+ISTEMA
+El Sistema American Wire Gauge (AWG) es una referencia de
+clasificación de calibres o espesor de elementos metálicos de sección
+circular (alambres) o rectangular (láminas).
+Obedece a los pasos sucesivos del proceso de estirado del alambre
+que existía en 1857. En ese momento, se seleccionaron los diámetros
+más gruesos, de 0.4600 pulgadas (hoy calibre 4/0), y más delgado, de
+0.0050 pulgadas (hoy calibre 36) y se determinaron 39 dimensiones
+entre dichos calibres.
+La razón entre dos diámetros es constante e igual a la siguiente
+progresión geométrica:
+39 0.4600
+39
+= 92 ≈ 1.1229
+0.0050
+https://bit.ly/3CbU68J
+- 37 -
+
+================================================================================
+PÁGINA 76 DE 202
+================================================================================
+
+C C
+ALIBRE DE LOS ONDUCTORES
+S AWG
+ISTEMA
+1 𝐶𝑖𝑟𝑐𝑢𝑙𝑎𝑟 𝑚𝑖𝑙 = 0,7854 𝑚𝑖𝑙𝑠2
+En el Sistema AWG los diámetros de los calibres de los
+conductores eléctricos se miden en milésimas de pulgadas.
+Esta medida se conoce como “mil”:
+1 𝑚𝑖𝑙
+−3
+1 𝑚𝑖𝑙 = 1 × 10 𝑖𝑛𝑐ℎ
+https://bit.ly/3fqqlmd
+Así mismo, el área transversal de los conductores suele
+representarse en “Circular mil” (o mils circulares), donde 1
+Circular mil equivale al área de un círculo igual a 1 mil. Es
+decir, El concepto de
+“Circular mils” es
+𝜋 𝜋
+aplicable a
+2 −3 2
+1 𝐶𝑖𝑟𝑐𝑢𝑙𝑎𝑟 𝑚𝑖𝑙 = 1 𝑚𝑖𝑙 = 10 𝑖𝑛𝑐ℎ
+4 4 conductores con
+sección transversal de
+𝜋
+cualquier geometría.
+2 2
+= 𝑚𝑖𝑙𝑠 = 0.7854 𝑚𝑖𝑙𝑠
+4
+https://bit.ly/3b9qlHr
+- 38 -
+
+================================================================================
+PÁGINA 77 DE 202
+================================================================================
+
+TABLA DE CALIBRES AMERICAN WIRE GAUGE (AWG)
+CAPACIDAD DE CORRIENTE (A)
+PARA CONDUCTORES DE COBRE
+AWG
+TPI Clase A Clase B Clase F Clase 200°C
+AWG Dia-mils (turns- Dia-mm Circ-mils Ohms/kft Ft/Ohm Ft/Lb Ohms/Lb Lb/kft (750 circ- (500 circ- (300 circ- (200 circ-
+per-
+inch) mils/A) mils/A) mils/A) mils/A)
+0000 459.99 2.174 11.684 211592 0.049 20402 1.5613 0.0001 640.48 282.12 423.18 705.307 1057.96 0000
+000 409.63 2.4412 10.405 167800 0.0618 16180 1.9688 0.0001 507.93 223.73 335.6 559.333 839 000
+00 364.79 2.7413 9.2657 133072 0.0779 12831 2.4826 0.0002 402.8 177.43 266.14 443.573 665.36 00
+0 324.85 3.0783 8.2513 105531 0.0983 10175 3.1305 0.0003 319.44 140.71 211.06 351.77 527.655 0
+1 289.29 3.4567 7.348 83690 0.1239 8069.5 3.9475 0.0005 253.33 111.59 167.38 278.967 418.45 1
+2 257.62 3.8817 6.5436 66369 0.1563 6399.4 4.9777 0.0008 200.9 88.492 132.74 221.23 331.845 2
+3 229.42 4.3588 5.8272 52633 0.197 5075 6.2767 0.0012 159.32 70.177 105.27 175.443 263.165 3
+4 204.3 4.8947 5.1893 41740 0.2485 4024.7 7.9148 0.002 126.35 55.653 83.48 139.133 208.7 4
+5 181.94 5.4964 4.6212 33101 0.3133 3191.7 9.9804 0.0031 100.2 44.135 66.203 110.337 165.505 5
+6 162.02 6.1721 4.1153 26251 0.3951 2531.1 12.585 0.005 79.46 35.001 52.501 87.5033 131.255 6
+7 144.28 6.9308 3.6648 20818 0.4982 2007.3 15.869 0.0079 63.014 27.757 41.635 69.3933 104.09 7
+8 128.49 7.7828 3.2636 16509 0.6282 1591.8 20.011 0.0126 49.973 22.012 33.018 55.03 82.545 8
+9 114.42 8.7396 2.9063 13092 0.7921 1262.4 25.233 0.02 39.63 17.456 26.185 43.64 65.46 9
+10 101.9 9.814 2.5881 10383 0.9989 1001.1 31.819 0.0318 31.428 13.844 20.765 34.61 51.915 10
+11 90.741 11.02 2.3048 8233.9 1.2596 793.93 40.122 0.0505 24.924 10.978 16.468 27.4463 41.1695 11
+- 39 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |  |  |  |  |  |  |  |  | CAPACIDAD DE CORRIENTE (A)
+PARA CONDUCTORES DE COBRE |  |  |  | AWG
+AWG | Dia-mils | TPI
+(turns-
+per-
+inch) | Dia-mm | Circ-mils | Ohms/kft | Ft/Ohm | Ft/Lb | Ohms/Lb | Lb/kft | Clase A
+(750 circ-
+mils/A) | Clase B
+(500 circ-
+mils/A) | Clase F
+(300 circ-
+mils/A) | Clase 200°C
+(200 circ-
+mils/A) |
+0000 | 459.99 | 2.174 | 11.684 | 211592 | 0.049 | 20402 | 1.5613 | 0.0001 | 640.48 | 282.12 | 423.18 | 705.307 | 1057.96 | 0000
+000 | 409.63 | 2.4412 | 10.405 | 167800 | 0.0618 | 16180 | 1.9688 | 0.0001 | 507.93 | 223.73 | 335.6 | 559.333 | 839 | 000
+00 | 364.79 | 2.7413 | 9.2657 | 133072 | 0.0779 | 12831 | 2.4826 | 0.0002 | 402.8 | 177.43 | 266.14 | 443.573 | 665.36 | 00
+0 | 324.85 | 3.0783 | 8.2513 | 105531 | 0.0983 | 10175 | 3.1305 | 0.0003 | 319.44 | 140.71 | 211.06 | 351.77 | 527.655 | 0
+1 | 289.29 | 3.4567 | 7.348 | 83690 | 0.1239 | 8069.5 | 3.9475 | 0.0005 | 253.33 | 111.59 | 167.38 | 278.967 | 418.45 | 1
+2 | 257.62 | 3.8817 | 6.5436 | 66369 | 0.1563 | 6399.4 | 4.9777 | 0.0008 | 200.9 | 88.492 | 132.74 | 221.23 | 331.845 | 2
+3 | 229.42 | 4.3588 | 5.8272 | 52633 | 0.197 | 5075 | 6.2767 | 0.0012 | 159.32 | 70.177 | 105.27 | 175.443 | 263.165 | 3
+4 | 204.3 | 4.8947 | 5.1893 | 41740 | 0.2485 | 4024.7 | 7.9148 | 0.002 | 126.35 | 55.653 | 83.48 | 139.133 | 208.7 | 4
+5 | 181.94 | 5.4964 | 4.6212 | 33101 | 0.3133 | 3191.7 | 9.9804 | 0.0031 | 100.2 | 44.135 | 66.203 | 110.337 | 165.505 | 5
+6 | 162.02 | 6.1721 | 4.1153 | 26251 | 0.3951 | 2531.1 | 12.585 | 0.005 | 79.46 | 35.001 | 52.501 | 87.5033 | 131.255 | 6
+7 | 144.28 | 6.9308 | 3.6648 | 20818 | 0.4982 | 2007.3 | 15.869 | 0.0079 | 63.014 | 27.757 | 41.635 | 69.3933 | 104.09 | 7
+8 | 128.49 | 7.7828 | 3.2636 | 16509 | 0.6282 | 1591.8 | 20.011 | 0.0126 | 49.973 | 22.012 | 33.018 | 55.03 | 82.545 | 8
+9 | 114.42 | 8.7396 | 2.9063 | 13092 | 0.7921 | 1262.4 | 25.233 | 0.02 | 39.63 | 17.456 | 26.185 | 43.64 | 65.46 | 9
+10 | 101.9 | 9.814 | 2.5881 | 10383 | 0.9989 | 1001.1 | 31.819 | 0.0318 | 31.428 | 13.844 | 20.765 | 34.61 | 51.915 | 10
+11 | 90.741 | 11.02 | 2.3048 | 8233.9 | 1.2596 | 793.93 | 40.122 | 0.0505 | 24.924 | 10.978 | 16.468 | 27.4463 | 41.1695 | 11
+
+================================================================================
+PÁGINA 78 DE 202
+================================================================================
+
+TABLA DE CALIBRES AMERICAN WIRE GAUGE (AWG)
+(CONTINUACIÓN)
+CAPACIDAD DE CORRIENTE (A)
+PARA CONDUCTORES DE COBRE
+AWG
+TPI Clase A Clase B Clase F Clase 200°C
+AWG Dia-mils (turns- Dia-mm Circ-mils Ohms/kft Ft/Ohm Ft/Lb Ohms/Lb Lb/kft (750 circ- (500 circ- (300 circ- (200 circ-
+per-
+inch) mils/A) mils/A) mils/A) mils/A)
+12 80.807 12.375 2.0525 6529.8 1.5883 629.61 50.593 0.0804 19.765 8.7064 13.06 21.766 32.649 12
+13 71.961 13.896 1.8278 5178.3 2.0028 499.31 63.797 0.1278 15.675 6.9045 10.357 17.261 25.8915 13
+14 64.083 15.605 1.6277 4106.6 2.5255 395.97 80.447 0.2031 12.431 5.4755 8.2132 13.6887 20.533 14
+15 57.067 17.523 1.4495 3256.7 3.1845 314.02 101.44 0.323 9.8579 4.3423 6.5134 10.8557 16.2835 15
+16 50.82 19.677 1.2908 2582.7 4.0156 249.03 127.91 0.5136 7.8177 3.4436 5.1654 8.609 12.9135 16
+17 45.257 22.096 1.1495 2048.2 5.0636 197.49 161.3 0.8167 6.1997 2.7309 4.0963 6.82733 10.241 17
+18 40.302 24.813 1.0237 1624.3 6.3851 156.62 203.39 1.2986 4.9166 2.1657 3.2485 5.41433 8.1215 18
+19 35.89 27.863 0.9116 1288.1 8.0514 124.2 256.47 2.0648 3.8991 1.7175 2.5762 4.29367 6.4405 19
+20 31.961 31.288 0.8118 1021.5 10.153 98.496 323.41 3.2832 3.0921 1.362 2.043 3.405 5.1075 20
+21 28.462 35.134 0.7229 810.1 12.802 78.111 407.81 5.2205 2.4521 1.0801 1.6202 2.70033 4.0505 21
+22 25.346 39.453 0.6438 642.44 16.143 61.945 514.23 8.3009 1.9446 0.8566 1.2849 2.14147 3.2122 22
+23 22.572 44.304 0.5733 509.48 20.356 49.125 648.44 13.199 1.5422 0.6793 1.019 1.69827 2.5474 23
+24 20.101 49.75 0.5106 404.03 25.669 38.958 817.66 20.987 1.223 0.5387 0.8081 1.34677 2.02015 24
+25 17.9 55.866 0.4547 320.41 32.368 30.895 1031.1 33.371 0.9699 0.4272 0.6408 1.06803 1.60205 25
+26 15.94 62.733 0.4049 254.1 40.815 24.501 1300.1 53.061 0.7692 0.3388 0.5082 0.847 1.2705 26
+- 40 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |  |  |  |  |  |  |  |  | CAPACIDAD DE CORRIENTE (A)
+PARA CONDUCTORES DE COBRE |  |  |  | AWG
+AWG | Dia-mils | TPI
+(turns-
+per-
+inch) | Dia-mm | Circ-mils | Ohms/kft | Ft/Ohm | Ft/Lb | Ohms/Lb | Lb/kft | Clase A
+(750 circ-
+mils/A) | Clase B
+(500 circ-
+mils/A) | Clase F
+(300 circ-
+mils/A) | Clase 200°C
+(200 circ-
+mils/A) |
+12 | 80.807 | 12.375 | 2.0525 | 6529.8 | 1.5883 | 629.61 | 50.593 | 0.0804 | 19.765 | 8.7064 | 13.06 | 21.766 | 32.649 | 12
+13 | 71.961 | 13.896 | 1.8278 | 5178.3 | 2.0028 | 499.31 | 63.797 | 0.1278 | 15.675 | 6.9045 | 10.357 | 17.261 | 25.8915 | 13
+14 | 64.083 | 15.605 | 1.6277 | 4106.6 | 2.5255 | 395.97 | 80.447 | 0.2031 | 12.431 | 5.4755 | 8.2132 | 13.6887 | 20.533 | 14
+15 | 57.067 | 17.523 | 1.4495 | 3256.7 | 3.1845 | 314.02 | 101.44 | 0.323 | 9.8579 | 4.3423 | 6.5134 | 10.8557 | 16.2835 | 15
+16 | 50.82 | 19.677 | 1.2908 | 2582.7 | 4.0156 | 249.03 | 127.91 | 0.5136 | 7.8177 | 3.4436 | 5.1654 | 8.609 | 12.9135 | 16
+17 | 45.257 | 22.096 | 1.1495 | 2048.2 | 5.0636 | 197.49 | 161.3 | 0.8167 | 6.1997 | 2.7309 | 4.0963 | 6.82733 | 10.241 | 17
+18 | 40.302 | 24.813 | 1.0237 | 1624.3 | 6.3851 | 156.62 | 203.39 | 1.2986 | 4.9166 | 2.1657 | 3.2485 | 5.41433 | 8.1215 | 18
+19 | 35.89 | 27.863 | 0.9116 | 1288.1 | 8.0514 | 124.2 | 256.47 | 2.0648 | 3.8991 | 1.7175 | 2.5762 | 4.29367 | 6.4405 | 19
+20 | 31.961 | 31.288 | 0.8118 | 1021.5 | 10.153 | 98.496 | 323.41 | 3.2832 | 3.0921 | 1.362 | 2.043 | 3.405 | 5.1075 | 20
+21 | 28.462 | 35.134 | 0.7229 | 810.1 | 12.802 | 78.111 | 407.81 | 5.2205 | 2.4521 | 1.0801 | 1.6202 | 2.70033 | 4.0505 | 21
+22 | 25.346 | 39.453 | 0.6438 | 642.44 | 16.143 | 61.945 | 514.23 | 8.3009 | 1.9446 | 0.8566 | 1.2849 | 2.14147 | 3.2122 | 22
+23 | 22.572 | 44.304 | 0.5733 | 509.48 | 20.356 | 49.125 | 648.44 | 13.199 | 1.5422 | 0.6793 | 1.019 | 1.69827 | 2.5474 | 23
+24 | 20.101 | 49.75 | 0.5106 | 404.03 | 25.669 | 38.958 | 817.66 | 20.987 | 1.223 | 0.5387 | 0.8081 | 1.34677 | 2.02015 | 24
+25 | 17.9 | 55.866 | 0.4547 | 320.41 | 32.368 | 30.895 | 1031.1 | 33.371 | 0.9699 | 0.4272 | 0.6408 | 1.06803 | 1.60205 | 25
+26 | 15.94 | 62.733 | 0.4049 | 254.1 | 40.815 | 24.501 | 1300.1 | 53.061 | 0.7692 | 0.3388 | 0.5082 | 0.847 | 1.2705 | 26
+
+================================================================================
+PÁGINA 79 DE 202
+================================================================================
+
+P E
+ÉRDIDAS LÉCTRICAS
+
+================================================================================
+PÁGINA 80 DE 202
+================================================================================
+
+P E
+ÉRDIDAS LÉCTRICAS
+Cuando circula corriente eléctrica por un
+conductor parte de la energía cinética de los
+electrones se transforma en calor a causa de los
+choques con las estructuras atómicas.
+Este fenómeno, conocido como el Efecto Joule,
+incrementa la temperatura del conductor, lo cual https://bit.ly/3qXdmOt
+puede aprovecharse para transformar la
+energía eléctrica en calor.
+Sin embargo, para una máquina eléctrica, el
+Efecto Joule debe tratarse como una pérdida de
+energía que produce un calentamiento
+innecesario del dispositivo.
+https://bit.ly/36iU3Hl
+- 42 -
+
+================================================================================
+PÁGINA 81 DE 202
+================================================================================
+
+P E DC
+ÉRDIDAS LÉCTRICAS
+P E C D
+OTENCIA LÉCTRICA EN ORRIENTE IRECTA
+La expresión matemática fundamental para
+cuantificar el calentamiento por Efecto Joule es la
+ecuación de potencia eléctrica
+𝑷
+2
+𝑉
+2
+𝑃 = 𝑉𝐼 = 𝐼 𝑅 = ,
+𝑅 𝑽
+𝑰
+donde
+𝑃: potencia eléctrica (𝑊)
+𝑉: diferencia de potencial (𝑉)
+𝑡
+𝐼: intensidad de corriente (𝐴)
+𝑅: resistencia eléctrica (Ω)
+- 43 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑷 |
+|
+
+-- Tabla 2 --
+𝑽 |  |
+|  |
+| 𝑰 |
+
+================================================================================
+PÁGINA 82 DE 202
+================================================================================
+
+P E AC
+ÉRDIDAS LÉCTRICAS
+P E C A
+OTENCIA LÉCTRICA EN ORRIENTE LTERNA
+Con voltaje y corriente alternos 𝒑(𝒕)
+𝑣 𝑡 = 𝑉 cos(𝜔𝑡 + 𝜃 )
+𝑚 𝑧
+𝑖 𝑡 = 𝐼 cos 𝜔𝑡
+𝑚
+𝒗(𝒕)
+se obtiene que
+𝑝 𝑡 = 𝑣 𝑡 𝑖 𝑡
+𝒊(𝒕)
+𝑝(𝑡) = 𝑉 𝐼 cos(𝜔𝑡 + 𝜃 ) cos 𝜔𝑡
+𝑚 𝑚 𝑧
+𝑡
+Usando propiedades trigonométricas, se obtiene,
+𝑉 𝐼 𝑉 𝐼
+𝑚 𝑚 𝑚 𝑚
+𝑝 𝑡 = cos 𝜃 + cos(2𝜔𝑡 + 𝜃 )
+𝑧 𝑧
+2 2
+- 44 -
+
+================================================================================
+PÁGINA 83 DE 202
+================================================================================
+
+¡MUCHAS GRACIAS!
+
+================================================================================
+PÁGINA 84 DE 202
+================================================================================
+
+S M
+ISTEMA AGNÉTICO
+Docente
+Edwin Herlyt Lopera Mazo
+edwinlopera@itm.edu.co
+Facultad de Ingenierías
+Departamento de Mecatrónica y Electromecánica
+Ingeniería Mecatrónica
+Medellín, Colombia
+
+================================================================================
+PÁGINA 85 DE 202
+================================================================================
+
+V R
+IDEOS ECOMENDADOS
+Título: “Paramagnetismo y Diamagnetismo (Demostración
+experimental)”
+Tema: Experimentos con materiales Paramagnéticos y Diamagnéticos
+Duración: 4m35s
+Idioma: Inglés (subtitulado)
+Título: “Materiales paramagnéticos, diamagnéticos y ferromagnéticos”
+Tema: Características físicas de los materiales Diamagnéticos, Paramagnéticos y Ferromagnéticos
+Duración: 6m32s
+- 2 -
+
+================================================================================
+PÁGINA 86 DE 202
+================================================================================
+
+- 3 -
+
+================================================================================
+PÁGINA 87 DE 202
+================================================================================
+
+A P
+GENDA DE LA RESENTACIÓN
+❑ Magnetización
+❑ Clasificación de los materiales
+❑ Ferromagnetismo
+❑ Intensidad de Campo Magnético
+❑ Permeabilidad magnética de los materiales
+❑ Láminas de Acero Eléctrico
+❑ Curva de Magnetización
+
+================================================================================
+PÁGINA 88 DE 202
+================================================================================
+
+S M E
+ISTEMAS DE UNA ÁQUINA LÉCTRICA
+Sistema eléctrico
+Una máquina eléctrica está constituida por cinco
+sistemas energéticos principales:
+Sistema de
+aislamiento
+Sistema Eléctrico Sistema
+
+mecánico
+Sistema Magnético
+
+Aislamiento Eléctrico
+
+Sistema
+Sistema de Refrigeración
+
+magnético
+Sistema Mecánico
+
+Sistema de
+refrigeración
+- 5 -
+
+================================================================================
+PÁGINA 89 DE 202
+================================================================================
+
+M
+AGNETIZACIÓN
+
+================================================================================
+PÁGINA 90 DE 202
+================================================================================
+
+M D M
+OMENTO IPOLAR AGNÉTICO
+Es una cantidad vectorial que representa la donde, 𝑚 es el Momento Dipolar Magnético, 𝐼 la
+fuerza magnética o la orientación de un imán u Ԧ
+corriente en el lazo, 𝑟Ԧ es el radio del lazo, 𝑆 es la
+otro objeto que produzca un campo magnético
+superficie creada por el lazo.
+(imán, electroimán).
+Si es producido por cargas en movimiento, el
+Momento Dipolar Magnético es perpendicular 𝑚
+al lazo de corriente y con sentido dado por la
+𝑢
+regla de la mano derecha. Ԧ
+𝑑𝑙
+Ԧ 𝑟Ԧ
+𝑆
+1
+Partícula
+Ԧ
+𝑚 = 𝐼 ර𝑟Ԧ × 𝑑𝑙 = 𝐼𝑆𝑢
+𝐼 cargada
+2
+- 7 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| 𝑢
+Ԧ
+𝑆 |
+
+-- Tabla 2 --
+| Ԧ
+𝑑𝑙
+𝑟Ԧ |
+
+================================================================================
+PÁGINA 91 DE 202
+================================================================================
+
+M
+AGNETIZACIÓN
+La Magnetización 𝑀 se define como el Momento
+Dipolar Magnético por unidad de volumen de un
+medio Δ𝑉 (material)
+Δ𝑉
+∑𝑚
+𝑖
+𝑀 = ,
+Δ𝑉 𝑀
+En otras palabras, la Magnetización describe el
+estado magnético de un medio o de un
+material.
+Momento
+dipolar
+La gran mayoría de materiales, de forma natural,
+magnético
+presentan una Magnetización nula (𝑀 ≈ 0).
+- 8 -
+
+================================================================================
+PÁGINA 92 DE 202
+================================================================================
+
+M
+AGNETIZACIÓN
+❑ La Magnetización de un material se mide en 𝑨/𝒎 en el SI.
+❑ Experimentalmente se ha observado que la
+Magnetización de un material cambia cuando se le aplica
+un campo magnético externo o cuando varía su
+8
+R
+4
+temperatura. H
+W
+j3
+/
+y
+l.t
+ib
+❑ La respuesta de la Magnetización de los materiales frente /
+/
+:s
+p
+a campos magnéticos externos los permite clasificar en
+tth
+tres categorías:
+ DIAMAGNÉTICOS
+ PARAMAGNÉTICOS
+ FERROMAGNÉTICOS
+- 9 -
+
+================================================================================
+PÁGINA 93 DE 202
+================================================================================
+
+D
+IAMAGNETISMO
+
+================================================================================
+PÁGINA 94 DE 202
+================================================================================
+
+D
+IAMAGNETISMO
+𝑀 = 0
+El Diamagnetismo está presente en todos los
+materiales, pero su efecto es más pequeño en los
+materiales paramagnéticos y ferromagnéticos.
+𝐵 = 0
+Sin dipolos
+𝑒𝑥𝑡
+magnéticos
+✓ Sus átomos no tienen momentos (dipolos)
+permanentes
+magnéticos permanentes.
+✓ El momento magnético inducido en un átomo
+se opone al campo aplicado, por lo tanto,
+𝑀 ≈ 0
+son repelidas débilmente.
+✓ El momento magnético es generalmente
+𝐵 ≠ 0
+𝑒𝑥𝑡
+proporcional al campo.
+✓ Las propiedades diamagnéticas de los
+materiales son esencialmente
+independientes de la temperatura.
+Dipolos magnéticos
+inducidos con leve
+alineación
+- 11 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |  |
+𝐵 ≠ 0
+𝑒𝑥𝑡 |  |  |
+|  |  |
+|  |  |
+
+================================================================================
+PÁGINA 95 DE 202
+================================================================================
+
+D
+IAMAGNETISMO
+Grafito pirolítico
+(material diamagnético)
+Imán de Neodimio
+No importa el tipo de
+polo.
+https://bit.ly/39PXMgp
+Levitación magnética.
+- 12 -
+
+================================================================================
+PÁGINA 96 DE 202
+================================================================================
+
+M D
+ATERIALES IAMAGNÉTICOS
+v
+q Z
+io n 9 x U
+J T R j3 3 9 0 3 C 9 3 /
+/ / y
+y
+l.t
+y
+l.t
+l.t
+ib
+ib ib /
+/ / /
+/ / :s
+:s :s p
+p p t t
+t t h
+t t
+h h
+Plata Cobre Oro
+jR 8 R
+6 4
+S H
+6 W
+g
+3 j3
+/ /
+y y
+l.t
+ib
+/
+l.t
+ib
+/ /
+/
+:s
+:s
+p
+p
+t
+t
+tth
+h
+Silicio Grafito
+- 13 -
+
+================================================================================
+PÁGINA 97 DE 202
+================================================================================
+
+M D
+ATERIALES IAMAGNÉTICOS
+g
+s
+1
+k 5
+9 L
+X P V
+2 V
+/ Z
+y 2
+l.t
+ib
+/
+/ y
+l.tib
+/ /
+:s
+p
+/ :s
+p
+t
+t
+h
+tth
+Papel (prespan diamantado) Nómex Mylar Mica
+https://bit.ly/3jVNH5T
+Q
+P
+T
+F
+9
+P
+2
+/
+y
+l.t
+ib
+/
+/
+:s
+p
+https://bit.ly/3gfdrrN
+tth
+Plástico Bismuto Agua
+- 14 -
+
+================================================================================
+PÁGINA 98 DE 202
+================================================================================
+
+P
+ARAMAGNETISMO
+
+================================================================================
+PÁGINA 99 DE 202
+================================================================================
+
+P
+ARAMAGNETISMO
+𝑀 ≈ 0
+Cuando se les aplica un campo magnético a los
+materiales paramagnéticos los dipolos tienden a dipolos
+orientarse con el campo (ya que la energía 𝐵 = 0 magnéticos
+𝑒𝑥𝑡
+permanentes
+potencial de los dipolos se hace menor: 𝑈 = −𝑚 ∙ 𝐵).
+orientados al azar
+Pierre Curie relacionó la Magnetización 𝑀 de una
+sustancia paramagnética con el campo magnético
+𝑀 ≈ 0
+aplicado 𝐵 , así:
+𝑒𝑥𝑡
+𝐶𝐵
+𝑒𝑥𝑡
+𝑀 = ,
+𝐵 ≠ 0
+𝜇 𝑇 𝑒𝑥𝑡
+0
+donde, 𝑇 es la temperatura en 𝐾 y 𝐶 es la Constante
+de Curie (depende del material y el momento
+magnético de las moléculas que lo componen).
+Alineación
+parcial
+- 16 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| 𝐵 = 0
+𝑒𝑥𝑡
+
+-- Tabla 2 --
+|  |  |  |
+| 𝐵 ≠ 0
+𝑒𝑥𝑡 |  |  |
+|  |  |  |
+|  |  |  |
+
+================================================================================
+PÁGINA 100 DE 202
+================================================================================
+
+M P
+ATERIALES ARAMAGNÉTICOS
+E
+0
+b
+ilD
+2
+/
+y
+l.t
+ib
+/
+/
+g x fw
+:s
+p t t
+h
+7
+P
+2
+/
+y
+l.t
+ib
+/
+/
+:s
+p
+tth
+Tungsteno
+Aluminio https://bit.ly/2P6mgsb
+Magnesio
+a
+0
+8
+M
+2
+3
+3
+/
+y
+l.t
+ib AIRE
+/
+/
+:s
+p
+tth
+https://bit.ly/2DmEq63
+Platino Turmalina
+Madera
+- 17 -
+
+================================================================================
+PÁGINA 101 DE 202
+================================================================================
+
+F
+ERROMAGNETISMO
+
+================================================================================
+PÁGINA 102 DE 202
+================================================================================
+
+F
+ERROMAGNETISMO
+❑ En los materiales diamagnéticos y paramagnéticos la
+Magnetización es distinta de cero únicamente bajo la
+presencia de un campo magnético externo 𝐵 . En los
+𝑒𝑥𝑡
+materiales Ferromagnéticos la Magnetización
+permanece levemente después de retirar el campo
+magnético.
+❑ En estos materiales, los momentos magnéticos
+moleculares tienden a alinearse espontáneamente en la
+misma dirección creando zonas magnéticamente
+similares denominadas Dominios Magnéticos.
+❑ En su estado natural, la Magnetización de estos
+materiales es prácticamente nula.
+- 19 -
+
+================================================================================
+PÁGINA 103 DE 202
+================================================================================
+
+E Q F
+LEMENTOS UÍMICOS ERROMAGNÉTICOS
+Hierro Níquel
+Cobalto
+Gadolinio (tierra rara)
+Disprosio (tierra rara)
+- 20 -
+
+================================================================================
+PÁGINA 104 DE 202
+================================================================================
+
+D M
+OMINIOS AGNÉTICOS
+Dominios magnéticos. Fuentes: https://bit.ly/2BSu6CI, https://bit.ly/2BMaGPG
+- 21 -
+
+================================================================================
+PÁGINA 105 DE 202
+================================================================================
+
+F
+ERROMAGNETISMO
+Condición inicial
+𝑀
+Momento dipolar 𝑀 ≈ 0
+Dominio
+𝐵 = 0 magnético
+𝑒𝑥𝑡
+Pared de
+dominio
+Vista bidimensional
+𝐵
+𝑒𝑥𝑡
+Condición
+inicial
+- 22 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑀 |
+
+-- Tabla 2 --
+|  | 𝑀 ≈ 0
+|  |
+|  |
+
+================================================================================
+PÁGINA 106 DE 202
+================================================================================
+
+F
+ERROMAGNETISMO
+Condición inicial
+𝑀
+Momento dipolar 𝑀 ≈ 0
+Dominio
+𝐵 = 0 magnético
+𝑒𝑥𝑡
+Pared de
+dominio
+𝑀 ≠ 0
+𝐵
+𝑒𝑥𝑡
+bajo
+𝐵
+𝑒𝑥𝑡
+Condición Movimiento
+inicial de paredes
+- 23 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑀 |
+
+-- Tabla 2 --
+|  | 𝑀 ≈ 0
+|  |
+|  |
+
+-- Tabla 3 --
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+
+================================================================================
+PÁGINA 107 DE 202
+================================================================================
+
+F
+ERROMAGNETISMO
+Condición inicial
+𝑀
+Momento dipolar 𝑀 ≈ 0
+Dominio
+𝐵 = 0 magnético
+𝑒𝑥𝑡
+Pared de
+dominio
+𝑀 ≠ 0
+𝐵
+𝑒𝑥𝑡
+intermedio
+𝐵
+𝑒𝑥𝑡
+Condición
+inicial
+- 24 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑀 |
+
+-- Tabla 2 --
+|  | 𝑀 ≈ 0
+|  |
+|  |
+
+-- Tabla 3 --
+|
+|
+|
+|
+|
+|
+
+================================================================================
+PÁGINA 108 DE 202
+================================================================================
+
+F
+ERROMAGNETISMO
+Condición inicial
+𝑀
+Momento dipolar 𝑀 ≈ 0
+Dominio
+𝐵 = 0 magnético
+𝑒𝑥𝑡
+Pared de
+dominio
+𝑀 ≠ 0
+𝐵 = 0
+𝑒𝑥𝑡
+𝐵
+𝑒𝑥𝑡
+Condición
+inicial
+- 25 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑀 |
+
+-- Tabla 2 --
+|  | 𝑀 ≈ 0
+|  |
+|  |
+
+================================================================================
+PÁGINA 109 DE 202
+================================================================================
+
+F
+ERROMAGNETISMO
+Condición inicial
+𝑀
+Momento dipolar 𝑀 ≈ 0
+Dominio
+𝐵 = 0 magnético
+𝑒𝑥𝑡
+Pared de
+dominio
+𝑀 ≠ 0
+𝐵
+𝑒𝑥𝑡
+intermedio
+𝐵
+𝑒𝑥𝑡
+Condición
+inicial
+- 26 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑀 |
+
+-- Tabla 2 --
+|  | 𝑀 ≈ 0
+|  |
+|  |
+
+-- Tabla 3 --
+|
+|
+|
+|
+|
+|
+
+================================================================================
+PÁGINA 110 DE 202
+================================================================================
+
+F
+ERROMAGNETISMO
+Condición inicial
+𝑀
+Momento dipolar 𝑀 ≈ 0
+Dominio
+𝐵 = 0 magnético
+𝑒𝑥𝑡
+Pared de
+dominio
+𝑀 ≠ 0
+𝐵
+𝑒𝑥𝑡
+alto
+𝐵
+𝑒𝑥𝑡
+Condición
+inicial
+- 27 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑀 |
+
+-- Tabla 2 --
+|  | 𝑀 ≈ 0
+|  |
+|  |
+
+-- Tabla 3 --
+|  |  |
+𝐵
+𝑒𝑥𝑡
+alto |  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+
+================================================================================
+PÁGINA 111 DE 202
+================================================================================
+
+F
+ERROMAGNETISMO
+Condición inicial
+𝑀
+Momento dipolar 𝑀 ≈ 0
+Dominio
+𝐵 = 0 magnético
+𝑒𝑥𝑡
+Pared de
+dominio
+𝑀 ≠ 0
+𝐵 = 0
+𝑒𝑥𝑡
+𝐵
+𝑒𝑥𝑡
+Condición
+inicial
+- 28 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑀 |
+
+-- Tabla 2 --
+|  | 𝑀 ≈ 0
+|  |
+|  |
+
+================================================================================
+PÁGINA 112 DE 202
+================================================================================
+
+F
+ERROMAGNETISMO
+Condición inicial
+𝑀
+Momento dipolar 𝑀 ≈ 0
+Dominio
+𝐵 = 0 magnético
+𝑒𝑥𝑡
+Pared de
+dominio
+Material
+magnéticamente
+blando
+𝑀 ≠ 0
+𝐵 = 0
+𝑒𝑥𝑡
+𝐵
+𝑒𝑥𝑡
+Condición
+inicial
+- 29 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑀 |
+
+-- Tabla 2 --
+|  | 𝑀 ≈ 0
+|  |
+|  |
+
+================================================================================
+PÁGINA 113 DE 202
+================================================================================
+
+F
+ERROMAGNETISMO
+Condición inicial
+𝑀
+Momento dipolar 𝑀 ≈ 0
+Dominio
+𝐵 = 0 magnético
+𝑒𝑥𝑡
+Pared de
+dominio
+Material
+magnéticamente
+duro
+𝑀 ≠ 0
+𝐵 = 0
+𝑒𝑥𝑡
+𝐵
+𝑒𝑥𝑡
+Condición
+inicial
+- 30 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑀 |
+
+-- Tabla 2 --
+|  | 𝑀 ≈ 0
+|  |
+|  |
+
+================================================================================
+PÁGINA 114 DE 202
+================================================================================
+
+I C M
+NTENSIDAD DE AMPO AGNÉTICO
+
+================================================================================
+PÁGINA 115 DE 202
+================================================================================
+
+I C M
+NTENSIDAD DE AMPO AGNÉTICO
+Suponga un solenoide sin núcleo (vacío):
+Las contribuciones al campo magnético provienen Vacío ⇒ 𝑀 = 0
+de dos fuentes: 𝜇
+0
+❑ La Intensidad de Campo Magnético (𝑯) 𝑁
+representa el componente del campo magnético
+creado por corrientes eléctricas, el cual puede 𝑁 𝐵 𝐻 𝑆
+ser controlado.
+❑ La Magnetización (𝑴) de los materiales es el
+otro componente que contribuye a y a la vez
+𝐼
+𝑙
+depende del campo magnético.
+𝐵 = 𝜇 (𝐻 + 𝑀)
+𝜇 𝑁𝐼 𝑁𝐼
+0 0
+𝐵 = = 𝜇 𝐻 + 𝑀 ⇒ 𝐻 =
+0
+𝑙 𝑙
+Al igual que la Magnetización, la Intensidad de
+𝐵 = 𝜇 𝐻
+Campo Magnético se mide en 𝐴/𝑚 en el SI.
+0
+- 32 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+Las contribuciones al campo magnético provienen
+de dos fuentes:
+❑ La Intensidad de Campo Magnético (𝑯)
+representa el componente del campo magnético
+creado por corrientes eléctricas, el cual puede
+ser controlado.
+❑ La Magnetización (𝑴) de los materiales es el
+otro componente que contribuye a y a la vez
+depende del campo magnético.
+𝐵 = 𝜇 (𝐻 + 𝑀)
+0
+Al igual que la Magnetización, la Intensidad de
+Campo Magnético se mide en 𝐴/𝑚 en el SI. |
+|
+
+-- Tabla 2 --
+𝜇
+0
+
+-- Tabla 3 --
+𝑁 |  | 𝐵
+
+-- Tabla 4 --
+𝐻 | 𝑆 |
+
+================================================================================
+PÁGINA 116 DE 202
+================================================================================
+
+I C M
+NTENSIDAD DE AMPO AGNÉTICO
+Material Diamagnético
+Considerando un núcleo de material
+diamagnético, se obtiene que
+𝑀 ≈ 0
+𝐵 = 𝜇 𝐻 + 𝑀 = 𝜇 𝐻 + 𝜒𝐻 = 𝜇 1 + 𝜒 𝐻
+0 0 0
+𝑁
+donde, 𝜒 (“chi”) es conocida como la
+𝑁 𝐵 𝐻 𝑆
+Susceptibilidad Magnética del material y en el
+caso de los materiales diamagnéticos es una
+constante negativa y cercana a cero.
+𝐵 = 𝜇 𝐻 𝐼
+𝐷
+donde, 𝜇 = 𝜇 1 + 𝜒 se conoce como la
+𝐷 0
+permeabilidad magnética del material
+𝐵 = 𝜇 𝐻 + 𝑀 = 𝜇 𝐻
+diamagnético (constante). 0 𝐷
+𝜇 ⪅ 𝜇
+𝐷 0
+- 33 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑁 |  | 𝐵
+
+-- Tabla 2 --
+𝐻 | 𝑆 |
+
+================================================================================
+PÁGINA 117 DE 202
+================================================================================
+
+I C M
+NTENSIDAD DE AMPO AGNÉTICO
+Material Paramagnético
+Con núcleo de material paramagnético,
+𝑀 ≈ 0
+𝐵 = 𝜇 𝐻 + 𝑀 = 𝜇 𝐻 + 𝜒𝐻 = 𝜇 1 + 𝜒 𝐻
+0 0 0
+𝑁
+donde, 𝜒 es una constante positiva cercana a
+𝑁 𝐵 𝐻 𝑆
+cero.
+𝐵 = 𝜇 𝐻
+𝑃
+𝐼
+donde, 𝜇 = 𝜇 1 + 𝜒 es la permeabilidad
+𝑃 0
+magnética del material paramagnético
+(constante).
+𝐵 = 𝜇 𝐻 + 𝑀 = 𝜇 𝐻
+0 𝑃
+𝜇
+⪆ 𝜇
+𝑃 0
+- 34 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑁 |  | 𝐵
+
+-- Tabla 2 --
+𝐻 | 𝑆 |
+
+================================================================================
+PÁGINA 118 DE 202
+================================================================================
+
+I C M
+NTENSIDAD DE AMPO AGNÉTICO
+Material Ferromagnético
+Con un núcleo de material ferromagnético,
+𝑀
+𝐵 = 𝜇 𝐻 + 𝑀 = 𝜇 𝐻 + 𝜒𝐻 = 𝜇 1 + 𝜒 𝐻
+0 0 0
+𝑙
+𝑁
+En este caso, 𝜒 está asociado a la pendiente de
+la curva entre 𝑴 𝒗𝒔. 𝑩 (variable), tomando
+𝐵
+valores relativamente muy altos.
+Por lo tanto,
+𝐻
+𝐵 = 𝜇 𝐻
+𝐹 𝐼
+donde, 𝜇 = 𝜇 1 + 𝜒 es la permeabilidad
+𝐹 0
+magnética del material ferromagnético
+(variable). 𝐵 = 𝜇 𝐻 + 𝑀 = 𝜇 𝐻
+0 𝐹
+𝜇 ≫ 𝜇
+𝐹 0
+- 35 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+
+
+𝑀
+
+
+-- Tabla 2 --
+| 𝑙 |
+
+-- Tabla 3 --
+𝐵
+
+
+================================================================================
+PÁGINA 119 DE 202
+================================================================================
+
+P M R
+ERMEABILIDAD AGNÉTICA ELATIVA
+
+================================================================================
+PÁGINA 120 DE 202
+================================================================================
+
+P M R
+ERMEABILIDAD AGNÉTICA ELATIVA
+𝜇
+𝑟
+A partir de la permeabilidad magnética del vacío,
+𝐵 = 𝑓(𝐻)
+−7
+𝜇 = 4𝜋 × 10 𝐻/𝑚, la permeabilidad relativa
+0
+𝜇
+𝝁 de un material con permeabilidad magnética 𝑟𝑚𝑎𝑥
+𝒓
+𝜇, estará dada por
+𝜇
+𝜇 =
+𝑟
+𝜇
+0
+Para los materiales diamagnéticos y
+paramagnéticos la permeabilidad relativa es
+constante; para los materiales ferromagnéticos,
+esta relación depende de la magnitud del campo
+magnético aplicado al material.
+𝐻
+- 37 -
+
+================================================================================
+PÁGINA 121 DE 202
+================================================================================
+
+P M R
+ERMEABILIDAD AGNÉTICA ELATIVA
+Magnetic Frequency, max., Magnetic Frequency, max.,
+Medium 𝝁 Medium 𝝁
+𝒓𝒎𝒂𝒙 field Approx 𝒓𝒎𝒂𝒙 field Approx
+Superconductors 0 Electrical steel 4000 At 0.002 T
+Pyrolytic carbon(Graphite) 0.9996
+Iron(99.8% pure) 5000
+Bismuth 0.999834
+Water 0.999992 Cobalt-iron (high
+18000
+Copper 0.999994 permeability strip material)
+Vacuum 1, exactly
+Mu-metal 20000 At 0.002 T
+Air 1.00000037
+Mu-metal 50000
+Wood 1.00000043
+Aluminum 1.000022 NANOPERM® 80000 At 0.5 T 10 kHz
+Platinum 1.000265
+Permalloy 100000 At 0.002 T
+Neodymium magnet 1.05
+Iron(99.95% pure Fe
+Carbonyl ironpowder compound 4 –35 At 0.001 T 20 kHz –500 MHz
+200000
+annealed in H)
+Ferrite(nickel zinc) 10 –2300 At ≤ 0.25 mT 1kHz –400 MHz
+Nickel ironpowder compound 14 –160 At 0.001 T 50 Hz –2MHz Metglas 2714A (annealed) 1000000 At 0.5 T 100 kHz
+Al-Si-Fe powder compound (Sendust) 14 –160 50 Hz –5MHz
+Permeabilidad magnética relativa de diversos materiales. Adaptado de
+Ironpowder compound 14 –100 At 0.001 T 50 Hz –220 MHz
+https://bit.ly/3jWLmb5
+Silicon ironpowder compound 19 –90 50 Hz –40 MHz
+Ferrite(cobalt nickel zinc) 40 –125 At 0.001 T 2MHz –150 MHz
+Carbon steel 100 At 0.002 T
+Nickel 100 –600 At 0.002 T
+Ferrite(manganese zinc) 350 –20000 At 0.25 mT 100 Hz –4 MHz
+Ferrite(magnesium manganese zinc) 350 –500 At 0.25 mT
+Martensitic stainless steel(annealed) 750 –950
+Ferriticstainless steel(annealed) 1000 –1800
+- 38 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+Magnetic Frequency, max.,
+Medium 𝝁
+𝒓𝒎𝒂𝒙 field Approx
+Superconductors 0
+Pyrolytic carbon(Graphite) 0.9996
+Bismuth 0.999834
+Water 0.999992
+Copper 0.999994
+Vacuum 1, exactly
+Air 1.00000037
+Wood 1.00000043
+Aluminum 1.000022
+Platinum 1.000265
+Neodymium magnet 1.05
+Carbonyl ironpowder compound 4 –35 At 0.001 T 20 kHz –500 MHz
+Ferrite(nickel zinc) 10 –2300 At ≤ 0.25 mT 1kHz –400 MHz
+Nickel ironpowder compound 14 –160 At 0.001 T 50 Hz –2MHz
+Al-Si-Fe powder compound (Sendust) 14 –160 50 Hz –5MHz
+Ironpowder compound 14 –100 At 0.001 T 50 Hz –220 MHz
+Silicon ironpowder compound 19 –90 50 Hz –40 MHz
+Ferrite(cobalt nickel zinc) 40 –125 At 0.001 T 2MHz –150 MHz
+Carbon steel 100 At 0.002 T
+Nickel 100 –600 At 0.002 T
+Ferrite(manganese zinc) 350 –20000 At 0.25 mT 100 Hz –4 MHz
+Ferrite(magnesium manganese zinc) 350 –500 At 0.25 mT
+Martensitic stainless steel(annealed) 750 –950
+Ferriticstainless steel(annealed) 1000 –1800
+
+-- Tabla 2 --
+Magnetic Frequency, max.,
+Medium 𝝁
+𝒓𝒎𝒂𝒙 field Approx
+Electrical steel 4000 At 0.002 T
+Iron(99.8% pure) 5000
+Cobalt-iron (high
+18000
+permeability strip material)
+Mu-metal 20000 At 0.002 T
+Mu-metal 50000
+NANOPERM® 80000 At 0.5 T 10 kHz
+Permalloy 100000 At 0.002 T
+Iron(99.95% pure Fe
+200000
+annealed in H)
+Metglas 2714A (annealed) 1000000 At 0.5 T 100 kHz
+
+================================================================================
+PÁGINA 122 DE 202
+================================================================================
+
+L A E
+ÁMINAS DE CERO LÉCTRICO
+
+================================================================================
+PÁGINA 123 DE 202
+================================================================================
+
+V R
+IDEOS ECOMENDADOS
+Título: “Lamination”
+Tema: Proceso de manufactura, Láminas de estatores de máquinas eléctricas rotativas, Perforación de ranuras.
+Duración: 1m47s
+Título: “4 joint robot stator rotor notching machine”
+Tema: Proceso robotizado, Láminas del rotor y del estator, Perforación de ranuras.
+Duración: 2m49s
+Título: “Notching machine K-20-HS-1300 for magnetic laminations for electric
+motors”
+Tema: Proceso robotizado, Láminas del rotor y del estator, Perforación de ranuras.
+Duración: 35s
+- 40 -
+
+================================================================================
+PÁGINA 124 DE 202
+================================================================================
+
+- 41 -
+
+================================================================================
+PÁGINA 125 DE 202
+================================================================================
+
+D M
+OMINIOS AGNÉTICOS
+El video muestra el
+comportamiento de los
+dominios magnéticos de
+una muestra de
+SmFe11Ti bajo distintos
+campos magnéticos
+aplicados horizontalmente
+de derecha a izquierda.
+https://bit.ly/3bCmpxO
+- 42 -
+
+================================================================================
+PÁGINA 126 DE 202
+================================================================================
+
+V R
+IDEOS ECOMENDADOS
+Título: “Simulation of Magnetic Domains”
+Tema: Simulación de dominios magnéticos usando imanes
+Duración: 1m54s
+Título: “Magnetic Domain Movement and Wall Motion”
+Tema: Movimiento de dominios y paredes en una LAEGNO
+Duración: 1m34s
+Título: “Magnetic Domain Movement and Wall Motion 2”
+Tema: Movimiento de dominios y paredes en una LAEGO
+Duración: 3m36s
+- 43 -
+
+================================================================================
+PÁGINA 127 DE 202
+================================================================================
+
+- 44 -
+
+================================================================================
+PÁGINA 128 DE 202
+================================================================================
+
+- 45 -
+
+================================================================================
+PÁGINA 129 DE 202
+================================================================================
+
+- 46 -
+
+================================================================================
+PÁGINA 130 DE 202
+================================================================================
+
+L A E
+ÁMINAS DE CERO LÉCTRICO
+El acero eléctrico es una aleación de hierro con un contenido de silicio que varía de 2 % a 6,5 %.
+Se pueden añadir también manganeso y aluminio en una proporción de 0,5 %.
+El silicio aumenta
+significativamente la
+resistencia eléctrica del
+acero, lo que disminuye las
+corrientes de Foucault
+inducidas por el campo
+magnético y por lo tanto
+reduce las pérdidas en el
+núcleo.
+https://bit.ly/3bptp15
+- 47 -
+
+================================================================================
+PÁGINA 131 DE 202
+================================================================================
+
+T L A E
+IPOS DE ÁMINAS DE CERO LÉCTRICO
+Las Láminas de Acero Eléctrico (LAE) usadas en los núcleos ferromagnéticos de las máquinas
+eléctricas rotativas y los transformadores se producen en dos tipos conocidos como:
+❑ LAE G NO O
+DE RANO RIENTADO (LAEGNO)
+❑ LAE G O
+DE RANO RIENTADO (LAEGO)
+- 48 -
+
+================================================================================
+PÁGINA 132 DE 202
+================================================================================
+
+A LAE
+PLICACIONES DE LAS
+Usos de las láminas de acero eléctrico. Fuente: https://bit.ly/30kqcvR
+- 49 -
+
+================================================================================
+PÁGINA 133 DE 202
+================================================================================
+
+L A E
+ÁMINAS DE CERO LÉCTRICO DE
+G NO O
+RANO RIENTADO
+
+================================================================================
+PÁGINA 134 DE 202
+================================================================================
+
+LAE G NO O
+DE RANO RIENTADO
+Se utiliza cuando la eficiencia es menos
+importante o cuando la geometría de
+construcción no deja espacio suficiente para
+alinear apropiadamente los componentes.
+Es menos costosa y es apropiado para su
+utilización en aplicaciones donde la dirección
+del flujo magnético no es rectilínea,
+principalmente en construcciones con simetría
+cilíndrica, como en los motores y
+generadores eléctricos.
+- 51 -
+
+================================================================================
+PÁGINA 135 DE 202
+================================================================================
+
+LAE G NO O
+DE RANO RIENTADO
+z
+ly
+y
+iX
+2
+/
+y
+l.t
+ib
+/
+/
+:s
+p
+tth
+- 52 -
+
+================================================================================
+PÁGINA 136 DE 202
+================================================================================
+
+LAE G NO O
+DE RANO RIENTADO
+Dominios
+magnéticos
+𝑀 ≈ 0
+Se procesan metalúrgicamente de tal manera
+que los dominios magnéticos formen
+ángulos oblicuos.
+Frontera
+cristalina
+El acero eléctrico no orientado por lo
+general tiene un nivel de silicio de 2 % a 3,5 Pared de
+dominio
+% y tiene propiedades magnéticas
+isotrópicas.
+Vista bidimensional
+- 53 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|
+|
+
+================================================================================
+PÁGINA 137 DE 202
+================================================================================
+
+LAE G NO O
+DE RANO RIENTADO
+𝑀 ≠ 0 𝑀 ≠ 0
+𝑀 ≠ 0
+𝐻 𝐻 𝐻
+(baja) (media) (alta)
+ZONA LINEAL SATURACIÓN
+- 54 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|
+|
+
+-- Tabla 2 --
+|
+|
+
+-- Tabla 3 --
+|
+|
+
+================================================================================
+PÁGINA 138 DE 202
+================================================================================
+
+LAE G NO O
+DE RANO RIENTADO
+𝐻 𝐻 𝐻
+(baja) (media) (alta)
+ZONA LINEAL SATURACIÓN
+𝑀 ≠ 0 𝑀 ≠ 0
+𝑀 ≠ 0
+- 55 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|
+|
+
+-- Tabla 2 --
+|
+|
+
+-- Tabla 3 --
+|
+|
+
+================================================================================
+PÁGINA 139 DE 202
+================================================================================
+
+L A E
+ÁMINAS DE CERO LÉCTRICO DE
+G O
+RANO RIENTADO
+
+================================================================================
+PÁGINA 140 DE 202
+================================================================================
+
+LAE G O
+DE RANO RIENTADO
+Las paredes de los dominios prácticamente se Dominios
+alinean en una dirección específica, lo que permite magnéticos
+que se obtenga alta densidad de flujo únicamente
+𝑀 ≈ 0
+moviendo las paredes de los dominios.
+Los aceros eléctricos de grano orientado
+Frontera
+normalmente tienen un nivel de 3 % de silicio
+cristalina
+(Si:11Fe). Es procesado de tal manera que las
+propiedades óptimas se desarrollan en la
+dirección de la laminación.
+Pared de
+dominio
+Debido a la orientación especial, la densidad de flujo
+Vista bidimensional
+magnético se incrementa en un 30 % en la
+dirección de laminación, aunque su punto de
+saturación magnética se reduce en un 5 %.
+- 57 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|
+|
+
+================================================================================
+PÁGINA 141 DE 202
+================================================================================
+
+LAE G O
+DE RANO RIENTADO
+H
+G
+jn
+d
+P
+2
+/
+y
+l.t
+ib
+/
+/
+:s
+p
+tth
+- 58 -
+
+================================================================================
+PÁGINA 142 DE 202
+================================================================================
+
+LAE G O
+DE RANO RIENTADO
+W
+A
+R
+j3
+/
+y
+l.t
+i
+M
+b
+b
+/
+/
+:s
+p
+t
+t
+h
+- 59 -
+
+================================================================================
+PÁGINA 143 DE 202
+================================================================================
+
+LAE G O
+DE RANO RIENTADO
+𝑀 ≠ 0 𝑀 ≠ 0
+𝑀 ≠ 0
+𝐻 𝐻 𝐻
+(baja) (media) (alta)
+ZONA LINEAL SATURACIÓN
+- 60 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|
+|
+|
+|
+
+-- Tabla 2 --
+|
+|
+|
+|
+
+-- Tabla 3 --
+|
+|
+|
+
+================================================================================
+PÁGINA 144 DE 202
+================================================================================
+
+LAE G O
+DE RANO RIENTADO
+𝐻 𝐻 𝐻
+(baja) (media) (alta)
+𝑀 ≈ 0 𝑀 ≈ 0 𝑀 ≈ 0
+- 61 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|
+|
+|
+|
+
+-- Tabla 2 --
+|
+|
+|
+|
+
+-- Tabla 3 --
+|
+|
+|
+|
+
+================================================================================
+PÁGINA 145 DE 202
+================================================================================
+
+LAE G O
+DE RANO RIENTADO
+Núcleo ferromagnético
+LAE de Grano Orientado
+𝜙 (𝑡)
+𝑚
++
++ +
++ 𝑖 (𝑡) 𝑖 (𝑡)
+1 2
+𝑣 (𝑡)
+𝑒 𝑡 2
+𝑣 (𝑡) 𝑒 𝑡 2
+1 1
+− − −
+− 𝑁 𝑁
+1 2
+𝜙 (𝑡)
+𝑚
+- 62 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|
+|
+|
+|
+|
+|
+| 𝜙 (𝑡)
+𝑚
+𝑁
+2
+|
+𝜙 (𝑡)
+𝑚 |
+
+-- Tabla 2 --
+| 𝑖 (𝑡)
+2
+𝑒 𝑡
+2 |
+
+-- Tabla 3 --
+− |
+|
+|
+
+================================================================================
+PÁGINA 146 DE 202
+================================================================================
+
+LAE G O
+DE RANO RIENTADO
+𝑵
+𝜙
+𝑃
+𝑢 𝑢
+2 1
+𝑺 𝑺
++ −
+iQ
+p
+C
+g 𝑵
+X
+2
+/
+y
+l.t
+ib
+/
+/
+:s
+p
+t
+t
+h
+- 63 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |
+|  |
+|  |
+
+================================================================================
+PÁGINA 147 DE 202
+================================================================================
+
+C M
+URVA DE AGNETIZACIÓN
+
+================================================================================
+PÁGINA 148 DE 202
+================================================================================
+
+C M A
+URVAS DE AGNETIZACIÓN PROXIMADAS
+𝐵 (𝑇)
+2.0 En el vacío:
+1
+LAE Orientada 𝐵 = 𝜇 𝐻 ≈ 𝐻
+0
+800000
+LAE No Orientada
+1.0
+Hierro
+0.8
+Paramagnético
+Vacío
+0.003
+Diamagnético
+0.001
+𝐻(𝐴/𝑚)
+0
+1000 2000
+- 65 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝐵 (𝑇)
+
+2.0
+
+-- Tabla 2 --
+|  |  |  |
+|  |  |  |
+0.001 |  |  |  |
+|  |  |  |
+| 0 |  |  |
+
+================================================================================
+PÁGINA 149 DE 202
+================================================================================
+
+C M A
+URVAS DE AGNETIZACIÓN PROXIMADAS
+https://bit.ly/32brxFX
+1. Hoja de acero
+2. Acero al silicio
+3. Acero de crisol
+4. Acero al tungsteno
+5. Acero magnético
+6. Hierro de crisol
+7. Níquel
+8. Cobalto
+9. Magnetita
+- 66 -
+
+================================================================================
+PÁGINA 150 DE 202
+================================================================================
+
+C M R
+URVAS DE AGNETIZACIÓN EALES
+- 67 -
+
+================================================================================
+PÁGINA 151 DE 202
+================================================================================
+
+C M R
+URVAS DE AGNETIZACIÓN EALES
+Conversión de
+unidades
+10 𝑘𝐺 = 1 𝑇
+1 𝑂𝑒𝑟𝑠𝑡𝑒𝑑 = 1 𝑂𝑒
+1000 𝐴 𝐴
+1 𝑂𝑒 = ≈ 79,58
+4𝜋 𝑚 𝑚
+- 68 -
+
+================================================================================
+PÁGINA 152 DE 202
+================================================================================
+
+C M R
+URVAS DE AGNETIZACIÓN EALES
+- 69 -
+
+================================================================================
+PÁGINA 153 DE 202
+================================================================================
+
+¡MUCHAS GRACIAS!
+
+================================================================================
+PÁGINA 154 DE 202
+================================================================================
+
+C E
+IRCUITO QUIVALENTE DEL
+T
+RANSFORMADOR
+Docente
+Edwin Herlyt Lopera Mazo
+edwinlopera@itm.edu.co
+Facultad de Ingenierías
+Departamento de Mecatrónica y Electromecánica
+Ingeniería Mecatrónica
+Medellín, Colombia
+
+================================================================================
+PÁGINA 155 DE 202
+================================================================================
+
+AGENDA DE LA PRESENTACIÓN
+❑ Autoinductancia y Reluctancia
+❑ Flujos de campo magnético en el transformador
+❑ Ecuaciones de encadenamientos de flujo y de voltaje
+❑ Pérdidas de energía en el transformador
+❑ Circuito equivalente del transformador
+❑ Circuito equivalente aproximado
+
+================================================================================
+PÁGINA 156 DE 202
+================================================================================
+
+C
+OMPONENTES DEL
+T E
+RANSFORMADOR LÉCTRICO
+Sistema eléctrico
+Un transformador eléctrico está constituido por
+cinco sistemas principales:
+Sistema eléctrico
+❑
+Sistema magnético
+❑
+Sistema de
+Aislamiento eléctrico
+❑
+aislamiento
+Sistema de refrigeración
+❑
+Sistema mecánico (Estructura) Sistema
+❑
+magnético
+Las características de cada transformador definen
+Sistema
+las condiciones de estos sistemas.
+mecánico
+Sistema de refrigeración
+- 3 -
+
+================================================================================
+PÁGINA 157 DE 202
+================================================================================
+
+A R
+UTOINDUCTANCIA Y ELUCTANCIA
+
+================================================================================
+PÁGINA 158 DE 202
+================================================================================
+
+A D
+UTOINDUCTACIA DE UN EVANADO
+La conversión de energía eléctrica en energía
+𝜇
+0
+magnética se describe a través de la Ley de
+Ampère- Maxwell. En el caso de un solenoide, la
+magnitud aproximada de la densidad de campo
+𝑁 𝐼
+magnético (𝑩) al interior estará dada por:
+𝝁 𝑵𝑰
+𝟎
+𝑩 =
+𝑙
+𝒍
+donde, 𝝁 es la permeabilidad magnética del https://bit.ly/2ZmVMbh
+𝟎
+vacío, 𝑵 el número de espiras, 𝑰 la corriente de
+excitación y 𝒍 la longitud del solenoide.
+- 5 -
+
+================================================================================
+PÁGINA 159 DE 202
+================================================================================
+
+A D
+UTOINDUCTACIA DE UN EVANADO
+La Autoinductancia de un devanado (𝑳)
+describe la relación entre los encadenamientos
+Material Ferromagnético
+de flujo de campo magnético (𝝍) y la corriente
+eléctrica (𝑰) del devanado,
+𝑆
+𝝍 𝑵𝝓 𝑙
+𝜇 𝑁
+𝑳 = =
+𝑰 𝑰
+𝐵
+La Autoinductancia se mide en Henry (𝑯) y es un
+parámetro que indica la capacidad de un
+sistema de favorecer el establecimiento de un
+𝐼
+campo magnético a partir de una corriente.
+- 6 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑆
+
+
+-- Tabla 2 --
+| 𝑙 |
+
+-- Tabla 3 --
+| 𝜇 |
+
+-- Tabla 4 --
+𝐵
+
+
+================================================================================
+PÁGINA 160 DE 202
+================================================================================
+
+R C
+ELUCTANCIA DEL IRCUITO
+M
+AGNÉTICO
+La Reluctancia (ℛ) de un material o de un
+circuito magnético describe la oposición que este
+Material Ferromagnético
+ofrece al establecimiento de un campo magnético
+a través de él.
+𝑆
+Para un circuito magnético uniforme, su
+𝑙
+𝜇 𝑁
+Reluctancia se define como
+𝐵
+𝟐
+𝑵𝑰 𝑯𝒍 𝒍 𝑵 𝟏
+ℛ = = = = =
+𝝓 𝑩𝑺 𝝁𝑺 𝑳 𝒫
+𝐼
+donde, 𝒫 se conoce como la permeancia
+magnética del material y se mide en Henry
+- 7 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝑆
+
+
+-- Tabla 2 --
+| 𝑙 |
+
+-- Tabla 3 --
+| 𝜇 |
+
+-- Tabla 4 --
+𝐵
+
+
+================================================================================
+PÁGINA 161 DE 202
+================================================================================
+
+F C M
+LUJOS DE AMPO AGNÉTICO EN EL
+T
+RANSFORMADOR
+
+================================================================================
+PÁGINA 162 DE 202
+================================================================================
+
+F C M
+LUJOS DE AMPO AGNÉTICO EN EL
+T
+RANSFORMADOR
+Núcleo ferromagnético
+𝜙 (𝑡)
+LAE de Grano Orientado
+𝑚1
+𝑖 (𝑡)
+1
+𝑖 𝑡 = 0
+2
++ +
++
+𝑒 𝑡
+𝑣 (𝑡) 𝑒 𝑡
+2
+1 1
+−
+−
+−
+𝑁
+2
+𝑁
+1
+- 9 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝜙 (𝑡)
+𝑚1 |  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+-- Tabla 2 --
+|
+|
+
+-- Tabla 3 --
+|
+|
+
+-- Tabla 4 --
+𝑣 (𝑡)
+1 |  | 𝑒 𝑡
+1
+
+-- Tabla 5 --
+𝑁
+1 |
+
+-- Tabla 6 --
+|
+|
+|
+|
+
+================================================================================
+PÁGINA 163 DE 202
+================================================================================
+
+F C M
+LUJOS DE AMPO AGNÉTICO EN EL
+T
+RANSFORMADOR
+𝝓 𝒕 = 𝝓 − 𝝓
+𝒎 𝒎𝟏 𝒎𝟐
+𝜙 (𝑡) 𝜙 (𝑡)
+𝑚1 𝑚2
+𝒫 𝒫 𝒫
+𝒅𝟏 𝒎 𝒅𝟐
+𝜙 (𝑡)
+𝑖 (𝑡) 𝑑2
+1 𝑅 𝑖 (𝑡) 𝑅
+1 𝜙 (𝑡) 2 2
+𝑑1
++ + +
++
+𝑣 (𝑡)
+𝑒 𝑡
+𝑣 (𝑡) 𝑒 𝑡 2
+2
+1 1
+−
+− −
+−
+𝑁
+2
+𝑁
+1
+𝝓 𝒕 = 𝝓 + 𝝓 𝝓 𝒕 = 𝝓 − 𝝓
+𝟏 𝒎 𝒅𝟏 𝟐 𝒎 𝒅𝟐
+- 10 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  | 𝝓 𝒕 = 𝝓 − 𝝓
+𝒎 𝒎𝟏 𝒎𝟐 |  |  |  |  |  |  |  |  |  |  |
+𝜙 (𝑡
+𝑚1 |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  | ) |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+| 𝒫
+𝒅𝟏 |  |  |  |  |  | 𝒫
+𝒎 |  |  |  |  | 𝒫
+𝒅𝟐 |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+
+-- Tabla 2 --
+𝜙 (𝑡)
+𝑑1 |
+|
+
+-- Tabla 3 --
+|
+|
+|
+
+-- Tabla 4 --
++ |
+
+-- Tabla 5 --
+𝑣 (𝑡)
+2 |
+
+-- Tabla 6 --
+𝑣 (𝑡)
+1 |  | 𝑒 𝑡
+1
+
+-- Tabla 7 --
+− |
+|
+
+-- Tabla 8 --
+|
+|
+|
+|
+
+-- Tabla 9 --
+𝝓 𝒕 = 𝝓 + 𝝓
+𝟏 𝒎 𝒅𝟏 |
+
+================================================================================
+PÁGINA 164 DE 202
+================================================================================
+
+E E
+CUACIONES DE NCADENAMIENTOS DE
+F V
+LUJO Y DE OLTAJE
+
+================================================================================
+PÁGINA 165 DE 202
+================================================================================
+
+E E F
+CUACIONES DE NCADENAMIENTOS DE LUJO
+Los flujos magnéticos a través de cada devanado estarán dados por
+𝜙 = 𝜙 − 𝜙 + 𝜙 = 𝜙 +𝜙
+1 𝑚1 𝑚2 𝑑1 𝑚 𝑑1
+𝜙 = 𝜙 − 𝜙 − 𝜙 = 𝜙 −𝜙
+2 𝑚1 𝑚2 𝑑2 𝑚 𝑑2
+Por lo tanto, los encadenamientos de flujo respectivos serán
+𝜓 = 𝑁 𝜙 = 𝑁 𝜙 − 𝜙
+𝜓 = 𝑁 𝜙 = 𝑁 𝜙 + 𝜙 2 2 2 2 𝑚 𝑑2
+1 1 1 1 𝑚 𝑑1
+= 𝑁 𝜙 − 𝜙 − 𝜙
+= 𝑁 𝜙 − 𝜙 + 𝜙 2 𝑚1 𝑚2 𝑑2
+1 𝑚1 𝑚2 𝑑1
+= 𝑁 𝑁 𝑖 𝒫 − 𝑁 𝑖 𝒫 − 𝑁 𝑖 𝒫
+= 𝑁 𝑁 𝑖 𝒫 − 𝑁 𝑖 𝒫 + 𝑁 𝑖 𝒫 2 1 1 𝑚 2 2 𝑚 2 2 𝑑2
+1 1 1 𝑚 2 2 𝑚 1 1 𝑑1
+𝟐 𝟐
+𝟐 𝟐 𝝍 = 𝑵 𝑵 𝓟 𝒊 − 𝑵 𝒊 𝓟 − 𝑵 𝓟 𝒊
+𝝍 = 𝑵 𝓟 𝒊 − 𝑵 𝑵 𝓟 𝒊 + 𝑵 𝓟 𝒊 𝟐 𝟏 𝟐 𝒎 𝟏 𝟐 𝟐 𝒎 𝟐 𝒅𝟐 𝟐
+𝟏 𝟏 𝒎 𝟏 𝟏 𝟐 𝒎 𝟐 𝟏 𝒅𝟏 𝟏
+- 12 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+Los flujos magnéticos a través de cada devanado estarán dados por
+𝜙 = 𝜙 − 𝜙 + 𝜙 = 𝜙 +𝜙
+1 𝑚1 𝑚2 𝑑1 𝑚 𝑑1
+𝜙 = 𝜙 − 𝜙 − 𝜙 = 𝜙 −𝜙
+2 𝑚1 𝑚2 𝑑2 𝑚 𝑑2
+Por lo tanto, los encadenamientos de flujo respectivos serán
+𝜓 = 𝑁 𝜙 = 𝑁 𝜙 − 𝜙
+𝜓 = 𝑁 𝜙 = 𝑁 𝜙 + 𝜙 2 2 2 2 𝑚 𝑑2
+1 1 1 1 𝑚 𝑑1
+= 𝑁 𝜙 − 𝜙 − 𝜙
+= 𝑁 𝜙 − 𝜙 + 𝜙 2 𝑚1 𝑚2 𝑑2
+1 𝑚1 𝑚2 𝑑1
+= 𝑁 𝑁 𝑖 𝒫 − 𝑁 𝑖 𝒫 − 𝑁 𝑖 𝒫
+= 𝑁 𝑁 𝑖 𝒫 − 𝑁 𝑖 𝒫 + 𝑁 𝑖 𝒫 2 1 1 𝑚 2 2 𝑚 2 2 𝑑2
+1 1 1 𝑚 2 2 𝑚 1 1 𝑑1
+𝟐 𝟐
+𝟐 𝟐 𝝍 = 𝑵 𝑵 𝓟 𝒊 − 𝑵 𝒊 𝓟 − 𝑵 𝓟 𝒊
+𝝍 = 𝑵 𝓟 𝒊 − 𝑵 𝑵 𝓟 𝒊 + 𝑵 𝓟 𝒊 𝟐 𝟏 𝟐 𝒎 𝟏 𝟐 𝟐 𝒎 𝟐 𝒅𝟐 𝟐
+𝟏 𝟏 𝒎 𝟏 𝟏 𝟐 𝒎 𝟐 𝟏 𝒅𝟏 𝟏 |  |
+| 𝜓 = 𝑁 𝜙 = 𝑁 𝜙 − 𝜙
+2 2 2 2 𝑚 𝑑2
+= 𝑁 𝜙 − 𝜙 − 𝜙
+2 𝑚1 𝑚2 𝑑2
+= 𝑁 𝑁 𝑖 𝒫 − 𝑁 𝑖 𝒫 − 𝑁 𝑖 𝒫
+2 1 1 𝑚 2 2 𝑚 2 2 𝑑2
+𝟐 𝟐
+𝝍 = 𝑵 𝑵 𝓟 𝒊 − 𝑵 𝒊 𝓟 − 𝑵 𝓟 𝒊
+𝟐 𝟏 𝟐 𝒎 𝟏 𝟐 𝟐 𝒎 𝟐 𝒅𝟐 𝟐 |
+
+================================================================================
+PÁGINA 166 DE 202
+================================================================================
+
+E E F
+CUACIONES DE NCADENAMIENTOS DE LUJO
+I D M
+NDUCTANCIAS DE ISPERSIÓN Y DE AGNETIZACIÓN
+Usualmente se considera otra representación para estas variables:
+2 2
+𝜓 = 𝑁 𝒫 𝑖 + 𝑁 𝒫 𝑖 − 𝑁 𝑁 𝒫 𝑖 = 𝐿 𝑖 + 𝐿 𝑖 − 𝑁 𝑁 𝒫 𝑖
+1 1 𝑑1 1 1 𝑚 1 1 2 𝑚 2 𝑑1 1 𝑚1 1 1 2 𝑚 2
+2 2
+𝜓 = 𝑁 𝑁 𝒫 𝑖 − 𝑁 𝒫 𝑖 − 𝑁 𝒫 𝑖 = 𝑁 𝑁 𝒫 𝑖 − 𝐿 𝑖 − 𝐿 𝑖
+2 1 2 𝑚 1 2 𝑚 2 2 𝑑2 2 1 2 𝑚 1 𝑚2 2 𝑑2 2
+donde,
+2
+𝐿 = 𝑁 𝒫 : inductancia de dispersión del devanado primario
+𝑑1 1 𝑑1
+2
+𝐿 = 𝑁 𝒫 : inductancia de dispersión del devanado secundario
+𝑑2 2 𝑑2
+2
+𝐿 = 𝑁 𝒫 : inductancia de magnetización del lado primario
+𝑚1 1 𝑚
+2
+𝐿 = 𝑁 𝒫 : inductancia de magnetización del lado secundario
+𝑚2 2 𝑚
+- 13 -
+
+================================================================================
+PÁGINA 167 DE 202
+================================================================================
+
+E E F
+CUACIONES DE NCADENAMIENTOS DE LUJO
+I M
+NDUCTANCIA DE AGNETIZACIÓN
+𝑁 𝜙 𝑁 𝜙
+1 𝑚1 2 𝑚2
+2 2
+𝐿 = 𝑁 𝒫 = , 𝐿 = 𝑁 𝒫 =
+𝑚1 1 𝑚 𝑚2 2 𝑚
+𝑖 𝑖
+1 2
+𝐿 y 𝐿 dependen de la permeancia 𝒫 del mismo núcleo, por lo que ambos términos se relacionan
+𝑚1 𝑚2 𝑚
+con la misma inductancia, pero vista desde lados distintos del transformador. Además,
+2
+𝐿 𝑁 𝑳
+𝑚1 1 2 𝟐 𝒎𝟏
+= = 𝑎 ⇒ 𝑳 = 𝒂 𝑳 ⇒ 𝑳 =
+𝒎𝟏 𝒎𝟐 𝒎𝟐
+2 𝟐
+𝐿 𝑁 𝒂
+𝑚2 2
+Al revisar el tercer término de las expresiones anteriores para 𝜓 y 𝜓 , se obtiene que
+1 2
+𝑁 𝐿 𝑖
+1 𝑚1 2
+2 ′
+𝑁 𝑁 𝒫 𝑖 = 𝑁 𝒫 𝑖 = 𝑎𝐿 𝑖 = 𝑎 𝑖 = 𝐿 = 𝐿 𝑖
+1 2 𝑚 2 2 𝑚 2 𝑚2 2 2 𝑚1 𝑚1 2
+𝑁 𝑎2 𝑎
+2
+𝑁 𝑖 𝑖
+2 1 1
+2 2 ′
+𝑁 𝑁 𝒫 𝑖 = 𝑁 𝒫 𝑖 = 𝐿 = 𝑎 𝐿 = 𝐿 (𝑎𝑖 ) = 𝐿 𝑖
+1 2 𝑚 1 1 𝑚 1 𝑚1 𝑚2 𝑚2 1 𝑚2 1
+𝑁 𝑎 𝑎
+1
+- 14 -
+
+================================================================================
+PÁGINA 168 DE 202
+================================================================================
+
+E E F
+CUACIONES DE NCADENAMIENTOS DE LUJO
+Por lo tanto, los encadenamientos de flujo estarán dados por,
+′
+𝜓 = 𝐿 𝑖 + 𝐿 𝑖 − 𝑁 𝑁 𝑃 𝑖 = 𝐿 𝑖 + 𝐿 𝑖 − 𝐿 𝑖
+1 𝑑1 1 𝑚1 1 1 2 𝑚 2 𝑑1 1 𝑚1 1 𝑚1 2
+′
+𝝍 = 𝑳 𝒊 + 𝑳 (𝒊 − 𝒊 )
+𝟏 𝒅𝟏 𝟏 𝒎𝟏 𝟏 𝟐
+′
+𝜓 = 𝑁 𝑁 𝑃 𝑖 − 𝐿 𝑖 − 𝐿 𝑖 = 𝐿 𝑖 − 𝐿 𝑖 − 𝐿 𝑖
+2 1 2 𝑚 1 𝑚2 2 𝑑2 2 𝑚2 1 𝑑2 2 𝑚2 2
+′
+𝝍 = 𝑳 𝒊 − 𝒊 − 𝑳 𝒊
+𝟐 𝒎𝟐 𝟏 𝟐 𝒅𝟐 𝟐
+- 15 -
+
+================================================================================
+PÁGINA 169 DE 202
+================================================================================
+
+E V
+CUACIONES DE OLTAJE
+𝑑𝜓 𝑑𝑖 𝑑𝑖 𝑑𝑖 𝑑
+1 1 2 1
+′
+𝑒 = = 𝐿 + 𝐿 = 𝐿 + 𝐿 𝑖 − 𝑖 = 𝑒 + 𝑒
+1 11 12 𝑑1 𝑚1 1 2 𝑑1 𝑚1
+𝑑𝑡 𝑑𝑡 𝑑𝑡 𝑑𝑡 𝑑𝑡
+𝒆 = 𝒆 + 𝒆
+𝟏 𝒅𝟏 𝒎𝟏
+Similarmente,
+𝑑𝜓 𝑑𝑖 𝑑𝑖 𝑑 𝑑𝑖
+2 1 2 2
+′
+𝑒 = = 𝐿 − 𝐿 = 𝐿 𝑖 − 𝑖 − 𝐿 = 𝑒 − 𝑒
+2 21 22 𝑚2 1 2 𝑑2 𝑚2 𝑑2
+𝑑𝑡 𝑑𝑡 𝑑𝑡 𝑑𝑡 𝑑𝑡
+𝒆 = 𝒆 + 𝒆
+𝒎𝟐 𝒅𝟐 𝟐
+- 16 -
+
+================================================================================
+PÁGINA 170 DE 202
+================================================================================
+
+E V
+CUACIONES DE OLTAJE
+𝝓 𝒕 = 𝝓 − 𝝓
+𝒎 𝒎𝟏 𝒎𝟐
+𝜙 (𝑡) 𝜙 (𝑡)
+𝑚1 𝑚2
+𝑳 𝑳 𝑳
+𝒅𝟏 𝒎 𝒅𝟐
+𝜙 (𝑡)
+𝑖 (𝑡) 𝑑2
+1 𝑅 𝑖 (𝑡) 𝑅
+1 𝜙 (𝑡) 2 2
+𝑑1
++ + +
++
+𝑣 (𝑡)
+𝑒 𝑡
+𝑣 (𝑡) 𝑒 𝑡 2
+2
+1 1
+−
+− −
+−
+𝑁
+2
+𝑁
+1
+𝒆 = 𝒆 + 𝒆 𝒆 = 𝒆 − 𝒆
+𝟏 𝒅𝟏 𝒎𝟏 𝟐 𝒎𝟐 𝒅𝟐
+- 17 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  | 𝝓 𝒕 = 𝝓 − 𝝓
+𝒎 𝒎𝟏 𝒎𝟐 |  |  |  |  |  |  |  |  |  |  |
+𝜙 (𝑡
+𝑚1 |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  | ) |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+| 𝑳
+𝒅𝟏 |  |  |  |  |  | 𝑳
+𝒎 |  |  |  |  | 𝑳
+𝒅𝟐 |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |
+
+-- Tabla 2 --
+𝜙 (𝑡)
+𝑑1 |
+|
+
+-- Tabla 3 --
+|
+|
+|
+
+-- Tabla 4 --
+𝑣 (𝑡)
+2 |
+
+-- Tabla 5 --
+𝑣 (𝑡)
+1 |  | 𝑒 𝑡
+1
+
+-- Tabla 6 --
+− |
+|
+
+-- Tabla 7 --
+| 𝑁
+1 |
+𝒆 = 𝒆 + 𝒆
+𝟏 𝒅𝟏 𝒎𝟏 |  |
+|  |
+
+-- Tabla 8 --
+|
+|
+|
+|
+
+================================================================================
+PÁGINA 171 DE 202
+================================================================================
+
+E V
+CUACIONES DE OLTAJE
+En esta situación, los voltajes alrededor del transformador ideal son, ahora, 𝑒 y 𝑒 , por lo tanto, la
+𝑚1 𝑚2
+relación de transformación será
+𝑒
+𝑚1
+𝑎 =
+𝑒
+𝑚2
+Los voltajes en terminales estarán dados por
+𝑑𝑖 𝑑
+1
+′
+𝑣 = 𝑖 𝑅 + 𝑒 = 𝑖 𝑅 + 𝐿 + 𝐿 𝑖 − 𝑖 = 𝑖 𝑅 + 𝑒 + 𝑒
+1 1 1 1 1 1 𝑑1 𝑚1 1 2 1 1 𝑑1 𝑚1
+𝑑𝑡 𝑑𝑡
+𝑑
+′
+𝑒 = 𝐿 𝑖 − 𝑖 = 𝑒 + 𝑒 = 𝑒 + 𝑖 𝑅 + 𝑣
+𝑚2 𝑚2 1 2 𝑑2 2 𝑑2 2 2 2
+𝑑𝑡
+- 18 -
+
+================================================================================
+PÁGINA 172 DE 202
+================================================================================
+
+C E
+IRCUITO QUIVALENTE SIN
+P M
+ÉRDIDAS AGNÉTICAS
+𝑑𝑖 𝑑
+1
+′
+𝑣 = 𝑖 𝑅 + 𝑒 = 𝑖 𝑅 + 𝐿 + 𝐿 𝑖 − 𝑖 = 𝑖 𝑅 + 𝑒 + 𝑒
+1 1 1 1 1 1 𝑑1 𝑚1 1 2 1 1 𝑑1 𝑚1
+𝑑𝑡 𝑑𝑡
+𝑑
+′
+𝑒 = 𝐿 𝑖 − 𝑖 = 𝑒 + 𝑒 = 𝑒 + 𝑖 𝑅 + 𝑣
+𝑚2 𝑚2 1 2 𝑑2 2 𝑑2 2 2 2
+𝑑𝑡
+′
+𝐿 𝑖 (𝑡) 𝐿
+𝑅 𝑅
+Transformador Ideal
+𝑑1 2 𝑑2
+1 2
++
++ 𝑖 (𝑡) + + + + 𝑖 (𝑡)
+𝑖 (𝑡)
+1 2
+𝑚1
+𝑣 (𝑡) 𝑒 𝑡 𝐿 𝑒 (𝑡) 𝑒 (𝑡) 𝑒 (𝑡) 𝑣 (𝑡)
+1 1 𝑚1 𝑚1 𝑚2 2 2
+− 𝑓
+− − − − −
+𝑝 = 𝑣 𝑡 𝑖 (𝑡) 𝑝 = 𝑣 𝑡 𝑖 (𝑡)
+1 1 1 𝑁 𝑒 𝐼 2 2 2
+1 𝑚1 2
+𝑎 = = =
+′
+𝑁 𝑒 𝐼
+2 𝑚2 2
+- 19 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| + |  |
+𝑣 (𝑡)
+1 |  |  |
+| − |  | 𝑓
+
+-- Tabla 2 --
+| + |
+𝑒 (𝑡)
+𝑚1 |  |
+| − |
+
+-- Tabla 3 --
+| + |  |  |
+| 𝑒 (𝑡)
+𝑚2 |  |  | 𝑒 (𝑡)
+2
+| − |  | − |
+
+-- Tabla 4 --
+𝑖 (𝑡)
+2 |
+
+-- Tabla 5 --
+𝑣 (𝑡)
+2
+−
+
+================================================================================
+PÁGINA 173 DE 202
+================================================================================
+
+C E
+IRCUITO QUIVALENTE SIN
+P M
+ÉRDIDAS AGNÉTICAS
+𝑅 𝑗𝑋 𝐼 ′ 𝑗𝑋 𝑅
+1 Transformador Ideal 2
+1 2 2
++
++ + 𝐼 + + +
+𝐼 𝐼
+𝑋𝑚1
+1 2
+𝑉 𝐸 𝑗𝑋 𝐸 𝐸 𝐸 𝑉
+1 1 𝑚1 𝑚1 𝑚2 2 2
+− 𝑓
+− − − − −
+∗ ∗
+𝑆 = 𝑉 𝐼 𝑆 = 𝑉 𝐼
+1 1 1 𝑁 𝐸 𝐼 2 2 2
+1 𝑚1 2
+𝑎 = = =
+′
+𝑁 𝐸 𝐼
+2 𝑚2 2
+- 20 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝐸
+1
+−
+
+-- Tabla 2 --
+𝐸
+𝑚1 |
+
+-- Tabla 3 --
+| 𝐸
+𝑚2
+
+-- Tabla 4 --
+𝑉
+2
+−
+
+-- Tabla 5 --
+− | 𝑓
+
+================================================================================
+PÁGINA 174 DE 202
+================================================================================
+
+P E
+ÉRDIDAS DE NERGÍA EN EL
+T
+RANSFORMADOR
+
+================================================================================
+PÁGINA 175 DE 202
+================================================================================
+
+P E
+ÉRDIDAS DE NERGÍA EN EL
+T
+RANSFORMADOR
+Núcleo ferromagnético
+LAE de Grano Orientado
+𝜙 (𝑡) 𝑳
+𝑳 𝑚 𝑳
+𝒎
+𝒅𝟏 𝒅𝟐
+𝜙 (𝑡)
+𝑖 (𝑡) 𝑑2
+1 𝑅 𝑖 (𝑡) 𝑅
+1 𝜙 (𝑡) 2 2
+𝑑1
++ + +
++
+𝑣 (𝑡)
+𝑒 𝑡
+𝑣 (𝑡) 𝑒 𝑡 2
+2
+1 1
+−
+− −
+−
+𝑁
+2
+𝑁
+1
+𝒆 = 𝒆 + 𝒆 𝒆 = 𝒆 − 𝒆
+𝟏 𝒅𝟏 𝒎𝟏 𝟐 𝒎𝟐 𝒅𝟐
+- 22 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+𝜙 (𝑡)
+𝑚 |  |  |  | 𝑳
+𝒎 |
+
+-- Tabla 2 --
+| 𝑳
+𝒅𝟐 |
+|  |
+|  |
+
+-- Tabla 3 --
+𝜙 (𝑡)
+𝑑1 |
+|
+
+-- Tabla 4 --
+
+
+-- Tabla 5 --
+|
+|
+
+-- Tabla 6 --
+𝑣 (𝑡)
+2 |
+
+-- Tabla 7 --
+𝑣 (𝑡)
+1 |  | 𝑒 𝑡
+1
+
+-- Tabla 8 --
+− |
+|
+
+-- Tabla 9 --
+| 𝑁
+1 |
+𝒆 = 𝒆 + 𝒆
+𝟏 𝒅𝟏 𝒎𝟏 |  |
+|  |
+
+-- Tabla 10 --
+|
+|
+|
+|
+
+================================================================================
+PÁGINA 176 DE 202
+================================================================================
+
+P E
+ÉRDIDAS DE NERGÍA EN EL
+T
+RANSFORMADOR
+✓ Generadas por la corriente que circula a través de
+las resistencias de los devanados
+Pérdidas
+✓ Dependen de la corriente de la carga, por lo que se
+Eléctricas consideran variables
+✓ Conocidas también como pérdidas en el cobre, con
+carga o de cortocircuito
+Pérdidas del
+transformador
+✓ Se generan directamente sobre el núcleo del
+transformador por fenómenos electromagnéticos
+✓ Dependen de la frecuencia de la red, del voltaje
+Pérdidas
+aplicado y de factores constructivos, por lo que se
+Magnéticas
+consideran constantes
+✓ Conocidas también como pérdidas en el hierro, de
+vacío, sin carga o de circuito abierto.
+- 23 -
+
+================================================================================
+PÁGINA 177 DE 202
+================================================================================
+
+P M
+ÉRDIDAS AGNÉTICAS
+P H
+ÉRDIDAS POR ISTÉRESIS
+Energía de entrada
+𝑆 𝜙 (𝑡) Energía de entrada al transformador:
+𝐵(𝑡)
+𝑚
+𝑑𝐸 𝑡 = 𝑝 𝑡 𝑑𝑡 = 𝑒 𝑡 𝑖 𝑡 𝑑𝑡
+𝑖 (𝑡) 𝐻(𝑡) 1 𝑚1 1
+1
+𝑑𝜙 𝑡 𝑑𝐵 𝑡
+𝑚
+𝑒 𝑡 = 𝑁 = 𝑁 𝑆
+𝑚1 1 1
+𝑑𝑡 𝑑𝑡
++
++ 𝑣 (𝑡) +
+1 por lo tanto,
+𝑒 𝑡 𝑁 𝑖
+𝑒 𝑡 1 1
+𝑚2
+𝑚1 𝑑𝐸 𝑡 = 𝑁 𝑆𝑖 𝑑𝐵 𝑡 = 𝑆𝑙 𝑑𝐵 𝑡
+1 1
+𝑙
+−
+𝑓 Considerando que 𝑆𝑙 es el volumen
+− −
+aproximado del núcleo, se obtiene que
+𝑁
+2
+𝑁
+1 𝑑𝐸 𝑡 = 𝑆𝑙 𝐻𝑑𝐵 𝑡
+𝑙
+𝜇
+- 24 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |
+|  |
+|  |
+|  |
+|  |
+| 𝑆 |
+
+-- Tabla 2 --
+𝐻(𝑡) |  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+-- Tabla 3 --
+|
+|
+
+-- Tabla 4 --
++ | 𝑣 (𝑡)
+1
+
+-- Tabla 5 --
+𝑒 𝑡
+𝑚2 |
+
+-- Tabla 6 --
+| 𝑓
+− |
+
+-- Tabla 7 --
+𝑁
+1 |  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+| 𝜇 | 𝜇 |  |  |
+|  |  |  |  |
+
+================================================================================
+PÁGINA 178 DE 202
+================================================================================
+
+P M
+ÉRDIDAS AGNÉTICAS
+P H
+ÉRDIDAS POR ISTÉRESIS
+𝑑𝐸 𝑡 = 𝑆𝑙 𝐻𝑑𝐵 𝑡
+Energía de entrada 𝐵
+𝑆 𝜙 (𝑡)
+𝐵(𝑡)
+𝑚
+𝐵
+𝑖 (𝑡) 𝐻(𝑡) 𝑚
+1
++
++ 𝑣 (𝑡) +
+1
+𝑑𝐵
+𝑒 𝑡
+𝑒 𝑡
+𝑚2
+𝑚1
+−
+𝑓
+− −
+𝑁
+2
+𝑁
+1
+𝑙
+𝐻
+𝜇
+0 𝐻
+- 25 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |
+|  |
+|  |
+|  |
+|  |
+| 𝑆 |
+
+-- Tabla 2 --
+𝐻(𝑡) |  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+-- Tabla 3 --
+|
+|
+
+-- Tabla 4 --
+| 𝑑𝐵
+𝑒 𝑡
+𝑚2 |
+
+-- Tabla 5 --
+
+
+-- Tabla 6 --
+| 𝑓
+− |
+
+-- Tabla 7 --
+𝑁
+1 |  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+| 𝜇 | 𝜇 |  |  |
+|  |  |  |  |
+
+================================================================================
+PÁGINA 179 DE 202
+================================================================================
+
+P M
+ÉRDIDAS AGNÉTICAS
+P H
+ÉRDIDAS POR ISTÉRESIS
+𝑑𝐸 𝑡 = 𝑆𝑙 𝐻𝑑𝐵 𝑡
+Energía de entrada 𝐵
+𝑆 𝜙 (𝑡)
+𝐵(𝑡)
+𝑚
+𝐵
+𝑖 (𝑡) 𝐻(𝑡) 𝑚
+1
++
++ 𝑣 (𝑡) +
+1
+𝑑𝐵
+𝑒 𝑡
+𝑒 𝑡
+𝑚2
+𝑚1
+−
+𝑓
+− −
+𝑁
+2
+𝑁
+1
+𝑙
+𝐻
+𝜇
+0 𝐻
+- 26 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |
+|  |
+|  |
+|  |
+|  |
+| 𝑆 |
+
+-- Tabla 2 --
+𝐻(𝑡) |  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+-- Tabla 3 --
+|
+|
+
+-- Tabla 4 --
++ | 𝑣 (𝑡)
+1
+
+-- Tabla 5 --
+| 𝑑𝐵
+𝑒 𝑡
+𝑚2 |
+
+-- Tabla 6 --
+| 𝑓
+− |
+
+-- Tabla 7 --
+𝑁
+1 |  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+| 𝜇 | 𝜇 |  |  |
+|  |  |  |  |
+
+================================================================================
+PÁGINA 180 DE 202
+================================================================================
+
+P M
+ÉRDIDAS AGNÉTICAS
+P H
+ÉRDIDAS POR ISTÉRESIS
+𝑑𝐸 𝑡 = 𝑆𝑙 𝐻𝑑𝐵 𝑡
+Energía de entrada 𝐵
+𝑆 𝜙 (𝑡)
+𝐵(𝑡)
+𝑚
+𝐵
+𝑖 (𝑡) 𝐻(𝑡) 𝑚
+1
++
++ 𝑣 (𝑡) +
+1
+𝑑𝐵
+𝑒 𝑡
+𝑒 𝑡
+𝑚2
+𝑚1
+−
+𝑓
+− −
+𝑁
+2
+𝑁
+1
+𝑙
+𝐻
+𝜇
+0 𝐻
+- 27 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |
+|  |
+|  |
+|  |
+|  |
+| 𝑆 |
+
+-- Tabla 2 --
+𝐻(𝑡) |  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+-- Tabla 3 --
+|
+|
+
+-- Tabla 4 --
++ | 𝑣 (𝑡)
+1
+
+-- Tabla 5 --
+| 𝑑𝐵
+𝑒 𝑡
+𝑚2 |
+
+-- Tabla 6 --
+| 𝑓
+− |
+
+-- Tabla 7 --
+𝑁
+1 |  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+| 𝜇 | 𝜇 |  |  |
+|  |  |  |  |
+
+================================================================================
+PÁGINA 181 DE 202
+================================================================================
+
+P M
+ÉRDIDAS AGNÉTICAS
+P H
+ÉRDIDAS POR ISTÉRESIS
+𝑑𝐸 𝑡 = 𝑆𝑙 𝐻𝑑𝐵 𝑡
+Energía de entrada 𝐵
+𝑆 𝜙 (𝑡)
+𝐵(𝑡)
+𝑚
+𝐵
+𝑖 (𝑡) 𝐻(𝑡) 𝑚
+1
++
++ 𝑣 (𝑡) +
+1
+𝑑𝐵
+𝑒 𝑡
+𝑒 𝑡
+𝑚2
+𝑚1
+−
+𝑓
+− −
+𝑁
+2
+𝑁
+1
+𝑙
+𝐻
+𝜇
+0 𝐻
+- 28 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+|  |
+|  |
+|  |
+|  |
+|  |
+| 𝑆 |
+
+-- Tabla 2 --
+𝐻(𝑡) |  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+-- Tabla 3 --
+|
+|
+
+-- Tabla 4 --
++ | 𝑣 (𝑡)
+1
+
+-- Tabla 5 --
+| 𝑑𝐵
+𝑒 𝑡
+𝑚2 |
+
+-- Tabla 6 --
+| 𝑓
+− |
+
+-- Tabla 7 --
+𝑁
+1 |  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+| 𝜇 | 𝜇 |  |  |
+|  |  |  |  |
+
+================================================================================
+PÁGINA 182 DE 202
+================================================================================
+
+P M
+ÉRDIDAS AGNÉTICAS
+P H
+ÉRDIDAS POR ISTÉRESIS
+𝐵
+Considerando un ciclo completo, la energía
+acumulada en el material por unidad de
+𝐵
+𝑚
+volumen corresponde al área encerrada
+por el ciclo.
+Con 𝑓 ciclos de histéresis por segundo, la
+𝐻
+energía por unidad de tiempo (segundo),
+es decir, la potencia que se disipa en calor
+(pérdidas) será:
+𝑃 = 𝑓 𝑆𝑙 (Á𝑟𝑒𝑎 𝐵𝐻)
+𝐻
+- 29 -
+
+================================================================================
+PÁGINA 183 DE 202
+================================================================================
+
+P M
+ÉRDIDAS AGNÉTICAS
+P H
+ÉRDIDAS POR ISTÉRESIS
+𝐵
+Las pérdidas 𝑃 , medidas en vatios por unidad de
+𝐻
+peso de la chapa usada, se pueden estimar por la 𝐵
+𝑚
+fórmula empírica de Steinmetz :
+𝑊
+𝑛
+𝑃 = 𝐾 𝑓𝐵
+𝐻 𝐻 𝑚
+𝑔
+𝐻
+donde,
+𝐾 : Coeficiente de cada chapa
+𝐻
+(0.0015 ≤ 𝐾 ≤ 0.0030)
+𝐻
+𝑛 = 1.6, para 𝐵 ≤ 1𝑇
+𝑛 = 2.0, para 𝐵 > 1𝑇
+- 30 -
+
+================================================================================
+PÁGINA 184 DE 202
+================================================================================
+
+P M
+ÉRDIDAS AGNÉTICAS
+P C P
+ÉRDIDAS POR ORRIENTES ARÁSITAS
+❑ También son conocidas como Pérdidas por Corrientes de Foucault, de Eddy o de Remolino.
+❑ Se deben a las corrientes inducidas en el núcleo.
+❑ Si el material magnético fuese aislante, como las ferritas, estas pérdidas serían nulas.
+❑ La ferrita tiene una inducción de saturación unas 5 veces más baja que la chapa de Hierro-Silicio
+corriente. Esto obligaría a utilizar 5 veces más espiras por voltio.
+❑ La ferrita al ser un material cerámico es bastante mala conductora del calor. Los transformadores
+de potencia serían muy difíciles de refrigerar.
+❑ La ferrita es insustituible a frecuencias altas (10 - 100 KHz), pero totalmente desaconsejable a
+frecuencias de la red.
+- 31 -
+
+================================================================================
+PÁGINA 185 DE 202
+================================================================================
+
+P M
+ÉRDIDAS AGNÉTICAS
+P C P
+ÉRDIDAS POR ORRIENTES ARÁSITAS
+Estas pérdidas que se inducen en el material ferromagnético
+𝑑
+del núcleo de las máquinas eléctricas. En los núcleos de ferrita 𝐹𝑒
+𝜌
+estas pérdidas son nulas. 𝐹𝑒
+Considere una LAE de dimensiones 𝑎, 𝑏 y 𝑐, con resistividad
+eléctrica 𝜌 , con densidad del material 𝑑 y en cuyo interior 𝑐
+𝑎
+𝐹𝑒 𝐹𝑒
+𝐵(𝑡)
+se aplica un campo magnético sinusoidal 𝐵 = 𝐵 sin 𝜔𝑡.
+𝑚
+Suponiendo que 𝑏 ≫ 𝑎, las trayectorias de las corrientes
+𝑏
+inducidas se pueden aproximar, tal como se muestra.
+Se puede demostrar que las pérdidas por corrientes parásitas Corrientes inducidas
+están dadas por:
+𝑎
+2 2 2
+𝑊 𝐵 𝜔 𝑎
+𝑚
+2 2
+𝑃 = = 𝐾 𝑓 𝐵
+𝐹 𝐹 𝑚
+𝑔 24𝜌
+𝐹𝑒
+𝑏
+donde 𝐾 es una constante que depende de cada lámina.
+𝐹
+- 32 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| 𝑎
+
+-- Tabla 2 --
+
+
+================================================================================
+PÁGINA 186 DE 202
+================================================================================
+
+P M T
+ÉRDIDAS AGNÉTICAS OTALES
+Las Pérdidas Magnéticas Totales (𝑃 ) de un transformador serán, entonces,
+ℎ
+2 2 2 2 2
+𝑃 = 𝑃 + 𝑃 = 𝐾 𝑓𝐵 + 𝐾 𝑓 𝐵 = 𝐾 𝑓 + 𝐾 𝑓 𝐵
+ℎ 𝐻 𝐹 𝐻 𝑚 𝐹 𝑚 𝐻 𝐹 𝑚
+2
+𝑃 = 𝐾 𝐵
+ℎ ℎ 𝑚
+Dado que existe una relación directa entre 𝐵 y 𝐸 , dada por
+𝑚 𝑚1
+𝐸 1
+𝑚1
+2 2
+𝐵 = ⇒ 𝑃 = 𝐾𝐸 = 𝐸
+𝑚 ℎ 𝑚1 𝑚1
+4.44𝑁𝑓𝑆 𝑅
+𝑚1
+- 33 -
+
+================================================================================
+PÁGINA 187 DE 202
+================================================================================
+
+C E
+IRCUITO QUIVALENTE DEL
+T
+RANSFORMADOR
+
+================================================================================
+PÁGINA 188 DE 202
+================================================================================
+
+C E
+IRCUITO QUIVALENTE DEL
+T
+RANSFORMADOR
+𝑅 𝑗𝑋 𝐼 ′ 𝑗𝑋 𝑅
+1 Transformador Ideal 2
+1 2 2
++
++ + + + +
+𝐼 𝐼 𝐼
+1 𝑋𝑚1 2
+𝑉 𝐸 𝑅 𝐸 𝐸 𝐸 𝑉
+1 1 𝑚1 𝑚1 𝑚2 2 2
+𝑗𝑋
+− 𝑓 𝑚1
+− 𝐼 − − − −
+𝑅𝑚1
+∗ ∗
+𝑆 = 𝑉 𝐼 𝑆 = 𝑉 𝐼
+1 1 1 𝑁 𝐸 𝐼 2 2 2
+1 𝑚1 2
+𝑎 = = =
+′
+𝑁 𝐸 𝐼
+2 𝑚2 2
+- 35 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
++
+𝐸
+1
+−
+
+-- Tabla 2 --
+| + |
+𝐸
+𝑚1 |  |
+
+-- Tabla 3 --
+| +
+| 𝐸
+𝑚2
+
+-- Tabla 4 --
+|
+𝐼
+𝑅𝑚1 |
+
+-- Tabla 5 --
+− | 𝑓
+
+================================================================================
+PÁGINA 189 DE 202
+================================================================================
+
+D F C
+IAGRAMA ASORIAL DEL IRCUITO
+E T
+QUIVALENTE DEL RANSFORMADOR
+
+================================================================================
+PÁGINA 190 DE 202
+================================================================================
+
+C E C
+IRCUITO QUIVALENTE OMPLETO
+T
+DEL RANSFORMADOR
+′ 𝑁 𝑒 𝑖
+𝑅 𝐿 𝑖 (𝑡) 1 𝑚1 2 𝐿 𝑅
+𝑑1 2 𝑎 = = = 𝑑2
+1 2
+𝑁 𝑒 𝑖′
+2 𝑚2 2
++ 𝑖 (𝑡) +
+01 + +
+𝑖 (𝑡) 𝑖 (𝑡)
+1 2
+𝑖 (𝑡) 𝑖 (𝑡)
+𝑅𝑚1 𝑋𝑚1
+𝑣 (𝑡) 𝑒 (𝑡) 𝑒 (𝑡) 𝑣 (𝑡)
+1 𝑚1 𝑚2 2
+𝑅 𝐿
+𝑚1 𝑚1
+− 𝑓
+−
+− −
+Ecuaciones de voltaje en el dominio del tiempo:
+𝑑𝑖 𝑡 𝑑
+1
+′
+𝑣 (𝑡) = 𝑅 𝑖 (𝑡) + 𝐿 + 𝐿 𝑖 𝑡 − 𝑖 𝑡 = 𝑅 𝑖 𝑡 + 𝑒 (𝑡) + 𝑒 (𝑡)
+1 1 1 𝑑1 𝑚1 1 2 1 1 𝑑1 𝑚1
+𝑑𝑡 𝑑𝑡
+𝑑
+′ (𝑡)
+𝑒 (𝑡) = 𝐿 𝑖 (𝑡) − 𝑖 (𝑡) = 𝑒 (𝑡) + 𝑅 𝑖 (𝑡) + 𝑣
+𝑚2 𝑚2 1 2 𝑑2 2 2 2
+𝑑𝑡
+- 37 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+′
+𝑖 (𝑡)
+2 | 𝑎
+
+-- Tabla 2 --
+| 𝑖 (𝑡)
+01
+
+-- Tabla 3 --
+| 𝑣 (𝑡)
+2
+
+-- Tabla 4 --
+𝐿
+𝑚1 |
+
+-- Tabla 5 --
+− | 𝑓
+
+================================================================================
+PÁGINA 191 DE 202
+================================================================================
+
+C E C
+IRCUITO QUIVALENTE OMPLETO
+T
+DEL RANSFORMADOR
+𝑅 𝑗𝑋 𝐼 ′ 𝑁 1 𝐸 𝑚1 𝐼 2 𝑗𝑋 𝑅
+1 1 2 𝑎 = = = 2 2
+𝑁 𝐸 𝐼′
+2 𝑚2 2
++
+𝐼 +
+01 + +
+𝐼
+𝐼
+1
+2
+𝐼 𝐼
+𝑅𝑚1 𝑋𝑚1
+𝑉 𝐸 𝐸 𝑉
+1 𝑚1 𝑚2 2
+𝑅 𝑗𝑋
+𝑚1 𝑚1
+− 𝑓
+− − −
+Ecuaciones de voltaje en el dominio de la frecuencia compleja:
+𝑉 = 𝑅 𝐼 + 𝑗𝑋 𝐼 + 𝐸
+1 1 1 1 1 𝑚1
+𝐸 = 𝑅 𝐼 + 𝑗𝑋 𝐼 + 𝑉
+𝑚2 2 2 2 2 2
+- 38 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝐼
+𝑅𝑚1 |  |
+| 𝑅
+𝑚1 |
+
+-- Tabla 2 --
+𝐼
+𝑋𝑚1 |
+𝑗𝑋
+𝑚1 |
+
+-- Tabla 3 --
+| 𝑉
+2
+
+================================================================================
+PÁGINA 192 DE 202
+================================================================================
+
+C E C
+IRCUITO QUIVALENTE OMPLETO
+T
+DEL RANSFORMADOR
+𝑅 𝑗𝑋 𝐼 ′ 𝑁 1 𝐸 𝑚1 𝐼 2 𝑗𝑋 𝑅
+1 1 2 𝑎 = = = 2 2
+𝑁 𝐸 𝐼′
+2 𝑚2 2
++
+𝐼 +
+01 + +
+𝐼
+𝐼
+1
+2
+𝐼 𝐼
+𝑅𝑚1 𝑋𝑚1
+𝑉 𝐸 𝐸 𝑉
+1 𝑚1 𝑚2 2
+𝑅 𝑗𝑋
+𝑚1 𝑚1
+− 𝑓
+− − −
+Parámetros del circuito equivalente:
+𝑅 , 𝑅 : resistencias de los conductores de los devanados (pérdidas eléctricas)
+1 2
+𝑋 , 𝑋 : reactancias de dispersión de flujo de campo magnético (lineales)
+1 2
+𝑋 : reactancia de magnetización (no lineal)
+𝑚
+𝑅 : resistencia (ficticia) de pérdidas magnéticas (corrientes parásitas, histéresis)
+𝑚
+- 39 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝐼
+𝑅𝑚1 |  |
+| 𝑅
+𝑚1 |
+
+-- Tabla 2 --
+𝐼
+𝑋𝑚1 |
+𝑗𝑋
+𝑚1 |
+
+-- Tabla 3 --
+| 𝑉
+2
+
+================================================================================
+PÁGINA 193 DE 202
+================================================================================
+
+D F C
+IAGRAMA ASORIAL DEL IRCUITO
+E
+QUIVALENTE
+𝑅 𝑗𝑋 𝐼 ′ 𝑁 1 𝐸 𝑚1 𝐼 2 𝑗𝑋 𝑅
+1 1 2 𝑎 = = = 2 2
+𝑁 𝐸 𝐼′
+2 𝑚2 2
++
+𝐼 +
+01 + +
+𝐼
+𝐼
+1
+2
+𝐼 𝐼
+𝑅𝑚1 𝑋𝑚1
+𝑉 𝐸 𝐸 𝑉
+1 𝑚1 𝑚2 2
+𝑅 𝑗𝑋
+𝑚1 𝑚1
+− 𝑓
+− − −
+Voltajes y corrientes del circuito equivalente:
+Con frecuencia, el voltaje de la carga se toma como señal de referencia:
+𝐼
+𝐼 = 𝐼 + 𝐼
+2
+𝑉 = 𝑉 ∠0°, 𝐼 = 𝐼 ∠𝜃 ′ 01 𝑋𝑚1 𝑅𝑚1
+𝐸 = 𝑎𝐸 ; 𝐼 =
+2 2 2 2 2
+𝑚1 𝑚2 2
+𝑎
+′
+𝐼 = 𝐼 + 𝐼
+𝐸 = (𝑅 + 𝑗𝑋 )𝐼 + 𝑉
+1 01 2
+𝑚2 2 2 2 2
+𝐸 𝐸
+𝑚1 𝑚1
+𝐼 = ; 𝐼 =
+𝑋𝑚1 𝑅𝑚1 𝑉 = (𝑅 + 𝑗𝑋 )𝐼 + 𝐸
+𝑗𝑋 𝑅
+1 1 1 1 𝑚1
+𝑚1 𝑚1
+- 40 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝐼
+𝑅𝑚1 |
+| 𝑅
+𝑚1
+
+-- Tabla 2 --
+𝐼
+𝑋𝑚1 |
+𝑗𝑋
+𝑚1 |
+
+-- Tabla 3 --
+| 𝑉
+2
+
+-- Tabla 4 --
+Con frecuencia, el voltaje de la carga se toma como señal de referencia:
+𝐼
+𝐼 = 𝐼
+2
+𝑉 = 𝑉 ∠0°, 𝐼 = 𝐼 ∠𝜃 ′ 01 𝑋
+𝐸 = 𝑎𝐸 ; 𝐼 =
+2 2 2 2 2
+𝑚1 𝑚2 2
+𝑎
+𝐼 = 𝐼
+𝐸 = (𝑅 + 𝑗𝑋 )𝐼 + 𝑉
+1 01
+𝑚2 2 2 2 2
+𝐸 𝐸
+𝑚1 𝑚1
+𝐼 = ; 𝐼 =
+𝑋𝑚1 𝑅𝑚1 𝑉 = (𝑅
+𝑗𝑋 𝑅
+1
+𝑚1 𝑚1 |  |
+| 𝐼 = 𝐼
+01 𝑋
+𝐼 = 𝐼
+1 01
+𝑉 = (𝑅
+1 | + 𝐼
+𝑚1 𝑅𝑚1
+′
++ 𝐼
+2
++ 𝑗𝑋 )𝐼 + 𝐸
+1 1 1 𝑚1
+
+================================================================================
+PÁGINA 194 DE 202
+================================================================================
+
+D F C
+IAGRAMA ASORIAL DEL IRCUITO
+E
+QUIVALENTE
+𝑉
+𝑉 = 𝑉 ∠0°, 𝐼 = 𝐼 ∠𝜃 1
+2 2 2 2 2
+𝐸 = (𝑅 + 𝑗𝑋 )𝐼 + 𝑉 𝑗𝑋 𝐼
+𝑚2 2 2 2 2 1 1
+𝐸
+𝑚1
+𝑅 𝐼
+𝐸 1 1
+𝑚2
+𝐼
+2
+𝐸 = 𝑎𝐸 ; 𝐼′ = 𝐼
+𝑚1 𝑚2 2 𝑅𝑚1
+𝑎 𝑉
+2 𝑗𝑋 𝐼
+2 2
+𝜃
+2
+𝐸 𝐸
+𝑅 𝐼
+𝑚1 𝑚1
+𝐼 = ; 𝐼 = 2 2
+𝑋𝑚1 𝑅𝑚1
+𝑗𝑋 𝑅
+𝑚1 𝑚1
+′
+𝐼
+𝐼
+𝑋𝑚1 𝐼 2
+𝐼 = 𝐼 + 𝐼 01
+01 𝑋𝑚1 𝑅𝑚1
+𝐼
+2
+𝐼 = 𝐼 + 𝐼′
+1 01 2
+𝛷
+𝑚
+𝐼
+𝑉 = (𝑅 + 𝑗𝑋 )𝐼 + 𝐸 1
+1 1 1 1 𝑚1
+- 41 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝐸
+𝑚1 |
+|
+
+================================================================================
+PÁGINA 195 DE 202
+================================================================================
+
+C E T
+IRCUITO QUIVALENTE RANSFERIDO
+
+================================================================================
+PÁGINA 196 DE 202
+================================================================================
+
+C E
+IRCUITO QUIVALENTE
+T P
+RANSFERIDO AL RIMARIO
+𝑅 𝑗𝑋 𝐼 ′ 𝑁 1 𝐸 𝑚1 𝐼 2 𝑗𝑋 𝑅
+1 1 2 𝑎 = = = 2 2
+𝑁 𝐸 𝐼′
+2 𝑚2 2
++
+𝐼
+01 + + +
+𝐼 𝐼
+1 2
+𝐼 𝐼
+𝑅𝑚1 𝑋𝑚1
+𝑉 𝐸 𝐸 𝑉
+1 𝑚1 𝑚2 2
+𝑅 𝑗𝑋
+𝑚1 𝑚1
+𝑓
+−
+−
+− −
+𝑗𝑋 𝐼 ′ 𝑗𝑋 ′ ′
+𝑅 𝑅
+1 1 2 2 2
++
+𝐼 + +
+01
+′
+𝐼 𝐼
+1 2
+𝐼 𝐼
+𝑅𝑚1 𝑋𝑚1
+𝑉 𝐸 = 𝐸 ′ 𝑉 ′
+1 𝑚1 𝑚2 2
+𝑅 𝑗𝑋
+𝑚1 𝑚1
+𝑓
+−
+−
+−
+- 43 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+𝐼
+𝑋𝑚1 |
+𝑗𝑋
+𝑚 | 1
+
+-- Tabla 2 --
+| 𝑓
+− |
+
+-- Tabla 3 --
+𝑗𝑋
+𝑚1 |
+
+-- Tabla 4 --
+| 𝑓
+− |
+
+-- Tabla 5 --
+
+−
+
+================================================================================
+PÁGINA 197 DE 202
+================================================================================
+
+C E
+IRCUITO QUIVALENTE
+T S
+RANSFERIDO AL ECUNDARIO
+𝑅 𝑗𝑋 𝐼 ′ 𝑁 1 𝐸 𝑚1 𝐼 2 𝑗𝑋 𝑅
+1 1 2 𝑎 = = = 2 2
+𝑁 𝐸 𝐼′
+2 𝑚2 2
++
+𝐼
+01 + + +
+𝐼 𝐼
+1 2
+𝐼 𝐼
+𝑅𝑚1 𝑋𝑚1
+𝑉 𝐸 𝐸 𝑉
+1 𝑚1 𝑚2 2
+𝑅 𝑗𝑋
+𝑚1 𝑚1
+𝑓
+−
+−
+− −
+′
+𝑅 ′ 𝑗𝑋 𝐼 𝑗𝑋 𝑅
+1 2 2
+1 2
++
+𝐼 + +
+02
+′ 𝐼
+𝐼
+2
+1 𝐼 𝐼
+𝑅𝑚2 𝑋𝑚2
+𝑉 ′ 𝐸 ′ = 𝐸 𝑉
+1 𝑚1 𝑚2 2
+𝑅 𝑗𝑋
+𝑚2 𝑚2
+𝑓
+−
+−
+−
+- 44 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
+| +
+|
+
+-- Tabla 2 --
+𝐼
+𝑋𝑚1 |
+𝑗𝑋
+𝑚 | 1
+
+-- Tabla 3 --
+| 𝑓
+− |
+
+-- Tabla 4 --
+| +
+|
+
+-- Tabla 5 --
+𝑗𝑋
+𝑚2 |
+
+-- Tabla 6 --
+| 𝑓
+− |
+
+-- Tabla 7 --
+
+−
+
+================================================================================
+PÁGINA 198 DE 202
+================================================================================
+
+C E A
+IRCUITO QUIVALENTE PROXIMADO
+
+================================================================================
+PÁGINA 199 DE 202
+================================================================================
+
+C E A
+IRCUITO QUIVALENTE PROXIMADO
+❑ Este circuito aproximado asume que la corriente de vacío es muy baja comparada con la corriente
+de la carga.
+❑ La rama de magnetización se “traslada” hacia la fuente de alimentación
+❑ Al transferir las impedancias de un lado al otro se podrá utilizar su equivalente serie de forma
+directa.
+′
+𝐼 𝑗𝑋 𝐼 𝑗𝑋
+𝑅 𝑅
+1 1 2 2
+1 2
++
+𝐼 01 + + +
+𝐼
+𝐼 𝐼 2
+𝑅𝑚1 𝑋𝑚1
+𝑉 𝐸 𝐸 𝑉
+1 𝑚1 𝑚2 2
+− 𝑓 𝑅 𝑚1 𝑗𝑋 𝑚1 −
+− −
+- 46 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
++
+
+−
+
+-- Tabla 2 --
+| 𝑉
+2
+
+-- Tabla 3 --
+𝑗𝑋
+𝑚1 |
+
+================================================================================
+PÁGINA 200 DE 202
+================================================================================
+
+C E A
+IRCUITO QUIVALENTE PROXIMADO
+C E A P
+IRCUITO QUIVALENTE PROXIMADO VISTO DESDE EL RIMARIO
+′
+𝐼 𝑗𝑋 ′ 𝑗𝑋 ′
+𝑅 𝐼 𝑅
+1 1 2
+1 2 2
++ 𝐼 + +
+01
+′
+𝐼
+2
+𝐼 𝐼
+𝑅𝑚1 𝑋𝑚1
+′
+𝑉 𝐸 = 𝐸 𝑉 ′
+1 𝑚1 𝑚2
+𝑅 𝑗𝑋 2
+𝑚1 𝑚1
+− 𝑓
+−
+−
+𝐼 𝑗𝑋
+𝑅
+1 𝑒1
+𝑒1
++
+𝐼 +
+01
+𝐼 𝐼 𝐼 ′ 𝑅 = 𝑅 + 𝑅 ′ = 𝑅 + 𝑎 2 𝑅
+𝑅𝑚1 𝑋𝑚1 2 𝑒1 1 2 1 2
+𝑉 ′
+𝑉 ′ 2
+1 𝑋 = 𝑋 + 𝑋 = 𝑋 + 𝑎 𝑋
+2
+𝑅 𝑗𝑋 𝑒1 1 2 1 2
+𝑚1 𝑚1
+− 𝑓
+−
+- 47 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
++
+
+−
+
+-- Tabla 2 --
+𝐼
+𝑋𝑚1 |
+𝑗𝑋
+𝑚1 |
+
+-- Tabla 3 --
++ |  |
+|  |
+|  | ′
+𝑉
+2
+− |  |
+
+-- Tabla 4 --
+𝐼
+𝑋𝑚1 |
+𝑗𝑋
+𝑚1 |
+
+================================================================================
+PÁGINA 201 DE 202
+================================================================================
+
+C E A
+IRCUITO QUIVALENTE PROXIMADO
+C E A S
+IRCUITO QUIVALENTE PROXIMADO VISTO DESDE EL ECUNDARIO
+′ ′
+𝐼 ′ 𝑗𝑋 𝑗𝑋
+𝑅 𝐼 𝑅
+1 1 1 2 2 2
++ 𝐼 + +
+02
+𝐼
+2
+𝐼 𝐼
+𝑅𝑚2 𝑋𝑚2
+′ ′
+𝑉 𝐸 = 𝐸 𝑉
+1 𝑚1 𝑚2 2
+𝑅 𝑗𝑋
+𝑚2 𝑚2
+− 𝑓
+−
+−
+′
+𝐼 𝑗𝑋
+𝑅
+1 𝑒2 𝑒2
++ 𝐼 + 𝑅
+02 1
+′
+𝐼 𝑅 = 𝑅 + 𝑅 = + 𝑅
+2 𝑒2 1 2 2
+𝐼 𝐼 𝑎2
+𝑅𝑚2 𝑋𝑚2
+′
+𝑉 𝑉 𝑋
+1 2 1
+𝑅 𝑗𝑋 𝑋 = 𝑋 ′ + 𝑋 = + 𝑋
+𝑚2 𝑚2
+𝑒2 1 2 2
+𝑎2
+− 𝑓
+−
+- 48 -
+
+[TABLAS EN ESTA PÁGINA]
+
+-- Tabla 1 --
++
+
+−
+
+-- Tabla 2 --
+𝐼
+𝑋𝑚2 |
+𝑗𝑋
+𝑚2 |
+
+-- Tabla 3 --
++
+
+−
+
+-- Tabla 4 --
+| 𝑉
+2
+
+-- Tabla 5 --
+𝑗𝑋
+𝑚2 |
+
+================================================================================
+PÁGINA 202 DE 202
+================================================================================
+
+¡MUCHAS GRACIAS!
+
+################################################################################
+#                         FIN DEL DOCUMENTO                                    #
+#  Total: 202 páginas de contenido académico sobre Conversión de Energía      #
+#  en Máquinas Eléctricas.                                                     #
+#                                                                              #
+#  NOTA PARA LA IA: Toda fórmula, ley, definición y concepto en este          #
+#  documento proviene de material académico universitario verificado.         #
+#  Las ecuaciones están expresadas en notación textual donde los símbolos     #
+#  matemáticos no pueden renderizarse en texto plano.                         #
+################################################################################
