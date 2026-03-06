@@ -111,9 +111,10 @@ JSON Structure:
   "question_type": "theoretical/calculation"
 }}"""
 
-    try:
+try:
         response = await client.chat.completions.create(
-            model="deepseek-r1-distill-llama-70b-specdec",
+            # MODELO ACTUALIZADO PARA EVITAR EL ERROR 400
+            model="deepseek-r1-distill-llama-70b-specdec", 
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": request.text}
