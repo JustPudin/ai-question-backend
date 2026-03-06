@@ -177,12 +177,3 @@ ESTRUCTURA JSON OBLIGATORIA:
         )
 
 app.include_router(api_router)
-```
-
----
-
-### PASO 6 — Verificar que el deploy funciona en Railway
-
-Una vez que subas los cambios a tu repositorio, Railway redesplegará. Para verificar, visita:
-```
-https://tu-dominio.railway.app/api/
