@@ -113,7 +113,7 @@ JSON Structure:
 
     try:
         response = await client.chat.completions.create(
-            model="deepseek-r1-distill-llama-70b",
+            model="deepseek-r1-distill-llama-70b-specdec",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": request.text}
