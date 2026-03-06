@@ -1,0 +1,23 @@
+CONTEXTO TÉCNICO: MÁQUINAS ELÉCTRICAS Y ELECTROMAGNETISMO
+=========================================================
+
+1. LEYES FUNDAMENTALES
+- Fuerza de Lorentz: F = qE + q(v x B). Describe la fuerza sobre una carga 'q' en campos eléctricos (E) y magnéticos (B). [cite: 6, 7]
+- Inducción Magnética (B): Se mide en Tesla (T) o Gauss (G). 1 T = 10^4 G. [cite: 8, 9]
+- Fuerza en un Conductor: F = I(l x B). La fuerza depende de la corriente (I), la longitud del conductor (l) y la densidad de flujo (B). [cite: 12]
+- Ley de Ampère-Maxwell: Relaciona el campo magnético con la corriente eléctrica y la variación del campo eléctrico. [cite: 20]
+- Ley de Faraday-Henry: e(t) = -N * (dϕ/dt). El voltaje inducido es proporcional al cambio del flujo magnético. [cite: 31]
+- Ley de Lenz: Establece que la polaridad del voltaje inducido se opone a la variación del flujo que lo genera. [cite: 27]
+
+2. TRANSFORMADORES IDEALES
+- Relación de Transformación (a): a = N1/N2 = V1/V2 = I2/I1 = E1/E2. [cite: 32, 41, 45]
+- Impedancia Transferida: Z1 = a^2 * Z2. Indica cómo se ve la impedancia del secundario desde el primario. [cite: 46, 47]
+- Potencia Ideal: p1(t) = p2(t). No hay pérdidas eléctricas ni magnéticas. [cite: 40]
+- Flujo Magnético Sinusoidal: Φm = V1 / (4.44 * f * N1). Relación entre flujo, voltaje, frecuencia (f) y espiras (N). [cite: 42]
+
+3. MATERIALES Y SISTEMAS
+- Clasificación de Máquinas: Rotativas (Generadores/Motores de AC/DC) y Estáticas (Transformadores). [cite: 3]
+- Sistemas de una Máquina: Eléctrico, Magnético, Mecánico, Aislamiento y Refrigeración. [cite: 5, 60]
+- Fuentes de Campo: Imanes permanentes (Neodimio, Ferrita, AlNiCo) y Electroimanes (Solenoides). [cite: 16, 17, 18, 20]
+- Resistencia Eléctrica: R = ρ * l / S. Depende de la resistividad (ρ), longitud (l) y sección transversal (S). [cite: 62]
+- Efecto de Temperatura: R(Tf) ≈ R(Ti)[1 + α(Tf - Ti)]. La resistencia aumenta con la temperatura. [cite: 64]
