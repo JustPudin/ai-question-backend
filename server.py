@@ -53,7 +53,7 @@ def dividir_en_bloques(texto: str, tamanio: int = 1000) -> list[str]:
     return bloques
 
 # ── Buscar contexto relevante ─────────────────────────────────────────────────
-def buscar_contexto_relevante(pregunta: str, bloques: list[str], max_bloques: int = 8) -> str:
+def buscar_contexto_relevante(pregunta: str, bloques: list[str], max_bloques: int = 6) -> str:
     palabras = re.findall(r'\b\w{4,}\b', pregunta.lower())
     stopwords = {
         'para', 'como', 'este', 'esta', 'cual', 'cuál', 'qué', 'que',
@@ -102,18 +102,17 @@ class QuestionResponse(BaseModel):
     explanation: str
     confidence: str
     question_type: str
-    model_used: str  # ← NUEVO: indica qué modelo respondió
+    model_used: str
 
 # ── Llamada a Claude ──────────────────────────────────────────────────────────
 async def llamar_claude(system_prompt: str, pregunta: str) -> str:
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         raise ValueError("ANTHROPIC_API_KEY no configurada")
-
     client = anthropic.AsyncAnthropic(api_key=api_key)
     response = await client.messages.create(
         model="claude-sonnet-4-20250514",
-        max_tokens=2000,
+        max_tokens=1500,
         temperature=0.1,
         system=system_prompt,
         messages=[{"role": "user", "content": pregunta}]
@@ -125,22 +124,20 @@ async def llamar_groq(system_prompt: str, pregunta: str) -> str:
     api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
         raise ValueError("GROQ_API_KEY no configurada")
-
     client = AsyncOpenAI(
         api_key=api_key,
         base_url="https://api.groq.com/openai/v1"
     )
     response = await client.chat.completions.create(
-        model="llama-3.3-70b-versatile",  # Mejor modelo gratuito de Groq actualmente
+        model="llama-3.3-70b-versatile",
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": pregunta}
         ],
-        max_tokens=2000,
+        max_tokens=1500,
         temperature=0.1,
     )
     raw = response.choices[0].message.content.strip()
-    # Limpieza de etiquetas de razonamiento por si acaso
     raw = re.sub(r'<think>.*?</think>', '', raw, flags=re.DOTALL).strip()
     return raw
 
@@ -168,25 +165,25 @@ async def analyze_question(request: QuestionRequest):
     if not request.text or not request.text.strip():
         raise HTTPException(status_code=400, detail="El texto está vacío")
 
-    contexto_relevante = buscar_contexto_relevante(request.text, BLOQUES_DOCUMENTO)
+    contexto_relevante = buscar_contexto_relevante(request.text, BLOQUES_DOCUMENTO, max_bloques=6)
 
-    system_prompt = f"""Eres un Profesor PhD en Física e Ingeniería Mecatrónica.
-Tu única fuente de verdad es la siguiente base de conocimiento técnico:
+    # ── SYSTEM PROMPT OPTIMIZADO (MÁS CORTO Y DIRECTO) ────────────────────────
+    system_prompt = f"""Eres un experto en ingeniería eléctrica y máquinas. Usa SOLO esta base de conocimiento:
 
-<knowledge_base>
+<base_conocimiento>
 {contexto_relevante}
-</knowledge_base>
+</base_conocimiento>
 
-REGLAS ESTRICTAS:
-1. Responde ÚNICAMENTE basándote en la base de conocimiento anterior.
-2. Usa las fórmulas y definiciones exactas del documento.
-3. Para transformadores, usa siempre la relación de transformación 'a' = N1/N2.
-4. Tu respuesta debe ser EXCLUSIVAMENTE un objeto JSON válido, sin texto adicional.
+INSTRUCCIONES:
+1. Si la pregunta es de opción múltiple, identifica la opción correcta (A, B, C, D) y copia el texto COMPLETO de esa opción en "correct_answer".
+2. En "explanation", da una justificación CONCISA (máximo 3 frases) basada en la base de conocimiento.
+3. Si la respuesta no está en la base de conocimiento, indícalo claramente.
+4. Usa las fórmulas y definiciones exactas del documento.
 
-ESTRUCTURA JSON OBLIGATORIA:
+FORMATO DE RESPUESTA (JSON estricto):
 {{
-  "correct_answer": "La respuesta correcta aquí",
-  "explanation": "Explicación detallada usando fórmulas del documento",
+  "correct_answer": "OPCIÓN COMPLETA aquí (ej: 'A) La resistencia Rm representa las pérdidas magnéticas...')",
+  "explanation": "Justificación breve de 2-3 frases máximo",
   "confidence": "High/Medium/Low",
   "question_type": "theoretical/calculation"
 }}"""
@@ -201,7 +198,6 @@ ESTRUCTURA JSON OBLIGATORIA:
         logger.info("Claude respondió correctamente")
 
     except anthropic.APIStatusError as e:
-        # Errores específicos que activan el fallback a Groq
         errores_de_credito = [
             "credit_balance_too_low",
             "billing",
