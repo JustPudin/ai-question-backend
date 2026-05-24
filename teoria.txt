@@ -1,988 +1,1687 @@
-################################################################################
-#                                                                              #
-#   BASE DE CONOCIMIENTO - REGULACIÓN DE VOLTAJE, EFICIENCIA Y                #
-#   MÁQUINAS DE INDUCCIÓN                                                      #
-#                                                                              #
-#   Docente: Edwin Herlyt Lopera Mazo | edwinlopera@itm.edu.co                #
-#   Facultad de Ingenierías - Depto. Mecatrónica y Electromecánica            #
-#   Institución Universitaria ITM - Medellín, Colombia                        #
-#                                                                              #
-#   INSTRUCCIONES PARA LA IA:                                                  #
-#   Este archivo contiene el texto completo de 193 diapositivas más la        #
-#   descripción detallada de TODOS los diagramas, gráficas y circuitos.       #
-#   Está organizado por temas. Úsalo como fuente autoritativa.                #
-#                                                                              #
-#   TEMAS CUBIERTOS:                                                           #
-#   1. Estimación de parámetros del modelo del transformador                  #
-#   2. Ensayo de Cortocircuito                                                 #
-#   3. Ensayo de Vacío                                                         #
-#   4. Regulación de Voltaje                                                   #
-#   5. Eficiencia del Transformador                                            #
-#   6. Máquinas de Inducción - Estructura y Estator                           #
-#   7. Campo Magnético Estacionario y Giratorio                               #
-#   8. Rotor Jaula de Ardilla y Circuito Equivalente                          #
-#   9. Deslizamiento                                                           #
-#   10. Placas de Datos de Motores de Inducción                               #
-#                                                                              #
-################################################################################
-
+REESCRITURA EN TEXTO PLANO DEL PDF
+Archivo fuente: ilovepdf_merged (4).pdf
+Propósito: dejar el contenido listo para ingestión por una IA, organizado por página, con explicaciones de fórmulas, diagramas y contexto técnico adicional.
+Nota: en varias diapositivas el PDF original solo muestra imágenes, esquemas o enlaces; en esos casos se agregó una descripción técnica basada en el contenido visible y en el contexto de la diapositiva.
 
 ================================================================================
-TEMA 1: ESTIMACIÓN DE LOS PARÁMETROS DEL MODELO DEL TRANSFORMADOR
+SECCIÓN 1. MÁQUINA DE CORRIENTE DIRECTA
 ================================================================================
 
-AGENDA DEL DOCUMENTO:
-- Estimación de los parámetros del circuito equivalente del transformador
-- Regulación de Voltaje
-- Pérdidas de energía constantes y variables
-- Eficiencia de un transformador
+[PÁGINA 1]
+Contenido detectado:
+Docente
+Edwin Herlyt Lopera Mazo
+edwinlopera@itm.edu.co
+Facultad de Ingenierías
+Departamento de Mecatrónica y Electromecánica
+Ingeniería Mecatrónica
+Medellín, Colombia
+MÁQUINA DE CORRIENTE DIRECTA
+Explicación / reconstrucción:
+Portada de la clase sobre máquina de corriente directa. Introduce al docente y ubica el tema dentro de Ingeniería Mecatrónica.
 
-[DESCRIPCIÓN GRÁFICA - DIAPOSITIVA 2]:
-Gráfica de Regulación de Voltaje vs. Corriente de carga.
-Eje Y (vertical): Voltaje secundario V2, con punto de referencia V02 (voltaje en vacío).
-Eje X (horizontal): Corriente de carga I2 y potencia aparente S2, con referencia a la corriente nominal In2.
-Se muestran TRES curvas características:
-  - Curva VERDE (superior, sube): Carga capacitiva. El voltaje V2 AUMENTA al aumentar la corriente, superando V02.
-  - Curva AZUL (media, ligeramente descendente): Carga resistiva. El voltaje V2 cae levemente con la carga.
-  - Curva NARANJA/CAFÉ (inferior, baja pronunciadamente): Carga inductiva. El voltaje V2 cae considerablemente al aumentar la carga.
-CONCLUSIÓN VISUAL: El tipo de carga determina si la regulación de voltaje es positiva (inductiva/resistiva) o negativa (capacitiva).
+[PÁGINA 2]
+Contenido detectado:
+❑ Clasificación general de las Máquinas DC
+❑ Ley de Faraday – Henry en forma vectorial
+❑ Principio de operación del Generador DC
+❑ Estrategias para incrementar el voltaje inducido
+❑ Devanado de excitación
+❑ Reacción de Armadura
+❑ Componentes de la Máquina DC y placa de datos
+AGENDA DE LA PRESENTACIÓN
+https://bit.ly/3nSfYwE
+Explicación / reconstrucción:
+Agenda general del bloque: clasificación de máquinas DC, ley de Faraday-Henry, principio de operación del generador DC, estrategias para aumentar el voltaje inducido, devanado de excitación, reacción de armadura y componentes/placa de datos.
 
-PARÁMETROS DEL CIRCUITO EQUIVALENTE - TABLA RESUMEN:
-Los parámetros del transformador real se obtienen mediante ensayos específicos:
-- R1, R2 (resistencias de devanados): Se obtienen con el Puente de Wheatstone o Método voltio-amperimétrico.
-- X1, X2 (reactancias de dispersión): Se obtienen con el Ensayo de Cortocircuito.
-- Rm, Xm (rama de magnetización): Se obtienen con el Ensayo de Vacío.
+[PÁGINA 3]
+Contenido detectado:
+CLASIFICACIÓN DE LAS MÁQUINAS DE
+CORRIENTE DIRECTA
+Explicación / reconstrucción:
+Diapositiva de título para la sección de clasificación de máquinas de corriente directa.
 
-[DESCRIPCIÓN GRÁFICA - CIRCUITO EQUIVALENTE COMPLETO (Diapositiva 4)]:
-Circuito equivalente del transformador monofásico real con todos sus parámetros.
-LADO PRIMARIO (izquierda):
-  - Fuente de tensión alterna V1 con frecuencia f.
-  - Corriente de entrada I1.
-  - En serie: resistencia R1 (pérdidas en el cobre del devanado primario).
-  - En serie: reactancia de dispersión jX1 (flujo de fuga primario).
-RAMAL DE EXCITACIÓN (centro-izquierda):
-  - Corriente de vacío I01 que se divide en:
-  - IRm1: corriente en fase con la tensión, circula por Rm1 (pérdidas en el hierro: histéresis + corrientes de Foucault).
-  - IXm1: corriente en cuadratura, circula por jXm1 (corriente magnetizante, establece el flujo en el núcleo).
-  - FEM inducida Em1 en el devanado primario.
-NÚCLEO IDEAL (centro):
-  - Representado por dos bobinas acopladas magnéticamente.
-  - Relación de transformación: a = N1/N2 = Em1/Em2 = I2/I2'
-LADO SECUNDARIO (derecha):
-  - FEM inducida Em2.
-  - En serie: reactancia de dispersión jX2 (flujo de fuga secundario).
-  - En serie: resistencia R2 (pérdidas en el cobre del devanado secundario).
-  - Corriente de salida I2.
-  - Tensión en bornes secundarios V2.
-  - Carga conectada en bornes de salida.
+[PÁGINA 4]
+Contenido detectado:
+- 4 -
+CLASIFICACIÓN DE LAS MÁQUINAS DC
+MÁQUINAS
+DC
+GENERADOR DC
+O MOTOR DC
+CON ESCOBILLAS
+(“BRUSH”)
+MOTOR DC
+Excitación
+independiente
+Autoexcitada
+Serie
+Derivación
+(Shunt)
+Compuesta
+(“Compound”)
+Aditiva
+Sustractiva
+Derivación larga
+Derivación corta
+Imán permanente
+Inductor
+Sin escobillas (“Brushless”)
+Universal
+Servomotor (Con escobillas - “Brush”)
+Explicación / reconstrucción:
+Clasificación general de máquinas DC. Se distinguen generadores DC y motores DC con escobillas; también aparecen motores con excitación independiente, autoexcitados (serie, derivación/shunt y compuestos aditiva o sustractiva), máquinas de imanes permanentes, brushless, universales y servomotores. La idea central es que la forma de excitación del campo define el comportamiento eléctrico y mecánico.
 
+[PÁGINA 5]
+Contenido detectado:
+LEY DE FARADAY –HENRY EN FORMA
+VECTORIAL
+Explicación / reconstrucción:
+Título de la sección sobre la ley de Faraday-Henry en forma vectorial.
+
+[PÁGINA 6]
+Contenido detectado:
+- 6 -
+LEY DE FARADAY EN FORMA VECTORIAL
+𝜙(𝑡) = න
+𝑆
+𝐵 ∙ 𝑑 Ԧ𝑆 = 𝐵 න
+𝑆
+𝑑𝑆
+𝜙 = 𝐵 න
+𝑥
+𝑙 𝑑𝑥 = 𝐵𝑙𝑥
+𝑥 𝑑𝑥
+𝜙(𝑡)
+Vista superior
+Ԧ𝑣
+Ԧ𝑣
+𝑙
+𝐵
+Explicación / reconstrucción:
+Se presenta el flujo magnético como integral de superficie: Φ(t)=∫_S B·dS. En un campo uniforme y perpendicular, esto se simplifica a Φ=B·S; para una superficie rectangular barrida por un conductor, Φ=B·l·x. La gráfica/diagrama muestra la vista superior de un conductor moviéndose con velocidad v dentro de un campo B.
+
+[PÁGINA 7]
+Contenido detectado:
+- 7 -
+LEY DE FARADAY EN FORMA VECTORIAL
+𝜙(𝑡) = න
+𝑆
+𝐵 ∙ 𝑑 Ԧ𝑆 = 𝐵 න
+𝑆
+𝑑𝑆
+𝜙 = 𝐵 න
+𝑥
+𝑙 𝑑𝑥 = 𝐵𝑙𝑥
+𝑒 = න
+𝐶
+𝐸 ∙ 𝑑 Ԧ𝑥 = 𝑑𝜙
+𝑑𝑡 = 𝐵𝑙 𝑑𝑥
+𝑑𝑡
+𝑒 = 𝐵𝑙𝑣
+En general,
+Ԧ𝑒 = 𝑙 Ԧ𝑣 × 𝐵
+donde,
+𝑒: voltaje inducido
+𝑣: velocidad relativa del conductor
+respecto a 𝐵
+𝐵: inducción magnética
+Vista superior
+𝑙
+𝜙(𝑡)
+Ԧ𝑣
+Ԧ𝑣Ԧ𝑒
+Ԧ𝑒
+𝑥 𝑑𝑥
+𝐵
+Explicación / reconstrucción:
+Derivación completa de la fem inducida: e=−dΦ/dt. Al sustituir Φ=B·l·x y x=vt, resulta e=Blv. En forma vectorial, la ley se expresa como e⃗=l⃗×(v⃗×B⃗), lo que indica que la dirección del voltaje inducido depende de la orientación del conductor, la velocidad y el campo magnético.
+
+[PÁGINA 8]
+Contenido detectado:
+PRINCIPIO DE OPERACIÓN DE UN
+GENERADOR AC ELEMENT AL
+Explicación / reconstrucción:
+Inicio de la explicación del generador AC elemental. Se muestra una onda sinusoidal de voltaje inducido e(t) alternando entre valor positivo y negativo a medida que gira el rotor.
+
+[PÁGINA 9]
+Contenido detectado:
+𝒆(𝒕)
+−
++
+- 9 -
+𝐸𝑚
+𝒆(𝒕)
+𝒕
+𝜏𝑚, 𝑛𝑚
+GENERADOR AC
+ELEMENT AL
+Explicación / reconstrucción:
+Secuencia visual del generador AC elemental. Cada diapositiva representa una posición distinta del rotor/espira, mostrando cómo el voltaje inducido cambia de signo a lo largo del tiempo. La forma de onda es sinusoidal, con amplitud Em y periodo asociado a la velocidad mecánica del rotor.
+
+[PÁGINA 10]
+Contenido detectado:
+- 10 -
+𝐸𝑚
+𝒆(𝒕)
+−
++
+𝒆(𝒕)
+𝒕
+𝜏𝑚, 𝑛𝑚
+GENERADOR AC
+ELEMENT AL
+Explicación / reconstrucción:
+Secuencia visual del generador AC elemental. Cada diapositiva representa una posición distinta del rotor/espira, mostrando cómo el voltaje inducido cambia de signo a lo largo del tiempo. La forma de onda es sinusoidal, con amplitud Em y periodo asociado a la velocidad mecánica del rotor.
+
+[PÁGINA 11]
+Contenido detectado:
+- 11 -
+𝒆(𝒕)
+−
++
+𝐸𝑚
+𝒆(𝒕)
+𝒕
+𝜏𝑚, 𝑛𝑚
+GENERADOR AC
+ELEMENT AL
+Explicación / reconstrucción:
+Secuencia visual del generador AC elemental. Cada diapositiva representa una posición distinta del rotor/espira, mostrando cómo el voltaje inducido cambia de signo a lo largo del tiempo. La forma de onda es sinusoidal, con amplitud Em y periodo asociado a la velocidad mecánica del rotor.
+
+[PÁGINA 12]
+Contenido detectado:
+- 12 -
+𝒆(𝒕)
+−
++
+𝐸𝑚
+𝒆(𝒕)
+𝒕
+𝜏𝑚, 𝑛𝑚
+GENERADOR AC
+ELEMENT AL
+Explicación / reconstrucción:
+Secuencia visual del generador AC elemental. Cada diapositiva representa una posición distinta del rotor/espira, mostrando cómo el voltaje inducido cambia de signo a lo largo del tiempo. La forma de onda es sinusoidal, con amplitud Em y periodo asociado a la velocidad mecánica del rotor.
+
+[PÁGINA 13]
+Contenido detectado:
+- 13 -
+𝒆(𝒕)
+−
++
+𝒆(𝒕)
+𝐸𝑚
+𝒕
+𝜏𝑚, 𝑛𝑚
+GENERADOR AC
+ELEMENT AL
+Explicación / reconstrucción:
+Secuencia visual del generador AC elemental. Cada diapositiva representa una posición distinta del rotor/espira, mostrando cómo el voltaje inducido cambia de signo a lo largo del tiempo. La forma de onda es sinusoidal, con amplitud Em y periodo asociado a la velocidad mecánica del rotor.
+
+[PÁGINA 14]
+Contenido detectado:
+PRINCIPIO DE OPERACIÓN DE UN
+GENERADOR DC ELEMENT AL
+Explicación / reconstrucción:
+Título de la sección sobre el principio de operación de un generador DC elemental.
+
+[PÁGINA 15]
+Contenido detectado:
+- 15 -
+𝐸𝑚
+𝒆(𝒕)
+𝒆(𝒕)−
++
+𝑒(𝑡) +−
+𝒕
+𝜏𝑚, 𝑛𝑚
+GENERADOR DC
+ELEMENT AL
+Explicación / reconstrucción:
+Secuencia del generador DC elemental. La conmutación rectifica la señal generada por la espira, de modo que el voltaje de salida se mantiene con la misma polaridad en el circuito externo. La curva sigue siendo pulsante, pero ya no alterna signo como en el generador AC elemental. La idea de fondo es que el conmutador transforma la fem alterna interna en una salida DC pulsante.
+
+[PÁGINA 16]
+Contenido detectado:
+- 16 -
+𝑒(𝑡) +−
+𝐸𝑚
+𝒆(𝒕)
+𝒕
+𝜏𝑚, 𝑛𝑚
+GENERADOR DC
+ELEMENT AL
+Explicación / reconstrucción:
+Secuencia del generador DC elemental. La conmutación rectifica la señal generada por la espira, de modo que el voltaje de salida se mantiene con la misma polaridad en el circuito externo. La curva sigue siendo pulsante, pero ya no alterna signo como en el generador AC elemental. La idea de fondo es que el conmutador transforma la fem alterna interna en una salida DC pulsante.
+
+[PÁGINA 17]
+Contenido detectado:
+- 17 -
+𝑒(𝑡) +−
+𝒆(𝒕)
+𝒕
+𝜏𝑚, 𝑛𝑚
+GENERADOR DC
+ELEMENT AL
+Explicación / reconstrucción:
+Secuencia del generador DC elemental. La conmutación rectifica la señal generada por la espira, de modo que el voltaje de salida se mantiene con la misma polaridad en el circuito externo. La curva sigue siendo pulsante, pero ya no alterna signo como en el generador AC elemental. La idea de fondo es que el conmutador transforma la fem alterna interna en una salida DC pulsante.
+
+[PÁGINA 18]
+Contenido detectado:
+- 18 -
++−
+𝒆(𝒕)
+𝒕
+𝑒(𝑡)
+𝜏𝑚, 𝑛𝑚
+GENERADOR DC
+ELEMENT AL
+Explicación / reconstrucción:
+Secuencia del generador DC elemental. La conmutación rectifica la señal generada por la espira, de modo que el voltaje de salida se mantiene con la misma polaridad en el circuito externo. La curva sigue siendo pulsante, pero ya no alterna signo como en el generador AC elemental. La idea de fondo es que el conmutador transforma la fem alterna interna en una salida DC pulsante.
+
+[PÁGINA 19]
+Contenido detectado:
+- 19 -
+𝒆(𝒕)
+𝒕
+𝑒(𝑡) +−
+𝜏𝑚, 𝑛𝑚
+GENERADOR DC
+ELEMENT AL
+Explicación / reconstrucción:
+Secuencia del generador DC elemental. La conmutación rectifica la señal generada por la espira, de modo que el voltaje de salida se mantiene con la misma polaridad en el circuito externo. La curva sigue siendo pulsante, pero ya no alterna signo como en el generador AC elemental. La idea de fondo es que el conmutador transforma la fem alterna interna en una salida DC pulsante.
+
+[PÁGINA 20]
+Contenido detectado:
+𝑒(𝑡) +−
+- 20 -
+𝐸𝑚
+𝒆(𝒕)
+𝜏𝑚, 𝑛𝑚
+𝒕
+GENERADOR DC
+ELEMENT AL
+Explicación / reconstrucción:
+Secuencia del generador DC elemental. La conmutación rectifica la señal generada por la espira, de modo que el voltaje de salida se mantiene con la misma polaridad en el circuito externo. La curva sigue siendo pulsante, pero ya no alterna signo como en el generador AC elemental. La idea de fondo es que el conmutador transforma la fem alterna interna en una salida DC pulsante.
+
+[PÁGINA 21]
+Contenido detectado:
+VOLTAJE INDUCIDO EN UNA ESPIRA
+Explicación / reconstrucción:
+Título de la sección sobre voltaje inducido en una espira.
+
+[PÁGINA 22]
+Contenido detectado:
+- 22 -
+VOLTAJE INDUCIDO EN UNA ESPIRA
+𝑒(𝑡) +−
+𝜙𝑚
+𝜙(𝑡)
+𝜔𝑟𝑡
+𝜃1
+𝑑 Ԧ𝑆
+𝐵
+𝜙(𝑡)
+𝜔𝑟
+𝜃1
+𝑒(𝑡) +−
+𝜃2
+𝑑 Ԧ𝑆
+𝐵
+𝜙(𝑡)
+𝜔𝑟
+𝑒(𝑡) +−
+𝜃3
+𝑑 Ԧ𝑆
+𝐵
+𝜙(𝑡)
+𝜔𝑟
+𝜃2 𝜃3
+Se observa que el flujo de campo magnético de la espira formada
+por los dos conductores es 𝜙 𝑡 = 𝜙𝑚 cos 𝜃 = 𝜙𝑚 cos 𝜔𝑟𝑡.
+Por lo tanto, al aplicar la Ley de Faraday, el voltaje inducido será
+𝑒 𝑡 = − 𝑑𝜙 𝑡
+𝑑𝑡 = 𝜙𝑚𝜔𝑟 sin 𝜔𝑟𝑡 ,
+con una amplitud de
+𝐸𝑚 = 𝜙𝑚𝜔𝑟
+𝐸𝑚
+𝑒(𝑡)
+Explicación / reconstrucción:
+Se estudia una espira girando en un campo magnético. El flujo a través de la espira se expresa como Φ(t)=Φm cos(θ)=Φm cos(ωr t). Al aplicar Faraday, se obtiene e(t)=−dΦ/dt=Φm ωr sin(ωr t). La diapositiva muestra varias posiciones angulares (θ1, θ2, θ3) para ilustrar cómo cambia el flujo.
+
+[PÁGINA 23]
+Contenido detectado:
+- 23 -
+𝒆(𝒕)−
++𝒆(𝒕) +−
+𝒍𝒓
+𝐵
+Explicación / reconstrucción:
+Vista de dos conductores opuestos de la espira dentro del campo B. Se destaca que cada conductor ve una fem inducida de polaridad opuesta, lo que al combinarse produce el voltaje total en la espira.
+
+[PÁGINA 24]
+Contenido detectado:
+- 24 -
+𝒆(𝒕) +−
+𝒍𝒓
+𝐵
+En este caso, usando la Ley de Faraday – Henry en forma vectorial, el
+voltaje inducido en uno de los dos conductores de la espira será
+Ԧ𝑒 = 𝑙 Ԧ𝑣 × 𝐵,
+con una magnitud de
+𝑒 = 𝑙𝑣𝐵 sin 𝛼 = 𝑙𝑟𝜔𝑟𝐵 sin 𝛼
+Ԧ𝑣
+𝑒(𝑡) +− Ԧ𝑣
+𝜔𝑟
+𝛼
+Explicación / reconstrucción:
+Aplicación de la ley de Faraday-Henry en forma vectorial: e⃗=l⃗ v⃗×B⃗. La magnitud depende de e=l v B sin α, donde α es el ángulo entre la velocidad del conductor y el campo magnético. La figura relaciona la velocidad tangencial del conductor, el radio y la orientación del campo.
+
+[PÁGINA 25]
+Contenido detectado:
+- 25 -
+𝒆(𝒕) +−
+𝒍𝒓
+𝐵
+Teniendo en cuenta que la superficie 𝑆 de la bobina está dada por
+𝑆 = 2𝑙𝑟, que el flujo de campo magnético máximo es 𝜙𝑚 = 𝐵𝑆, y que
+la espira está formada por dos conductores, el voltaje inducido total
+inducido en toda la espira (2 conductores) será
+𝑒 = 𝜙𝑚𝜔𝑟 sin 𝛼
+Ԧ𝑣
+𝑒(𝑡) +− Ԧ𝑣
+𝜔𝑟
+𝛼
+Explicación / reconstrucción:
+Se demuestra que la superficie de la bobina es S=2lr y que el flujo máximo es Φm=BS. Como la espira tiene dos conductores activos, el voltaje total inducido suma ambas contribuciones y puede escribirse como e=Φm ωr sin α.
+
+[PÁGINA 26]
+Contenido detectado:
+𝛼
+- 26 -
+𝒆(𝒕) +−
+𝒍𝒓
+𝐵
+Además, desde esta perspectiva, se verifica que 𝛼 = 𝜃 = 𝜔𝑟𝑡. Es decir,
+𝑒 𝑡 = 𝜙𝑚𝜔𝑟 sin 𝜔𝑟𝑡, tal como se mostró anteriormente.
+Igualmente, 𝐸𝑚 = 𝜙𝑚𝜔𝑟
+Ԧ𝑣
+𝑒(𝑡) +Ԧ𝑣
+𝜔𝑟
+−
+𝜃
+𝑒(𝑡) +−
+Explicación / reconstrucción:
+Se iguala el ángulo geométrico con el ángulo mecánico: α=θ=ωr t. Por eso la fem final queda e(t)=Φm ωr sin(ωr t), y la amplitud es Em=Φm ωr. Esto conecta directamente velocidad, flujo y voltaje generado.
+
+[PÁGINA 27]
+Contenido detectado:
+ESTRATEGIAS PARA INCREMENT AR EL
+VOLTAJE INDUCIDO
+Explicación / reconstrucción:
+Título de la sección sobre estrategias para incrementar el voltaje inducido.
+
+[PÁGINA 28]
+Contenido detectado:
+- 28 -
+INCREMENTO EL VOLTAJE INDUCIDO
+𝒆(𝒕) +−
+𝒍𝒓
+𝒆(𝒕) +−
+𝐴1 𝐴2 𝐴1 𝐴2
+Explicación / reconstrucción:
+Se muestran distintas maneras de aumentar el voltaje generado en una máquina DC: más conductores activos, más bobinas, mejor distribución de las delgas del conmutador y arreglos de devanado que permiten sumar las fem individuales. La idea general es incrementar el número de conductores que contribuyen al voltaje y reducir el rizado.
+
+[PÁGINA 29]
+Contenido detectado:
+- 29 -
+𝒆(𝒕) +−
+𝑒(𝑡) +−
+𝐴1
+𝐴2
+𝐴1
+𝐴2
+𝐵1
+𝐵2𝐶1
+𝐶2𝐷1
+𝐷2
+𝐵1
+𝐵2
+𝐶1 𝐷1
+𝐶2𝐷2
+INCREMENTO EL VOLTAJE INDUCIDO
+Explicación / reconstrucción:
+Se muestran distintas maneras de aumentar el voltaje generado en una máquina DC: más conductores activos, más bobinas, mejor distribución de las delgas del conmutador y arreglos de devanado que permiten sumar las fem individuales. La idea general es incrementar el número de conductores que contribuyen al voltaje y reducir el rizado.
+
+[PÁGINA 30]
+Contenido detectado:
+- 30 -
+𝒆(𝒕) +−
+𝑒(𝑡)
++−
+𝐴1
+𝐴2𝐵1
+𝐵2𝐶1
+𝐶2𝐷1
+𝐷2
+INCREMENTO EL VOLTAJE INDUCIDO
+Explicación / reconstrucción:
+Se muestran distintas maneras de aumentar el voltaje generado en una máquina DC: más conductores activos, más bobinas, mejor distribución de las delgas del conmutador y arreglos de devanado que permiten sumar las fem individuales. La idea general es incrementar el número de conductores que contribuyen al voltaje y reducir el rizado.
+
+[PÁGINA 31]
+Contenido detectado:
+- 31 -
+𝒆(𝒕) +−
+𝑒(𝑡)
++
+𝐴1
+𝐴2𝐵1
+𝐵2𝐶1
+𝐶2𝐷1
+𝐷2
+−
+𝑒𝐴(𝑡) 𝑒𝐵(𝑡)
+𝑒𝐶(𝑡)𝑒𝐷(𝑡)
+INCREMENTO EL VOLTAJE INDUCIDO
+Explicación / reconstrucción:
+Se muestran distintas maneras de aumentar el voltaje generado en una máquina DC: más conductores activos, más bobinas, mejor distribución de las delgas del conmutador y arreglos de devanado que permiten sumar las fem individuales. La idea general es incrementar el número de conductores que contribuyen al voltaje y reducir el rizado.
+
+[PÁGINA 32]
+Contenido detectado:
+- 32 -
+𝑒(𝑡)
++ −
+𝑒𝐴4(𝑡)
++
+−
+𝑒𝑎3(𝑡)
++
+−
+𝑒𝑎1(𝑡) 𝑒𝑎2(𝑡)
+𝑒𝐴3(𝑡)
+𝑒𝐴2(𝑡) 𝑒𝐴1(𝑡)
+𝑒𝑎4(𝑡)
+Máquina DC con devanado imbricado, 2 polos, 8 delgas, 8 bobinas,
+2 escobillas. Tomado de Krause, 2013.
+INCREMENTO EL VOLTAJE INDUCIDO
+Explicación / reconstrucción:
+La figura corresponde a una máquina DC con devanado imbricado, 2 polos, 8 delgas, 8 bobinas y 2 escobillas. Este tipo de devanado reparte la corriente en varias ramas paralelas y ayuda a suavizar la salida.
+
+[PÁGINA 33]
+Contenido detectado:
+- 33 -
+Voltaje inducido en el Generador DC. Tomado de Krause, 2013.
+INCREMENTO EL VOLTAJE INDUCIDO
+Explicación / reconstrucción:
+Referencia visual del voltaje inducido en un generador DC. La gráfica ilustra cómo las múltiples bobinas y la conmutación convierten el voltaje alternante interno en una salida unidireccional.
+
+[PÁGINA 34]
+Contenido detectado:
+- 34 -
+Máquina DC con devanado imbricado, 6 polos, 12 delgas, 12 bobinas,
+6 escobillas. Tomado de Guru, 2003.
+INCREMENTO EL VOLTAJE INDUCIDO
+Explicación / reconstrucción:
+Máquina DC con devanado imbricado de 6 polos, 12 delgas, 12 bobinas y 6 escobillas. A mayor número de polos y bobinas, más uniforme puede ser la tensión rectificada.
+
+[PÁGINA 35]
+Contenido detectado:
+- 35 -
+Máquina DC con devanado ondulado, 4 polos, 9 delgas, 9 bobinas, 2
+escobillas. Tomado de Guru, 2003.
+INCREMENTO EL VOLTAJE INDUCIDO
+Explicación / reconstrucción:
+Máquina DC con devanado ondulado de 4 polos, 9 delgas, 9 bobinas y 2 escobillas. En este devanado, las bobinas se conectan de forma que la tensión se suma a lo largo del recorrido, favoreciendo el voltaje antes que la corriente.
+
+[PÁGINA 36]
+Contenido detectado:
+DEVANADO DE EXCIT ACIÓN
+Explicación / reconstrucción:
+Título de la sección sobre devanado de excitación.
+
+[PÁGINA 37]
+Contenido detectado:
+- 37 -
+DEVANADO DE EXCIT ACIÓN
+❑ Una única espira entregaría un voltaje DC
+pulsante con cruces por cero de baja
+potencia, lo cual sería poco práctico.
+❑ Los imanes permanentes son muy
+prácticos, pero limitan el control del
+voltaje generado.
+❑ Una máquina eléctrica DC con una única
+espira de imanes permanentes no
+tiene utilidad práctica.
+𝑒(𝑡) +−
+Explicación / reconstrucción:
+Una sola espira produciría un voltaje DC pulsante con cruces por cero y muy baja potencia; por eso no es una solución práctica. Los imanes permanentes simplifican el diseño, pero limitan el control del voltaje generado.
+
+[PÁGINA 38]
+Contenido detectado:
+- 38 -
+DEVANADO DE EXCIT ACIÓN
+𝑒(𝑡) +−
+❑ Al incrementar el número de bobinas
+(espiras y conductores) de la armadura el
+rizado del voltaje DC generado disminuye.
+❑ En la imagen se observan cuatro bobinas en
+la armadura.
+❑ Los imanes permanentes en estos casos
+pueden ser prácticos para máquinas DC de
+baja potencia.
+Explicación / reconstrucción:
+Al aumentar el número de bobinas de armadura disminuye el rizado del voltaje DC. La presencia de cuatro bobinas ya produce una salida más continua que una sola espira, aunque aún con pulsaciones.
+
+[PÁGINA 39]
+Contenido detectado:
+- 39 -
+DEVANADO DE EXCIT ACIÓN
+𝑒(𝑡) +−
+❑ En esta imagen se observan seis bobinas en
+la armadura (devanado imbricado).
+❑ En una vuelta del rotor se generaría un
+voltaje con un rizado de seis picos.
+❑ La magnitud de ese voltaje dependería de
+la velocidad del rotor y del campo
+magnético ofrecido por los imanes.
+Explicación / reconstrucción:
+Con seis bobinas en la armadura (devanado imbricado), una vuelta completa del rotor genera un voltaje con seis picos de rizado. La magnitud depende de la velocidad del rotor y de la intensidad del campo magnético.
+
+[PÁGINA 40]
+Contenido detectado:
+- 40 -
+DEVANADO DE EXCIT ACIÓN
+𝑒(𝑡) +−
+❑ Para aprovechar la funcionalidad de los
+arrollamientos en vez del uso de los imanes
+se requiere incorporar un núcleo
+ferromagnético para el devanado de
+excitación.
+❑ Aunque pareciera conveniente que este
+núcleo sea de grano orientado, en la práctica
+se usan LAE de Grado No Orientado,
+debido, entre otras razones, al fenómeno de
+la reacción de armadura.
+Explicación / reconstrucción:
+Para usar devanados en lugar de imanes permanentes se requiere un núcleo ferromagnético en el devanado de excitación. Aunque un material de grano orientado parecería ideal, en la práctica se usan láminas no orientadas debido a la reacción de armadura.
+
+[PÁGINA 41]
+Contenido detectado:
+- 41 -
+DEVANADO DE EXCIT ACIÓN
+𝑒(𝑡) +−
+❑ Se espera que las líneas de campo
+magnético recibidas por la armadura
+ofrezcan una configuración similar a la
+ofrecida por los imanes permanentes.
+Sin embargo, la reacción de armadura
+puede distorsionarlas
+considerablemente.
+❑ Estas máquinas consideran diversos
+mecanismos para tratar de organizar la
+distribución del campo magnético en su
+interior.
+Explicación / reconstrucción:
+El campo creado por el devanado de excitación debería parecerse al de un imán permanente, pero la reacción de armadura puede deformarlo de forma importante.
+
+[PÁGINA 42]
+Contenido detectado:
+- 42 -
+DEVANADO DE EXCIT ACIÓN
+𝑒(𝑡) +−
+❑ Lo más común es que las bobinas que
+forman el devanado de excitación operen
+con voltaje o con intensidad de
+corriente idéntica o muy similar a la
+armadura.
+❑ En la práctica, estas bobinas se diseñan
+para (shunt) con la armadura, conectarse
+en serie o en paralelo
+Explicación / reconstrucción:
+Las bobinas de excitación suelen diseñarse para operar con voltaje o corriente similar a la armadura. Por eso se conectan típicamente en serie o en paralelo, dependiendo del tipo de máquina DC.
+
+[PÁGINA 43]
+Contenido detectado:
+- 43 -
+𝑒(𝑡) +−
+❑ Para un núcleo particular, el número de
+vueltas de estas bobinas define el voltaje
+de operación y el calibre del alambre
+utilizado define la corriente nominal.
+❑ Al igual que en las máquinas AC, estos
+devanados producen polos magnéticos
+pares.
+DEVANADO DE EXCIT ACIÓN
+Explicación / reconstrucción:
+El número de vueltas define el voltaje de operación y el calibre del alambre define la corriente nominal. Estos devanados generan polos magnéticos pares, igual que en las máquinas AC.
+
+[PÁGINA 44]
+Contenido detectado:
+- 44 -
+Zona neutra
+𝑒(𝑡) +−
+❑ La distribución del campo magnético
+ideal formará polos magnéticos pares
+claramente definidos con unas zonas
+neutras intermedias.
+❑ Se espera que el devanado de excitación
+tenga la capacidad de llevar al núcleo
+ferromagnético cerca a la zona de
+saturación.
+DEVANADO DE EXCIT ACIÓN
+Explicación / reconstrucción:
+La distribución ideal del campo presenta polos pares claramente definidos y zonas neutras intermedias. El devanado de excitación debe acercar el núcleo a saturación para obtener un campo suficiente.
+
+[PÁGINA 45]
+Contenido detectado:
+- 45 -
+DEVANADO DE EXCIT ACIÓN
+𝑒(𝑡) +−
+❑ En la práctica se utilizan dos bobinas
+independientes para formar el devanado
+de excitación: Shunt y Serie.
+❑ El devanado shunt viene diseñado para
+para conectarse en paralelo con la
+armadura, mientras que el devanado
+serie esta diseñado para conectarse en
+serie con la armadura.
+❑ Son dos bobinas cuentan con
+características técnicas muy distintas
+por lo que no hay que confundirse a la
+hora de conectarlas.
+Explicación / reconstrucción:
+Se distinguen dos bobinas de excitación: shunt y serie. La shunt se conecta en paralelo con la armadura y la serie en serie con ella; ambas tienen características técnicas diferentes y no deben confundirse.
+
+[PÁGINA 46]
+Contenido detectado:
+REACCIÓN DE ARMADURA
+Explicación / reconstrucción:
+Título de la sección sobre reacción de armadura.
+
+[PÁGINA 47]
+Contenido detectado:
+- 47 -
+REACCIÓN DE ARMADURA
+𝑒(𝑡) +−
+❑ El concepto de “reacción de armadura” se
+refiere a los efectos eléctricos,
+magnéticos y mecánicos que produce
+la corriente del devanado de
+armadura, es decir, cuando la máquina
+está operando con carga.
+❑ En todas las máquinas eléctricas se debe
+considerar este fenómeno, el cual
+normalmente tiende a afectar
+negativamente el desempeño de la
+máquina.
+Explicación / reconstrucción:
+La reacción de armadura es el conjunto de efectos eléctricos, magnéticos y mecánicos producidos por la corriente de armadura cuando la máquina opera con carga. Normalmente degrada el desempeño porque distorsiona el campo y afecta la conmutación.
+
+[PÁGINA 48]
+Contenido detectado:
+- 48 -
+CAMPO DEL DEVANADO DE EXCIT ACIÓN
+Zona Neutra
+𝑒(𝑡) +−
+❑ Tal como se observa, en la Zona Neutra
+del campo magnético creado inicialmente
+por el devanado de excitación se ubican
+los conductores en los cuales ocurre la
+conmutación del voltaje inducido.
+❑ El posicionamiento de las escobillas
+también responde a la ubicación de esa
+Zona Neutra.
+❑ En esta imagen aún no se tiene en
+cuenta el efecto de la Reacción de
+Armadura sobre el campo magnético
+producido por el devanado de excitación.
+Explicación / reconstrucción:
+Se muestra la zona neutra del campo de excitación: allí se ubican los conductores donde ocurre la conmutación. La posición de las escobillas depende de esta zona neutra, antes de considerar el efecto de la armadura.
+
+[PÁGINA 49]
+Contenido detectado:
+- 49 -
+Zona Neutra
+𝑒(𝑡) +−
+CAMPO DEL DEVANADO DE EXCIT ACIÓN
+❑ Si se considera únicamente el campo
+magnético creado por el devanado de
+excitación (sin corriente por la
+armadura), la posición ideal de la Zona
+Neutra y de las escobillas sería la
+mostrada en la imagen.
+❑ La magnitud de este campo magnético
+dependería de la corriente aplicada al
+devanado de excitación.
+Explicación / reconstrucción:
+Sin corriente en la armadura, la posición ideal de la zona neutra y de las escobillas coincide con la simetría del campo de excitación. La magnitud del campo depende de la corriente de excitación.
+
+[PÁGINA 50]
+Contenido detectado:
+- 50 -
+Zona Neutra
+𝑒(𝑡) +−
+CAMPO MAGNÉTICO DE LA ARMADURA
+❑ La corriente a través de la armadura
+crea un nuevo campo magnético
+(reacción de armadura) de acuerdo con
+la Ley de Ampère-Maxwell.
+❑ Este campo magnético es proporcional,
+en cierto rango, a la corriente a través
+del devanado de armadura, la cual
+depende de la carga del generador.
+Explicación / reconstrucción:
+La corriente de armadura crea un nuevo campo magnético según Ampère-Maxwell. Este campo es proporcional a la corriente de armadura y, por tanto, a la carga del generador.
+
+[PÁGINA 51]
+Contenido detectado:
+- 51 -
+Zona
+Neutra
+Nueva
+Zona
+Neutra
+𝑒(𝑡) +−
+REACCIÓN DE ARMADURA
+❑ La combinación de los campos
+magnéticos del devanado de excitación y
+de la armadura generan una nueva
+distribución del campo que se desvía de
+la condición sin carga.
+❑ Este campo magnético resultante depende
+de la magnitud de la excitación, de la
+velocidad de la máquina, del voltaje
+generado y de la corriente en la carga.
+❑ La Zona Neutra naturalmente se
+desplaza produciendo inicialmente un
+efecto sobre el proceso de conmutación
+de las bobinas.
+Explicación / reconstrucción:
+La superposición de los campos de excitación y armadura genera una nueva distribución del flujo, desplazando la zona neutra. Ese desplazamiento complica la conmutación correcta de las bobinas.
+
+[PÁGINA 52]
+Contenido detectado:
+MÉTODOS PARA DISMINUIR LA REACCIÓN DE
+ARMADURA
+Explicación / reconstrucción:
+Título de la sección sobre métodos para disminuir la reacción de armadura.
+
+[PÁGINA 53]
+Contenido detectado:
+- 53 -
+Zona
+Neutra
+Nueva
+Zona
+Neutra
++𝑒(𝑡)−
+DECALAJE DE ESCOBILLAS
+❑ Este es el mecanismo más básico para
+disminuir los efectos de la reacción de
+armadura.
+❑ Consiste en mover las escobillas de
+forma consistente hasta alcanzar la
+nueva zona neutra.
+❑ La posición de la nueva zona neutra
+dependerá de la intensidad de la
+reacción de armadura, por lo que el
+decalaje solo es efectivo para un punto
+de operación específico.
+Explicación / reconstrucción:
+El decalaje de escobillas es el mecanismo más básico: se desplazan las escobillas hasta la nueva zona neutra. Es barato, pero solo sirve bien para un punto de operación específico.
+
+[PÁGINA 54]
+Contenido detectado:
+- 54 -
+Zona
+Neutra
+Nueva
+Zona
+Neutra
++
+𝑒(𝑡)
+−
+DECALAJE DE ESCOBILLAS
+❑ Técnicamente habría que posicionar las
+escobillas para cada punto de
+operación de la máquina, lo que lo hace
+poco práctico, aunque muy económico.
+❑ El efecto más visible de una mala
+posición de las escobillas es el chispeo
+exagerado en el colector de la máquina.
+Explicación / reconstrucción:
+El ajuste de escobillas para cada carga sería poco práctico. Una mala posición produce chispeo excesivo en el colector.
+
+[PÁGINA 55]
+Contenido detectado:
+- 55 -
+INTER-POLOS
+𝑒(𝑡) +−
+❑ Se busca que estos devanados
+contrarresten la reacción de armadura
+creando un campo magnético opuesto
+que cambia en función de la corriente de
+armadura.
+❑ Es un método aplicable a máquinas DC de
+potencia intermedia y puede
+complementarse con el decalaje de las
+escobillas.
+Explicación / reconstrucción:
+Los interpolos generan un campo opuesto al de la reacción de armadura y ayudan a mejorar la conmutación. Son útiles en máquinas DC de potencia intermedia y pueden combinarse con el decalaje de escobillas.
+
+[PÁGINA 56]
+Contenido detectado:
+- 56 -
+DEVANADO DE COMPENSACIÓN
+𝑒(𝑡) +−
+❑ Estos devanados son más complejos de
+instalar y mantener, pero son muy
+efectivos para reducir la reacción de
+armadura porque tratan de
+contrarrestar el campo magnético de la
+armadura justo en el punto donde se
+producen.
+❑ Se usan en máquinas DC de gran
+potencia por su complejidad.
+❑ En máquinas DC muy grandes suelen
+usarse los tres mecanismos
+simultáneamente.
+Explicación / reconstrucción:
+El devanado de compensación contrarresta el campo de armadura justo donde se produce. Es más complejo, pero muy efectivo; por eso se usa en máquinas DC de gran potencia.
+
+[PÁGINA 57]
+Contenido detectado:
+COMPONENTES Y PLACA DE DATOS
+Explicación / reconstrucción:
+Inicio de la sección sobre componentes y placa de datos. Las siguientes diapositivas muestran material visual y enlaces de apoyo para identificar partes y revisar documentación técnica.
+
+[PÁGINA 58]
+Contenido detectado:
+- 58 -
+MOTORES DE LOS TRENES DEL METRO
+https://bit.ly/3c4jAqD
+Explicación / reconstrucción:
+Material de apoyo sobre motores de trenes del metro. La imagen sirve como ejemplo de aplicación real de máquinas eléctricas de potencia.
+
+[PÁGINA 59]
+Contenido detectado:
+- 59 -
+MOTORES DE LOS TRENES DEL METRO
+Explicación / reconstrucción:
+Continuación del material visual sobre motores de trenes del metro.
+
+[PÁGINA 60]
+Contenido detectado:
+- 60 -
+MOTORES DE LOS TRENES DEL METRO
+https://bit.ly/3yGstQW
+Enlace a Video
+Explicación / reconstrucción:
+Se incluye un video de apoyo sobre motores de los trenes del metro.
+
+[PÁGINA 61]
+Contenido detectado:
+- 61 -
+OPERACIÓN COMO MOTOR
+https://bit.ly/2Sr5wk1
+Explicación / reconstrucción:
+Video de apoyo sobre la operación como motor. Refuerza el principio de funcionamiento en régimen motriz.
+
+[PÁGINA 62]
+Contenido detectado:
+- 62 -
+COMPONENTES DE LA MÁQUINA DC
+Explicación / reconstrucción:
+Sección dedicada a los componentes de la máquina DC. Aunque la imagen no se transcribe completamente, normalmente aquí se identifican estator, rotor/armadura, escobillas, conmutador, polos y carcasa.
+
+[PÁGINA 63]
+Contenido detectado:
+- 63 -
+COMPONENTES DE LA MÁQUINA DC
+https://bit.ly/3enWQ6J
+Explicación / reconstrucción:
+Material visual adicional sobre componentes de la máquina DC.
+
+[PÁGINA 64]
+Contenido detectado:
+- 64 -
+COMPONENTES DE LA MÁQUINA DC
+Explicación / reconstrucción:
+Otra diapositiva de apoyo sobre componentes; probablemente muestra detalles internos del motor/generador DC.
+
+[PÁGINA 65]
+Contenido detectado:
+- 65 -
+COMPONENTES DE LA MÁQUINA DC
+Explicación / reconstrucción:
+Otra diapositiva de apoyo sobre componentes; sirve para reconocer partes mecánicas y eléctricas.
+
+[PÁGINA 66]
+Contenido detectado:
+- 66 -
+COMPONENTES DE LA MÁQUINA DC
+https://bit.ly/3xRbCdS
+Explicación / reconstrucción:
+Material visual sobre componentes de la máquina DC.
+
+[PÁGINA 67]
+Contenido detectado:
+- 67 -
+COMPONENTES DE LA MÁQUINA DC
+Explicación / reconstrucción:
+Material visual sobre componentes de la máquina DC.
+
+[PÁGINA 68]
+Contenido detectado:
+- 68 -
+COMPONENTES DE LA MÁQUINA DC
+Explicación / reconstrucción:
+Material visual sobre componentes de la máquina DC.
+
+[PÁGINA 69]
+Contenido detectado:
+- 69 -
+COMPONENTES DE LA MÁQUINA DC
+https://bit.ly/3eovfSJ
+https://bit.ly/3uuMJ5C
+Explicación / reconstrucción:
+Material visual sobre componentes de la máquina DC con enlaces complementarios.
+
+[PÁGINA 70]
+Contenido detectado:
+- 70 -
+https://bit.ly/3vJ5fHG
+Explicación / reconstrucción:
+Material visual adicional; probablemente muestra despiece o animación de la máquina DC.
+
+[PÁGINA 71]
+Contenido detectado:
+- 71 -
+https://bit.ly/3f0UfOX
+https://bit.ly/3nSfYwE
+Explicación / reconstrucción:
+Material de apoyo con dos enlaces complementarios sobre componentes y operación.
+
+[PÁGINA 72]
+Contenido detectado:
+- 72 -
+https://bit.ly/3tt63Pk
+https://bit.ly/33yD2Yd
+Explicación / reconstrucción:
+Material de apoyo con dos enlaces complementarios sobre componentes y operación.
+
+[PÁGINA 73]
+Contenido detectado:
+- 73 -
+COMPONENTES DE LA MÁQUINA DC
+https://bit.ly/3b727gM
+Explicación / reconstrucción:
+Material visual sobre componentes de la máquina DC.
+
+[PÁGINA 74]
+Contenido detectado:
+- 74 -
+COMPONENTES DE LA MÁQUINA DC
+https://bit.ly/2Sx8UtV
+Explicación / reconstrucción:
+Material visual sobre componentes de la máquina DC.
+
+[PÁGINA 75]
+Contenido detectado:
+- 75 -
+https://bit.ly/3us8naB
+https://bit.ly/3ukgTZf
+Explicación / reconstrucción:
+Material de apoyo con dos enlaces complementarios sobre componentes de la máquina DC.
+
+[PÁGINA 76]
+Contenido detectado:
+- 76 -
+https://bit.ly/2SvVn5P
+Explicación / reconstrucción:
+Material visual adicional sobre componentes de la máquina DC.
+
+[PÁGINA 77]
+Contenido detectado:
+- 77 -
+COMPONENTES DE LA MÁQUINA DC
+https://bit.ly/3ha5xDk
+https://bit.ly/2QPsBN7
+Explicación / reconstrucción:
+Material visual sobre componentes de la máquina DC.
+
+[PÁGINA 78]
+Contenido detectado:
+- 78 -
+COMPONENTES DE LA MÁQUINA DC
+https://bit.ly/3tq7f5W
+https://bit.ly/2QXzETT
+Explicación / reconstrucción:
+Material visual sobre componentes de la máquina DC.
+
+[PÁGINA 79]
+Contenido detectado:
+- 79 -
+COMPONENTES DE LA MÁQUINA DC
+https://bit.ly/3nXCcgL
+Explicación / reconstrucción:
+Material visual sobre componentes de la máquina DC.
+
+[PÁGINA 80]
+Contenido detectado:
+- 80 -
+COMPONENTES DE LA MÁQUINA DC
+https://bit.ly/2Rwa6gm
+https://bit.ly/3tje7SI
+Explicación / reconstrucción:
+Material visual sobre componentes de la máquina DC.
+
+[PÁGINA 81]
+Contenido detectado:
+- 81 -
+PLACA DE DATOS
+https://bit.ly/3hizq4F
+Explicación / reconstrucción:
+Sección sobre la placa de datos de la máquina. Aquí normalmente se leen potencia nominal, voltaje, corriente, velocidad, frecuencia, tipo de servicio y demás parámetros de identificación.
+
+[PÁGINA 82]
+Contenido detectado:
+- 82 -
+PLACA DE DATOS
+https://bit.ly/3f6f77A
+Explicación / reconstrucción:
+Más material de apoyo sobre placa de datos.
+
+[PÁGINA 83]
+Contenido detectado:
+- 83 -
+PLACA DE DATOS
+https://bit.ly/3f3gHr1
+https://bit.ly/3xY45tJ
+Explicación / reconstrucción:
+Más material de apoyo sobre placa de datos.
+
+[PÁGINA 84]
+Contenido detectado:
+- 84 -
+PLACA DE DATOS
+https://bit.ly/2SB9xCK
+https://bit.ly/3vQH7mv
+Explicación / reconstrucción:
+Más material de apoyo sobre placa de datos.
+
+[PÁGINA 85]
+Contenido detectado:
+- 85 -
+PLACA DE DATOS
+https://bit.ly/3evpYcn
+Explicación / reconstrucción:
+Más material de apoyo sobre placa de datos.
+
+[PÁGINA 86]
+Contenido detectado:
+- 86 -
+PLACA DE DATOS
+https://bit.ly/3tqlx6M
+Explicación / reconstrucción:
+Más material de apoyo sobre placa de datos.
+
+[PÁGINA 87]
+Contenido detectado:
+- 87 -
+PLACA DE DATOS
+https://bit.ly/3hdveTq
+Explicación / reconstrucción:
+Más material de apoyo sobre placa de datos.
+
+[PÁGINA 88]
+Contenido detectado:
+¡MUCHAS GRACIAS!
+Explicación / reconstrucción:
+Cierre del bloque sobre máquina DC.
 
 ================================================================================
-TEMA 2: ENSAYO DE CORTOCIRCUITO
+SECCIÓN 2. ACCIONAMIENTO DE MÁQUINAS ELÉCTRICAS
 ================================================================================
 
-DEFINICIÓN Y PROPÓSITO:
-El Ensayo de Cortocircuito permite obtener:
-- Las pérdidas con carga nominales (pérdidas en el cobre) del transformador.
-- La impedancia de cortocircuito Zcc.
-- Los parámetros de la impedancia serie equivalente: Re1 (o Re2) y Xe1 (o Xe2).
+[PÁGINA 89]
+Contenido detectado:
+Docente
+Edwin Herlyt Lopera Mazo
+edwinlopera@itm.edu.co
+Facultad de Ingenierías
+Departamento de Mecatrónica y Electromecánica
+Ingeniería Mecatrónica
+Medellín, Colombia
+ACCIONAMIENTO DE MÁQUINAS ELÉCTRICAS
+Explicación / reconstrucción:
+Portada del segundo bloque: accionamiento de máquinas eléctricas.
 
-PROCEDIMIENTO:
-- Se cortocircuita UN LADO del transformador (usualmente el secundario).
-- Por el otro lado se aplica una tensión alterna BAJA a frecuencia nominal.
-- La tensión aplicada es tal que produzca una corriente de cortocircuito cercana a la corriente nominal.
-- Se puede realizar por cualquier lado, pero USUALMENTE se aplica la tensión por el LADO DE ALTA TENSIÓN.
-- Se miden: voltaje Vcc1, corriente Icc1 y potencia activa Pcc1 de entrada.
+[PÁGINA 90]
+Contenido detectado:
+❑ Partes de un sistema de control
+❑ Tecnologías de automatización
+❑ El relé de control
+❑ El contactor
+❑ Automatismos básicos con lógica cableada
+❑ Arranque estrella - triángulo
+❑ Módulos disponibles en el laboratorio
+AGENDA DE LA PRESENTACIÓN
+Explicación / reconstrucción:
+Agenda del bloque: partes de un sistema de control, tecnologías de automatización, relé de control, contactor, automatismos básicos, arranque estrella-triángulo y módulos de laboratorio.
 
-[DESCRIPCIÓN GRÁFICA - MONTAJE DEL ENSAYO (Diapositiva 6)]:
-Diagrama del montaje del ensayo de cortocircuito.
-- A la izquierda: fuente de tensión alterna Vcc1 con medidor de potencia Pcc1 y frecuencia f.
-- La corriente de entrada se denomina Icc1.
-- El transformador monofásico está representado como un bloque central.
-- El lado secundario está CORTOCIRCUITADO (barras unidas con un conductor, corriente Icc2 circula en cortocircuito).
-- La impedancia medida desde los terminales del primario se llama Zcc1.
+[PÁGINA 91]
+Contenido detectado:
+PARTES DE UN SISTEMA DE CONTROL
+Explicación / reconstrucción:
+Título de la sección sobre partes de un sistema de control.
 
-CONDICIÓN DE OPERACIÓN:
-Bajo cortocircuito, la corriente nominal (Icc1 = In1) se alcanza con un voltaje (Vcc1) que equivale aproximadamente al 3% al 8% del voltaje nominal del devanado (Vn1).
-La corriente de vacío I01 es insignificante frente a la corriente de cortocircuito, por lo tanto, LA RAMA DE MAGNETIZACIÓN SE DESPRECIA en este ensayo.
+[PÁGINA 92]
+Contenido detectado:
+- 4 -
+PARTES DE UN SISTEMA DE CONTROL
+Mando
+HMI
+ControlDetección Mando de
+potencia
+ActuadoresMáquina
+InstrumentaciónProtección
+Alimentación
+Explicación / reconstrucción:
+Se representan los bloques de un sistema de control: mando, HMI, detección, control, mando de potencia, máquina, actuadores, protección e instrumentación. La idea es que el proceso industrial se organiza en capas funcionales.
 
-[DESCRIPCIÓN GRÁFICA - CIRCUITO EQUIVALENTE BAJO CORTOCIRCUITO (Diapositiva 7)]:
-Circuito equivalente completo del transformador con el secundario cortocircuitado.
-- La fuente Vcc1 alimenta el lado primario con corriente Icc1 y potencia Pcc1.
-- La rama de magnetización (Rm1 // jXm1) aparece en el circuito pero se desprecia porque la corriente de vacío I01 es muy pequeña frente a Icc1.
-- Las impedancias serie R1, jX1 del primario y R2, jX2 del secundario (referidas al primario) están en serie.
-- La corriente del secundario referida al primario es I'cc2.
-- La impedancia Zcc1 vista desde el primario equivale a la impedancia serie equivalente de ambos devanados.
+[PÁGINA 93]
+Contenido detectado:
+- 5 -
+PARTES DE UN SISTEMA DE CONTROL
+Parte operativa
+Mando
+Maniobra
+Actuadores
+Parte control
+Tecnología
+cableada
+Tecnología
+programada
+Detectores de presencia
+Detectores de posición, encoder
+Presóstatos, termóstatos
+Pulsadores, interruptores
+Caudalímetros…
+Variadores de velocidad
+Contadores, temporizadores
+Relés de estado sólido de potencia
+Limitadores de presión, distribuidores neumáticos
+Cilindros y motores neumáticos, hidráulicos
+Motores eléctricos
+Bobinas, resistencias…
+Interfaz H-M
+Pantallas touch screen
+Panel local, tableros de control, botoneras…
+Teclados, ratones…
+Control neumático
+Sistemas electrónicos modulares
+Control electromecánico, relés, contadores, temp., contactores
+Panel local, tableros de control, botoneras…
+Autómatas programables (PLC´s)
+Microcontroladores
+Computadores
+Explicación / reconstrucción:
+Se distinguen la parte operativa, la parte de mando/maniobra, la parte de control y la parte de actuadores. También aparecen tecnologías cableadas y programadas, y ejemplos de sensores, pulsadores, PLC, microcontroladores, motores, bobinas y pantallas HMI.
 
-[DESCRIPCIÓN GRÁFICA - CIRCUITO SIMPLIFICADO (Diapositiva 8)]:
-Cuando se desprecia la rama de magnetización, el circuito equivalente bajo cortocircuito se reduce a:
-- Fuente Vcc1 en serie con Re1 (resistencia equivalente) y jXe1 (reactancia equivalente).
-- Esta impedancia Zcc1 es casi lineal entre voltaje y corriente (comportamiento resistivo-inductivo).
+[PÁGINA 94]
+Contenido detectado:
+TECNOLOGÍAS DE AUTOMATIZACIÓN
+Explicación / reconstrucción:
+Título de la sección sobre tecnologías de automatización.
 
-IMPEDANCIA PORCENTUAL - FÓRMULAS:
-La impedancia del transformador puede evaluarse desde cualquier lado. Su magnitud se expresa como porcentaje de la impedancia nominal:
+[PÁGINA 95]
+Contenido detectado:
+- 7 -
+TECNOLOGÍAS DE AUTOMATIZACIÓN
+Lógica cableada
+Eléctrica
+• Relé
+• Electrónica
+Neumática
+Hidráulica
+Mecánica
+Lógica programada
+PC
+PLC
+µcontrolador
+Explicación / reconstrucción:
+Clasificación de tecnologías de automatización: lógica cableada (eléctrica, neumática, hidráulica, mecánica) y lógica programada (PC, PLC, microcontrolador).
 
-Impedancia nominal primaria:  Zn1 = Vn1 / In1
-Impedancia nominal secundaria: Zn2 = Vn2 / In2
-Relación entre impedancias:    Zn1 = a² × Zn2
-Impedancia porcentual:         Zcc(%) = Zcc1/Zn1 = Zcc2/Zn2
+[PÁGINA 96]
+Contenido detectado:
+- 8 -
+LÓGICA CABLEADA
+Circuito de control Circuito de potencia
+Explicación / reconstrucción:
+Lógica cableada: separamos circuito de control y circuito de potencia. El control decide y el circuito de potencia ejecuta.
 
-[DESCRIPCIÓN GRÁFICA - DOS CIRCUITOS EQUIVALENTES (Diapositiva 9)]:
-Se muestran DOS circuitos equivalentes del ensayo de cortocircuito (referidos a cada lado):
-CIRCUITO IZQUIERDO (referido al primario):
-  - Fuente Vcc1, corriente Icc1, potencia Pcc1.
-  - Impedancia serie: Re1 + jXe1.
-  - Corriente secundaria referida al primario: I'cc2.
-  - Impedancia total vista: Zcc1.
-CIRCUITO DERECHO (referido al secundario):
-  - Fuente V'cc1, corriente I'cc1, potencia Pcc1.
-  - Impedancia serie: Re2 + jXe2.
-  - Corriente secundaria: Icc2.
-  - Impedancia total vista: Z'cc1 = Zcc2.
-CONCLUSIÓN: Ambos circuitos son equivalentes y la impedancia porcentual es la misma desde cualquier lado.
+[PÁGINA 97]
+Contenido detectado:
+- 9 -
+LÓGICA PROGRAMADA
+Programa lógico
+Circuito de potenciaCircuito de control
+Controlador
+Explicación / reconstrucción:
+Lógica programada: un programa lógico gobierna el controlador, que interactúa con el circuito de control y el de potencia.
 
-RELACIÓN VOLTAJE DE CORTOCIRCUITO - IMPEDANCIA:
-Dado que Icc alcanza la corriente nominal In1, el voltaje porcentual de cortocircuito equivale a la impedancia porcentual:
-Zcc(%) = (Zcc1/Zn1) = (Vcc1/In1) / (Vn1/In1) = Vcc1/Vn1 = Vcc(%)
-Por ello esta impedancia se denomina "impedance-voltage".
-La relación lineal entre voltaje y corriente permite realizar esta prueba a una corriente inferior (35%-50% de la nominal).
+[PÁGINA 98]
+Contenido detectado:
+RELÉ DE CONTROL
+Explicación / reconstrucción:
+Título de la sección sobre relé de control.
 
-FÓRMULAS DEL ENSAYO DE CORTOCIRCUITO:
-Impedancia de cortocircuito:      Zcc1 = Vcc1 / Icc1
-Resistencia equivalente:           Re1 = Pcc1 / Icc1²
-Reactancia de dispersión equiv.:  Xe1 = sqrt(Zcc1² - Re1²)
-Distribución de reactancias:       X1 = Xe1/2 ;  X2 = Xe1/(2a²)
-Distribución de resistencias:      R1 obtenida por Wheatstone/voltio-amperimétrico
-                                    Re1 = R1 + a²R2
+[PÁGINA 99]
+Contenido detectado:
+- 11 -
+RELÉ DE CONTROL
+❑ Relé magnetotérmico: se usa para protección contra sobrecargas combinando una protección tipo
+relé térmico con una protección de relé electromagnético. Es similar al que se usa para protección
+eléctrica en circuitos eléctricos residenciales.
+❑ Relés de medida: controlan características funcionales de los receptores. (Relé de medida de tensión y
+relé de medida de intensidad) de aplicación industrial.
+❑ Relé diferencial: destinado a la protección de personas contra contactos eléctricos directos e
+indirectos. Se pueden encontrar en algunos tomacorrientes de las vivienda. Es característico un botón tipo
+“Test” que tiene en su exterior que permite comprobar su estado de funcionamiento.
+❑ Relé de mando o auxiliar: este aparato se utiliza para operaciones de contactos simples, es decir no
+influye en él nada más que un interruptor o pulsador de activación. Su inconveniente es que la intensidad
+que soportan sus contactos no es muy elevada. Su ventaja, tiene una gran variedad de combinaciones:
+Combinaciones de los relés auxiliares
+Explicación / reconstrucción:
+Se explican tipos de relés: magnetotérmico para sobrecargas, relés de medida para tensión/intensidad, relé diferencial para protección de personas y relé auxiliar o de mando para maniobras simples.
 
+[PÁGINA 100]
+Contenido detectado:
+- 12 -
+RELÉ DE CONTROL
+RELÉS DE 8 Y 11 PINES
+8 pines
+11pines
+Explicación / reconstrucción:
+Se muestran relés de 8 y 11 pines como ejemplos de encapsulado y disposición de bornes.
+
+[PÁGINA 101]
+Contenido detectado:
+- 13 -
+RELÉ DE CONTROL
+RELÉ DE 14 PINES
+Explicación / reconstrucción:
+Se muestra un relé de 14 pines como otra variante común.
+
+[PÁGINA 102]
+Contenido detectado:
+- 14 -
+RELÉ DE CONTROL
+Numeración de los terminales EN 50005
+1. Número de contacto (ej. 11, 21, 31, ....)
+.2 contactos NC (ej. 12, 22, 32,..)
+.4 para contactos NA (ej. 14, 24, 34....)
+A1 y A2 para terminales de bobina
+B1, B2, B3 etc. para señales de entrada
+Número
+del contacto
+Función del
+Contacto (NA, NC)
+Ejemplo: relé de cuatro polos
+Nombre de contactos, en diferentes países
+Símbolo Configuración EU D GB USA No. de contactos
+Contacto
+normalmente
+abierto
+NO
+2NO
+nNO
+S
+2S
+nS
+A
+2A
+nA
+SPST-NO
+DPST-NO
+nPST-NO
+1
+2
+varios
+Contacto
+normalmente
+cerrado
+NC
+2NC
+nNC
+Ö
+2Ö
+nÖ
+B
+2B
+nB
+SPST-NC
+DPST-NC
+nPST-NC
+1
+2
+varios
+Contacto
+conmutado
+CO
+2CO
+nCO
+W
+2W
+nW
+C
+2C
+nC
+SPDT (1P2T)
+DPDT (2P2T)
+nPDT (nP2T)
+1
+2
+varios
+n = número de polos (1, ... ,4), S = 1, (simple); D = 2, (doble)
+KA1
+A1
+A2
+11
+12 14
+21
+22 24
+31
+32 34
+41
+42 44
+Marcación IEC (EU)
+Explicación / reconstrucción:
+Numeración EN 50005: terminales de contactos y bobina. Se explican contactos NA, NC y conmutados, así como la nomenclatura internacional (SPST, DPST, SPDT, etc.).
+
+[PÁGINA 103]
+Contenido detectado:
+- 15 -
+PARTES DEL CONT ACTOR
+1 - Carcaza inferior
+2 – Núcleo fijo
+3 – Espira de sombra
+4 – Bobina
+5 – Resorte antagonista
+6 – Núcleo móvil
+7 – Cabeza móvil
+8 – Contactos móviles
+9 – Contactos móviles auxiliares
+10 – Resortes del contacto móvil
+11 – Contactos fijos principales
+12 – Contactos fijos auxiliares
+13 - Tornillos con rondanas
+14 – Carcaza superior
+15 - Tapa
+10
+11
+12
+13
+14
+15
+1
+2 3
+4
+5
+6
+7
+8
+9
+11
+13
+12
+Explicación / reconstrucción:
+Título de la sección sobre partes del contactor.
+
+[PÁGINA 104]
+Contenido detectado:
+EL CONT ACTOR
+Explicación / reconstrucción:
+Título de la sección sobre el contactor.
+
+[PÁGINA 105]
+Contenido detectado:
+- 17 -
+PARTES DEL CONT ACTOR
+Bornes de contactos
+Bornes de contactos de fuerza (robustos eléctricamente)
+Bornes de contactos de mando. Contactos auxiliaresMuelle antagonista
+Cámara de extinción
+(antichispas)
+Martillo
+(armadura móvil) Chaveta de la
+parte móvil
+Contactos eléctricos Carcasa del contactor
+Muelle o resorte de retorno
+Bobina
+Martillo
+Chaveta
+(Pieza para la
+sujeción de la
+culata) ResorteCulata
+(Circuito magnético fijo)
+Amortiguador
+(Pieza de goma)
+Electroimán: compuesto por circuito
+magnético y bobina.
+A su vez, el circuito magnético está
+constituido por la culata y el martillo.Culata
+Base del contactor
+Bobina
+Explicación / reconstrucción:
+Se nombran las partes del contactor: bornes de fuerza y de mando, cámara de extinción, bobina, núcleo fijo y móvil, contactos principales y auxiliares, carcasa, resortes y amortiguador. El electroimán está formado por la culata y el martillo/armadura móvil.
+
+[PÁGINA 106]
+Contenido detectado:
+- 18 -
+FUNCIONAMIENTO DEL CONT ACTOR
+Contactor
+13 14
+13
+14
+Alimentación
+contactor
+Alimentación
+contactor
+A1
+A2
+A1
+A2
+Bobina
+energizada
+13
+14
+A1 A1
+A2 A2
+Interruptor Interruptor
+Explicación / reconstrucción:
+Funcionamiento del contactor: al energizar la bobina, la armadura móvil se desplaza y cambia el estado de los contactos 13-14 y otros contactos auxiliares, permitiendo o cortando el paso de corriente.
+
+[PÁGINA 107]
+Contenido detectado:
+- 19 -
+DISPOSITIVOS AUXILIARES
+1 - Bloque de contactos auxiliares
+2 – Temporizador neumático
+3 – Relé térmico
+4 – Adaptador
+5 – Guardamotor
+6 – Contactor
+1
+1 1
+2
+5
+3
+4
+Contactos
+de potencia
+Contactos
+de potencia
+Contactos
+auxiliares
+Contactos
+auxiliares3
+6
+6
+1 2
+Explicación / reconstrucción:
+Dispositivos auxiliares asociados al contactor: bloque de contactos auxiliares, temporizador neumático, relé térmico, adaptador, guardamotor y el propio contactor.
+
+[PÁGINA 108]
+Contenido detectado:
+AUTOMATISMOS BÁSICOS CON LÓGICA
+CABLEADA
+Explicación / reconstrucción:
+Título de la sección sobre automatismos básicos con lógica cableada.
+
+[PÁGINA 109]
+Contenido detectado:
+- 21 -
+MANDO POR IMPULSO INICIAL
+Esquema de funcionamiento
+Explicación / reconstrucción:
+Mando por impulso inicial: esquema de funcionamiento para mantener o activar un circuito por un pulso de arranque.
+
+[PÁGINA 110]
+Contenido detectado:
+- 22 -
+MANDO POR IMPULSO PERMANENTE
+Esquema de funcionamiento
+Explicación / reconstrucción:
+Mando por impulso permanente: el circuito permanece activado mientras exista la orden de control.
+
+[PÁGINA 111]
+Contenido detectado:
+- 23 -
+ARRANQUE DIRECTO DE UN MOTOR
+DE INDUCCIÓN
+Potencia Control
+Start
+Stop
+Explicación / reconstrucción:
+Arranque directo de un motor de inducción. Se separan el circuito de potencia y el de control, con pulsadores Start/Stop.
+
+[PÁGINA 112]
+Contenido detectado:
+- 24 -
+INVERSIÓN DEL SENTIDO DE GIRO
+Explicación / reconstrucción:
+Inversión del sentido de giro. Se consigue modificando la secuencia de conexión, típicamente intercambiando fases en motores de inducción.
+
+[PÁGINA 113]
+Contenido detectado:
+- 25 -
+ARRANQUE A VOLTAJE REDUCIDO
+▪ Estrella – triángulo
+▪ La tensión se reduce en los bobinados al 57%
+▪ El par se reduce al 33%
+▪ La corriente de arranque se reduce a 3 veces In (1.6 a 2.6)
+▪ El motor se desconecta momentáneamente (pérdida de par y pico de corriente
+transitoria, transición abierta)
+▪ Estrella – Triángulo/Resistencias – Triángulo (arranque Wauchope)
+▪ Añade un paso intermedio, antes de conectarse en delta, haciendo una
+conexión en triángulo, con una resistencia en serie con los bobinados de cada
+fase (transición cerrada)
+▪ Minimiza los transitorios en el paso de estrella a triángulo
+▪ Mediante autotransformador
+▪ El motor se conecta a la red en una o varias etapas
+▪ Cada etapa necesita un contactor y un retardo
+▪ El motor no se desconecta momentáneamente (no transitorio)
+▪ La corriente y el par se reducen con el cuadrado del voltaje reducido
+Explicación / reconstrucción:
+Arranque a voltaje reducido mediante estrella-triángulo. La tensión en bobinados se reduce al 57%, el par al 33% y la corriente de arranque baja a cerca de 3 veces In. Hay transición abierta, por lo que puede haber pico de corriente y pérdida momentánea de par.
+
+[PÁGINA 114]
+Contenido detectado:
+- 26 -
+ARRANQUE A VOLTAJE REDUCIDO
+▪ Mediante resistencias estatóricas
+▪ Similar al arranque con autotransformador, el motor se conecta en una o
+varias etapas a través de una resistencia en serie con el estátor.
+▪ El valor de la resistencia se reduce en cada etapa.
+▪ Es un método ineficaz y con gran pérdida por efecto Joule
+▪ Mediante resistencias rotóricas
+▪ Requiere un motor de rotor bobinado (más costoso)
+▪ Intercalando resistencias con el rotor, se puede desplazar el par máximo a
+velocidades bajas.
+▪ Con varias etapas se puede conseguir un arranque suave, con un par elevado
+y un consumo moderado.
+▪ Electrónicos (arrancador suave)
+▪ Utiliza tres pares de SCR montados en antiparalelo en serie con cada una de
+las fases del motor.
+▪ La tensión aplicada al motor se controla variando el ángulo de disparo de los
+SCR (control de fase)
+Explicación / reconstrucción:
+Más métodos de arranque a voltaje reducido: resistencias estatóricas, resistencias rotóricas y arrancador suave electrónico con SCR antiparalelo. Las resistencias reducen la tensión por etapas; el arrancador suave controla el ángulo de disparo para variar gradualmente la tensión.
+
+[PÁGINA 115]
+Contenido detectado:
+- 27 -
+ARRANQUE ESTRELLA-TRIÁNGULO
+Explicación / reconstrucción:
+Título de la sección sobre arranque estrella-triángulo.
+
+[PÁGINA 116]
+Contenido detectado:
+MÓDULOS DE LÓGICA CABLEADA DEL
+LABORATORIO
+Explicación / reconstrucción:
+Módulos de lógica cableada disponibles en el laboratorio. La diapositiva introduce el equipamiento práctico para montar circuitos de control.
+
+[PÁGINA 117]
+Contenido detectado:
+- 29 -
+Explicación / reconstrucción:
+Diapositiva de cierre o numeración final del bloque.
+
+[PÁGINA 118]
+Contenido detectado:
+¡MUCHAS GRACIAS!
+Explicación / reconstrucción:
+Cierre general con agradecimiento.
 
 ================================================================================
-TEMA 3: ENSAYO DE VACÍO
+GLOSARIO Y APOYO TÉCNICO
 ================================================================================
-
-DEFINICIÓN Y PROPÓSITO:
-El Ensayo de Vacío permite obtener:
-- Las pérdidas de vacío nominales (pérdidas en el hierro: histéresis + corrientes de Foucault).
-- Los parámetros de la rama de magnetización: Rm1 y Xm1 (o Rm2 y Xm2).
-
-PROCEDIMIENTO:
-- Se deja en VACÍO (sin carga) un lado del transformador.
-- Por el otro lado se aplica el VOLTAJE NOMINAL alterno a frecuencia nominal.
-- Se puede realizar por cualquier lado.
-- Se miden: voltaje V01, corriente de vacío I01 y potencia activa P01.
-
-[DESCRIPCIÓN GRÁFICA - MONTAJE DEL ENSAYO DE VACÍO (Diapositiva 13)]:
-Diagrama del montaje del ensayo de vacío.
-- A la izquierda: fuente de tensión Vn (voltaje nominal) con medidor de potencia P01 y frecuencia f.
-- La corriente de entrada (vacío) se denomina I01.
-- El transformador monofásico está en el centro.
-- El lado secundario está en CIRCUITO ABIERTO (sin carga), con voltaje en bornes V02.
-
-CONDICIÓN DE OPERACIÓN:
-Bajo vacío, la corriente I01 normalmente alcanza valores MENORES AL 5% de la corriente nominal In1.
-La corriente de vacío establece el campo magnético en el núcleo y refleja las pérdidas magnéticas.
-
-[DESCRIPCIÓN GRÁFICA - CIRCUITO EQUIVALENTE BAJO VACÍO (Diapositiva 14)]:
-Circuito equivalente completo con secundario abierto.
-- La fuente V01 alimenta el primario.
-- La corriente I01 se divide en dos componentes al llegar a la rama de magnetización:
-  * IRm1: componente activa (en fase con V01), circula por Rm1, representa las pérdidas magnéticas.
-  * IXm1: componente reactiva (en cuadratura con V01), circula por jXm1, establece el flujo.
-- Las impedancias R1 y jX1 del devanado primario producen una pequeña caída de tensión.
-- El voltaje en la FEM Em1 es ligeramente menor que V01 (caída en R1, X1).
-- El secundario está abierto: I2 = 0, pero hay voltaje V02 = Em2 en bornes.
-
-SIMPLIFICACIÓN DEL ENSAYO DE VACÍO:
-Como la magnitud de Rm1 y Xm1 es MUCHO MAYOR que R1 y X1, y la corriente I01 es muy baja, la caída de tensión en R1 y X1 es despreciable. Por lo tanto, se asume que la potencia de vacío P01 medida en la fuente corresponde íntegramente a las PÉRDIDAS MAGNÉTICAS.
-
-FÓRMULAS DEL ENSAYO DE VACÍO:
-Resistencia de pérdidas magnéticas: Rm1 = V01² / P01
-Potencia reactiva de vacío:          Q01 = sqrt((V01·I01)² - P01²)
-Reactancia magnetizante:             Xm1 = V01² / Q01
-
-Si NO se desprecia la impedancia del devanado, se calcula primero:
-Em2 = V02 - (R2 + jX2)·I02 → luego Rm2 = Em2/IRm2 y Xm2 = Em2/IXm2
-
-
-================================================================================
-TEMA 4: EJEMPLO RESUELTO - ESTIMACIÓN DE IMPEDANCIAS
-================================================================================
-
-ENUNCIADO:
-Transformador monofásico con:
-- Potencia nominal: 100 kVA
-- Voltajes nominales: 7620 V (primario) y 240 V (secundario)
-- Relación de transformación: a = 7620/240 = 31.75
-
-DATOS DEL ENSAYO DE CORTOCIRCUITO (realizado por el lado de alta tensión):
-- Vcc1 = 641.41 V
-- Icc1 = 13.12 A
-- Pcc1 = 3442.69 W
-
-DATOS DEL ENSAYO DE VACÍO (realizado por el lado de baja tensión):
-- V02 = 240 V
-- I02 = 34.55 A
-- P02 = 4115 W
-
-SOLUCIÓN - ENSAYO DE CORTOCIRCUITO:
-Re1 = Pcc1 / Icc1² = 3442.69 / 13.12² = 20 Ω
-R1 = Re1 / 2 = 10 Ω (asumiendo distribución igual)
-R2 = Re1 / (2a²) = 9.92 mΩ
-
-Zcc1 = Vcc1 / Icc1 = 641.41 / 13.12 = 48.88 Ω
-Xe1 = sqrt(Zcc1² - Re1²) = sqrt(48.88² - 20²) = 44.61 Ω
-X1 = Xe1/2 = 22.31 Ω
-X2 = Xe1/(2a²) = 22.13 mΩ
-
-[DESCRIPCIÓN GRÁFICA - CIRCUITO DEL ENSAYO CC (Diapositiva 19-20)]:
-Circuito simplificado (sin rama de magnetización) con:
-- Fuente Vcc1, corriente Icc1, potencia Pcc1.
-- Resistencia equivalente Re1 en serie.
-- Reactancia jXe1 en serie.
-- Corriente secundaria referida I'cc2.
-
-SOLUCIÓN - ENSAYO DE VACÍO:
-Rm2 = V02² / P02 = 240² / 4115 = 14 Ω
-Q02 = sqrt((V02·I02)² - P02²) = sqrt((240·34.55)² - 4115²)
-Xm2 = V02² / Q02 = 8 Ω
-
-CIRCUITO EQUIVALENTE FINAL (Diapositiva 23):
-Referido al primario, los valores del circuito equivalente son:
-- R1 = 10 Ω (devanado primario)
-- jX1 = j22.31 Ω (dispersión primaria)
-- Rm2 referida = 14·a² = 14·31.75² Ω
-- jXm2 referida = j8·a² Ω (rama de magnetización)
-- jX2 referida = j22.13 mΩ × a² (dispersión secundaria referida)
-- R2 referida = 9.92 mΩ × a² (resistencia secundaria referida)
-- Relación de transformación: a = N1/N2 = Vn1/Vn2 = 31.75
-
-
-================================================================================
-TEMA 5: REGULACIÓN DE VOLTAJE
-================================================================================
-
-DEFINICIÓN (IEEE Std. C57.12.80-2010):
-La Regulación de Voltaje (RV) de un transformador es el cambio porcentual en el voltaje de salida (secundario) que ocurre cuando la carga (a un factor de potencia específico) se retira del transformador, manteniendo el voltaje de entrada constante.
-
-FÓRMULA GENERAL:
-ΔVn = (V02 - Vn2) / Vn2
-
-Donde:
-- V02: voltaje secundario en vacío (sin carga)
-- Vn2: voltaje secundario nominal (con carga nominal)
-
-MÉTODOS PARA DETERMINAR LA REGULACIÓN DE VOLTAJE:
-
-MÉTODO DIRECTO (Diapositiva 26):
-Mide directamente V02 (voltaje en vacío) y V2 (voltaje con carga) desconectando la carga temporalmente.
-[DESCRIPCIÓN GRÁFICA]: Diagrama de un transformador con fuente V1, voltaje de vacío V02 y voltaje con carga V2. La carga se desconecta para medir V02 y luego se reconecta para medir V2.
-
-MÉTODO INDIRECTO (Diapositiva 27):
-Utiliza el CIRCUITO EQUIVALENTE del transformador para ESTIMAR V02, conocidos V2 e I2 medidos.
-Permite evaluar la regulación bajo DIFERENTES condiciones de operación sin desconectar la carga.
-El circuito equivalente referido al secundario usa Re2 y Xe2.
-
-REGULACIÓN PARA CARGA R-L (INDUCTIVA CON RESISTENCIA):
-[DESCRIPCIÓN GRÁFICA - DIAGRAMA FASORIAL (Diapositivas 29-31)]:
-Diagrama fasorial con:
-- Vector V2 como referencia (eje horizontal).
-- Corriente I2 desfasada un ángulo θ2 RETRASADO (carga inductiva: I atrasa a V).
-- Caída resistiva Re2·I2 en fase con I2.
-- Caída reactiva Xe2·I2 en cuadratura con I2 (adelantada 90°).
-- El voltaje V02 = V2 + Re2·I2 + jXe2·I2 (suma fasorial).
-- V02 es MAYOR que V2 → Regulación POSITIVA.
-
-FÓRMULA PARA CARGA R-L (θ2 > 0, inductiva):
-V02 = sqrt[(V2·cos(θ2) + Re2·I2)² + (V2·sin(θ2) + Xe2·I2)²]
-ΔV = (V02 - V2) / V2 → POSITIVA (V02 > V2)
-
-REGULACIÓN PARA CARGA RESISTIVA PURA (θ2 = 0):
-[DESCRIPCIÓN GRÁFICA]: Diagrama fasorial donde I2 está en fase con V2.
-V02 = sqrt[(V2 + Re2·I2)² + (Xe2·I2)²]
-ΔV = (V02 - V2) / V2 → POSITIVA (pequeña)
-
-REGULACIÓN PARA CARGA INDUCTIVA PURA (θ2 = 90°):
-[DESCRIPCIÓN GRÁFICA]: Diagrama fasorial donde I2 está completamente retrasada respecto a V2.
-V02 = sqrt[(Re2·I2)² + (V2 + Xe2·I2)²]
-ΔV = (V02 - V2) / V2 → POSITIVA (máxima, mayor caída de voltaje)
-
-REGULACIÓN PARA CARGA CAPACITIVA (θ2 < 0):
-[DESCRIPCIÓN GRÁFICA - Diapositivas 35-36]: Diagrama fasorial donde I2 está ADELANTADA respecto a V2.
-- La caída jXe2·I2 tiene sentido contrario al caso inductivo.
-- V02 puede ser MENOR que V2 → Regulación NEGATIVA.
-V02 = sqrt[(Re2·I2)² + (-V2 + Xe2·I2)²]
-ΔV = (V02 - V2) / V2 → NEGATIVA (V02 < V2)
-
-[DESCRIPCIÓN GRÁFICA - CURVAS DE REGULACIÓN PARA DISTINTAS CARGAS (Diapositiva 37)]:
-Gráfica de V2 vs. corriente de carga I2 para tres tipos de carga:
-- Eje Y: Voltaje secundario V2, con referencia V02 (voltaje en vacío).
-- Eje X: Corriente I2 y potencia aparente S2, con referencia In2.
-- Curva SUPERIOR (verde): Carga CAPACITIVA - el voltaje sube por encima de V02 al aumentar la carga.
-- Curva MEDIA (azul): Carga RESISTIVA - el voltaje cae levemente, siempre debajo de V02.
-- Curva INFERIOR (naranja): Carga INDUCTIVA - el voltaje cae considerablemente, mayor caída al aumentar la carga.
-
-[DESCRIPCIÓN GRÁFICA - CURVAS DE ΔV (Diapositiva 38)]:
-Gráfica de la Regulación de Voltaje ΔV vs. corriente de carga:
-- Eje Y: ΔV (regulación porcentual), puede ser positivo o negativo.
-- Eje X: Corriente I2 y potencia aparente S2.
-- Curva SUPERIOR (positiva, creciente): Carga INDUCTIVA - ΔV positivo y crece con la carga.
-- Curva MEDIA (positiva, leve): Carga RESISTIVA - ΔV positivo pero pequeño.
-- Curva INFERIOR (negativa): Carga CAPACITIVA - ΔV negativo (voltaje sube respecto al vacío).
-
-
-================================================================================
-TEMA 6: EFICIENCIA DEL TRANSFORMADOR
-================================================================================
-
-DEFINICIÓN:
-La Eficiencia η es el cociente entre la potencia activa entregada a la carga (P2) y la potencia activa consumida en la entrada (P1).
-
-FÓRMULA GENERAL:
-η = P2 / P1 = (P1 - Pc - Ph) / P1 = P2 / (P2 + Pc + Ph)
-
-Donde:
-- P2: potencia activa entregada a la carga (W)
-- P1: potencia activa de entrada (W)
-- Pc: pérdidas en el cobre (pérdidas variables, dependen de la carga)
-- Ph: pérdidas en el hierro (pérdidas constantes, independientes de la carga)
-
-PÉRDIDAS DEL TRANSFORMADOR:
-1. PÉRDIDAS EN EL COBRE (Pc) - Variables con la carga:
-   Pc = Re2 · I2²  (usando circuito equivalente aproximado)
-   Aumentan con el cuadrado de la corriente de carga.
-
-2. PÉRDIDAS EN EL HIERRO (Ph) - Constantes:
-   Ph = V²/Rm ≈ constante
-   No cambian con la carga (solo dependen del voltaje aplicado, que permanece constante).
-   Se obtienen directamente del Ensayo de Vacío: Ph = P01 (o P02).
-
-[DESCRIPCIÓN GRÁFICA - CIRCUITO EQUIVALENTE PARA EFICIENCIA (Diapositiva 42-43)]:
-Se usa el CIRCUITO EQUIVALENTE APROXIMADO (sin rama de excitación en serie):
-- La fuente V'1 está conectada directamente al ramal de excitación (Rm2 // jXm2) en paralelo.
-- En serie con la carga: Re2 + jXe2 (impedancias equivalentes del transformador).
-- Corriente de carga I2 fluye por la rama serie.
-- Corriente de vacío I02 (despreciable frente a I2) circula por la rama de excitación.
-- Pérdidas en el cobre: Pc = Re2·I2² (variable).
-- Pérdidas en el hierro: Ph = constante (independiente de la carga).
-
-CONDICIÓN PARA MÁXIMA EFICIENCIA:
-La máxima eficiencia se obtiene cuando las pérdidas variables (cobre) igualan a las pérdidas constantes (hierro):
-Pc = Ph
-Re2 · I2_ηmax² = Ph
-I2_ηmax = sqrt(Ph / Re2)
-
-FÓRMULA DE EFICIENCIA EN FUNCIÓN DE LA CARGA:
-η = (V2 · I2 · cos(θ2)) / (V2 · I2 · cos(θ2) + Re2 · I2² + Ph)
-
-[DESCRIPCIÓN GRÁFICA - CURVA DE EFICIENCIA (Diapositiva 45)]:
-Gráfica de Eficiencia η y Pérdidas vs. Corriente de carga I2:
-- Eje Y izquierdo: Eficiencia η (sube y luego baja levemente).
-- Eje X: Corriente I2, potencia aparente S2, con referencia I_η2 (corriente de máxima eficiencia) e In2.
-- Curva de EFICIENCIA (azul): Sube rápidamente al principio, alcanza un máximo η_m en I2 = I_η2, luego cae levemente.
-- Curva de PÉRDIDAS EN EL COBRE Pc (naranja, parabólica): Crece con I2².
-- Línea de PÉRDIDAS EN EL HIERRO Ph (recta horizontal): Constante para cualquier carga.
-- El punto de máxima eficiencia η_m ocurre exactamente donde Pc = Ph (las dos curvas se cruzan).
-- CONCLUSIÓN VISUAL: Para corrientes menores a I_η2 dominan las pérdidas en el hierro; para corrientes mayores dominan las pérdidas en el cobre.
-
-
-================================================================================
-TEMA 7: MÁQUINAS DE INDUCCIÓN - GENERALIDADES Y ESTATOR
-================================================================================
-
-DENOMINACIONES DE LA MÁQUINA:
-- "ASINCRÓNICA": porque en estado estacionario, la velocidad del campo magnético giratorio DIFIERE de la velocidad del rotor.
-- "DE INDUCCIÓN": porque la transferencia de energía entre sus devanados se realiza por INDUCCIÓN ELECTROMAGNÉTICA (no hay contacto eléctrico directo entre estator y rotor).
-
-VENTAJAS DE LA MÁQUINA DE INDUCCIÓN:
-- Bajo costo de fabricación.
-- Fácil operación.
-- Bajo costo de mantenimiento (especialmente con rotor jaula de ardilla).
-- Baja variación de velocidad con la carga.
-- No requiere conmutador.
-- No usa escobillas (rotor jaula de ardilla).
-- Alto par de arranque (rotor devanado).
-
-DESVENTAJAS:
-- Con baja carga, el factor de potencia es muy bajo.
-- Absorbe alta corriente en vacío (pérdidas en el cobre importantes).
-- El poco cambio de velocidad puede ser un problema en algunas aplicaciones.
-
-DEVANADOS DE LA MÁQUINA:
-
-DEVANADO INDUCTOR O DE EXCITACIÓN:
-- Devanado trifásico (o monofásico) conectado a la RED ELÉCTRICA.
-- Recibe o entrega energía eléctrica de la red.
-- En él se produce un CAMPO MAGNÉTICO GIRATORIO cuya velocidad depende directamente de la frecuencia de red.
-- Se instala en el ESTATOR (parte fija) de la máquina.
-
-DEVANADO DE ARMADURA O INDUCIDO:
-- Aprovecha las condiciones magnéticas del devanado inductor para realizar la CONVERSIÓN DE ENERGÍA eléctrica en mecánica (motor) o viceversa (generador).
-- También es un devanado trifásico (o monofásico).
-- Usualmente se instala en el ROTOR (parte móvil) de la máquina.
-
-PARTES ESTRUCTURALES (Diapositivas 54-57):
-[DESCRIPCIÓN GRÁFICA - DESPIECE DE LA MÁQUINA]:
-La máquina de inducción se compone de:
-- CARCASA: estructura metálica externa que aloja todos los componentes.
-- ESTATOR: parte fija con núcleo ferromagnético y devanado trifásico inductor.
-- ROTOR: parte móvil (jaula de ardilla o devanado), montada sobre el eje.
-- EJE: transmite la potencia mecánica.
-- RODAMIENTOS: soportan el rotor y permiten su rotación.
-- TAPAS LATERALES: cierran la carcasa por ambos extremos.
-- VENTILADOR: montado en el eje para refrigeración.
-
-CARACTERÍSTICAS DE LA CARCASA (Diapositiva 60):
-[DESCRIPCIÓN GRÁFICA - CARCASA]:
-Imagen de una carcasa típica de motor de inducción con:
-- Caja de conexiones (bornera): donde se conectan los cables de alimentación trifásica.
-- Herraje para izar: argollas metálicas para levantar el motor.
-- Tapa del ventilador: cubre el ventilador exterior.
-- Placa de datos: con información técnica del motor (potencia, voltaje, corriente, velocidad, IP, etc.).
-- Aletas para refrigeración: aumentan la superficie de disipación de calor.
-- Base para anclaje: patas o pernos para fijar el motor a la bancada.
-
-ESTATOR DE UNA MÁQUINA DE INDUCCIÓN (Diapositiva 59):
-- El núcleo ferromagnético del estator (YUGO) está formado por LÁMINAS de acero eléctrico de grano no orientado.
-- Las láminas permiten magnetización homogénea en cualquier dirección.
-- Tienen la misma forma y están apiladas.
-- El núcleo tiene RANURAS ABIERTAS para instalar el devanado trifásico inductor.
-- El número de ranuras es MÚLTIPLO DE 3 (para devanado trifásico equilibrado).
-
-ESTRUCTURA DEL YUGO (Diapositivas 62-63):
-[DESCRIPCIÓN GRÁFICA - YUGO Y RANURAS]:
-- YUGO: anillo ferromagnético laminado que forma la estructura principal del estator.
-- RANURAS: cavidades longitudinales en la superficie interior del yugo donde se instalan los conductores del devanado. Tienen forma rectangular o trapezoidal.
-- DIENTES: las partes sólidas de ferromagnético entre ranura y ranura. Conducen el flujo magnético.
-
-INSTALACIÓN DEL DEVANADO DEL ESTATOR (Diapositivas 64-68):
-[DESCRIPCIÓN GRÁFICA]:
-- Las BOBINAS del devanado se fabrican con conductores de cobre esmaltado.
-- Se instalan en las ranuras del yugo, con aislamiento entre el cobre y el hierro.
-- Las "CABEZAS DE BOBINA" son las partes del devanado que sobresalen por los extremos del estator, conectando los lados activos de las bobinas.
-- Se usa AMARRE de devanado para sujetar las cabezas de bobina.
-- El devanado completo forma el circuito trifásico con tres grupos de bobinas desfasadas 120° geométricos entre sí.
-
-
-================================================================================
-TEMA 8: CAMPO MAGNÉTICO EN LAS BOBINAS DEL ESTATOR
-================================================================================
-
-LEY DE AMPÈRE-MAXWELL (aplicada a la bobina del estator):
-Fórmula integral: INTEGRAL_CERRADA(B · dl) = μ0 · INTEGRAL(J · dS)
-
-[DESCRIPCIÓN GRÁFICA - ESPIRA ELEMENTAL (Diapositivas 73-76)]:
-Una espira (bobina elemental) se compone de DOS CONDUCTORES (u1 y u2) instalados en ranuras diametralmente opuestas del estator:
-- u1: conductor de "ida" (corriente saliendo del plano, representada con punto).
-- u2: conductor de "vuelta" (corriente entrando al plano, representada con cruz).
-- La SUPERFICIE de la espira es el área encerrada entre los dos conductores.
-- Al circular corriente i_f(t) por la espira, la Ley de Ampère establece un FLUJO DE CAMPO MAGNÉTICO φ(t) a través de la superficie de la bobina.
-- La dirección del flujo sigue la regla de la mano derecha respecto a la dirección de la corriente.
-- El flujo resultante B tiene dirección perpendicular al plano de la espira.
-
-LEY DE FARADAY-HENRY (aplicada a la bobina del estator):
-Fórmula: eu(t) = -d/dt [INTEGRAL(B · dS)]
-
-[DESCRIPCIÓN GRÁFICA - FEM INDUCIDA (Diapositivas 77-81)]:
-Secuencia de diapositivas que muestra:
-1. Espira elemental (u1, u2) con sus terminales de conexión.
-2. La misma espira mostrando su superficie.
-3. Flujo de campo magnético VARIABLE B(t) aplicado ASCENDENTE que atraviesa la superficie de la bobina.
-4. El flujo φ(t) variable induce una FEM eu(t) en los terminales de la bobina.
-5. Según la LEY DE LENZ, la FEM inducida se OPONE a la variación del flujo que la genera.
-CONCLUSIÓN: La bobina del estator puede tanto CREAR flujo (cuando se le aplica corriente) como TENER una FEM inducida (cuando un flujo variable la atraviesa). Esto es la base del principio del transformador y del motor de inducción.
-
-BOBINA CON MÚLTIPLES ESPIRAS (Diapositivas 87-91):
-Si una bobina tiene N espiras iguales con la misma inducción magnética B, se configuran N flujos idénticos.
-Esto se llama ENCADENAMIENTO DE FLUJO (ψ):
-ψ = N·φ
-
-[DESCRIPCIÓN GRÁFICA - DEVANADOS]:
-- DEVANADO IMBRICADO: cada bobina ocupa ranuras que se solapan con las de las bobinas adyacentes. Permite mejor factor de devanado.
-- DEVANADO CONCÉNTRICO: las bobinas están dispuestas concéntricamente, sin solapamiento.
-- DEVANADO DE UNA CAPA: cada ranura contiene solo un lado de bobina.
-- DEVANADO DOBLE CAPA: cada ranura contiene dos lados de bobina de diferentes bobinas.
-
-
-================================================================================
-TEMA 9: PASO DE BOBINAS Y NÚMERO DE POLOS
-================================================================================
-
-RELACIÓN ENTRE PASO DE BOBINA Y NÚMERO DE POLOS:
-El ángulo que separa los dos conductores de una bobina (paso de bobina) está directamente relacionado con el número de pares de polos (p) de la máquina.
-
-[DESCRIPCIÓN GRÁFICA - PASO DE BOBINAS (Diapositivas 93-97)]:
-
-p = 1 (1 par de polos, 2 polos):
-- Una bobina por fase.
-- Los conductores u1 y u2 de la bobina están separados 180° (diametralmente opuestos).
-- La superficie S de la bobina cubre el semicírculo completo del estator.
-
-p = 2 (2 pares de polos, 4 polos):
-- Dos bobinas por fase (bobinas u11-u12 y u21-u22).
-- Los conductores de cada bobina están separados 90° mecánicos (entre sí).
-- Las dos superficies S1 y S2 son más pequeñas (cada una cubre 1/4 del estator).
-
-p = 3 (3 pares de polos, 6 polos):
-- Tres bobinas por fase.
-- Los conductores de cada bobina están separados 60° mecánicos.
-- Cada superficie cubre 1/6 del estator.
-
-p = 4 (4 pares de polos, 8 polos):
-- Cuatro bobinas por fase.
-- Los conductores de cada bobina están separados 45° mecánicos.
-- Se muestra UNA de las cuatro bobinas para la fase U.
-
-CONCLUSIÓN GENERAL: A mayor número de pares de polos, mayor número de bobinas por fase y menor ángulo de paso. Los devanados de múltiples polos permiten obtener velocidades de sincronismo más bajas.
-
-
-================================================================================
-TEMA 10: CAMPOS MAGNÉTICOS ESTACIONARIOS
-================================================================================
-
-CREACIÓN DEL CAMPO MAGNÉTICO ESTACIONARIO:
-Cada bobina de una fase del estator, al ser alimentada por una corriente alterna, genera un CAMPO MAGNÉTICO ESTACIONARIO cuya magnitud varía sinusoidalmente con el tiempo pero cuya DIRECCIÓN ES FIJA en el espacio.
-
-[DESCRIPCIÓN GRÁFICA - CAMPO DE UNA BOBINA (Diapositivas 99-107)]:
-Secuencia de diapositivas que muestra la bobina U con corriente i_u(t):
-
-DIAPOSITIVA 99: Dos posibles polaridades del campo magnético de la bobina U:
-- Izquierda: corriente i_u(t) positiva → polo Norte (N) en u1, polo Sur (S) en u2 → flujo φ_u sale por u2, entra por u1.
-- Derecha: corriente i_u(t) negativa → polo Norte (N) en u2, polo Sur (S) en u1 → flujo φ_u invertido.
-
-DIAPOSITIVA 100: El flujo φ_u(t) es creado en la superficie de la bobina u por la corriente i_u(t) que alimenta el devanado inductor (Ley de Ampère-Maxwell). Es VARIABLE en el tiempo porque la corriente también lo es.
-
-DIAPOSITIVA 101: El flujo φ_u(t) variable induce un voltaje eu(t) sobre la misma bobina u (Ley de Lenz), que se OPONE a la variación del flujo.
-
-DISTRIBUCIÓN ESPACIAL DEL CAMPO (Diapositivas 102-107):
-El flujo φ_u(t) como función del ángulo espacial α (posición en el estator):
-φ_U(α, t) = φ_u(t) · cos(α)
-
-Donde α es el ángulo medido desde la posición de la bobina U.
-- En α = 0: φ_U = φ_u(t) (máximo)
-- En α = π/2: φ_U = 0
-- En α = π: φ_U = -φ_u(t) (mínimo)
-
-[DESCRIPCIÓN GRÁFICA - REPRESENTACIÓN DE LOS 3 CAMPOS (Diapositivas 108-110)]:
-El estator trifásico tiene tres bobinas (U, V, W) separadas 120° geométricos entre sí.
-
-DIAPOSITIVA 108: Se muestran las bobinas U y V con sus corrientes i_u(t) e i_v(t), generando los flujos φ_u y φ_v respectivamente. Cada flujo es estacionario en dirección pero variable en magnitud.
-
-DIAPOSITIVA 109: Se agrega el flujo φ_v de la fase V, desfasado 120° geométricos respecto a φ_u.
-
-DIAPOSITIVA 110: Se completa con el flujo φ_w de la fase W. Las corrientes i_w(t) generan φ_w desfasado 240° geométricos respecto a φ_u.
-CONCLUSIÓN: Los tres campos magnéticos estacionarios φ_u, φ_v, φ_w coexisten en el estator, cada uno con dirección fija pero magnitud sinusoidal en el tiempo.
-
-
-================================================================================
-TEMA 11: CREACIÓN DEL CAMPO MAGNÉTICO GIRATORIO
-================================================================================
-
-PRINCIPIO FÍSICO:
-Cuando el motor de inducción se conecta a una red trifásica balanceada, las tres corrientes desfasadas 120° eléctricos generan tres campos magnéticos estacionarios desfasados 120° geométricos. La SUMA de estos tres campos produce un CAMPO MAGNÉTICO RESULTANTE φ_g que GIRA a velocidad angular constante.
-
-[DESCRIPCIÓN GRÁFICA - CREACIÓN DEL CAMPO GIRATORIO (Diapositivas 112-116)]:
-Secuencia de 5 diapositivas que muestra la evolución temporal del campo giratorio:
-
-ESTRUCTURA MOSTRADA EN CADA DIAPOSITIVA:
-- Estator circular con las tres bobinas: U (horizontal), V (desfasada 120°), W (desfasada 240°).
-- Las bobinas están en posiciones +u1/-u2, +v1/-v2, +w1/-w2.
-- Vectores de corriente I_U, I_V, I_W con sus sentidos (entrada/salida según el momento temporal).
-- A la derecha: gráfica temporal de las tres corrientes sinusoidales i_u(t), i_v(t), i_w(t).
-- Vector resultante φ_g (campo magnético giratorio) mostrado como flecha giratoria.
-- Ángulo θ (ángulo eléctrico) que aumenta con el tiempo.
-
-DIAPOSITIVA 112 (θ = 0°): La corriente de la fase U es máxima. El campo resultante φ_g apunta en la dirección de la bobina U.
-DIAPOSITIVA 113 (θ > 0°): Las tres corrientes han variado. El campo φ_g ha girado proporcionalmente. Se muestra la disposición de las bobinas con separación 120° geométrica.
-DIAPOSITIVA 114 (θ incrementa): El campo magnético φ_g continúa girando. Las corrientes i_u, i_v, i_w varían sinusoidalmente.
-DIAPOSITIVA 115 (θ ≈ 90°): El campo ha girado 90°. La corriente de la fase V se aproxima a su máximo.
-DIAPOSITIVA 116 (θ ≈ 180°): El campo ha girado 180°. La corriente de la fase U está en su mínimo (negativo).
-
-VELOCIDAD ANGULAR DEL CAMPO GIRATORIO:
-La velocidad de giro del campo magnético (velocidad sincrónica) en rpm es:
-ng = 60·f / p
-
-Donde:
-- f: frecuencia de la red eléctrica (Hz)
-- p: número de PARES de polos
-- ng: velocidad sincrónica (rpm)
-
-Ejemplos (f = 60 Hz):
-- p = 1 → ng = 3600 rpm
-- p = 2 → ng = 1800 rpm
-- p = 3 → ng = 1200 rpm
-- p = 4 → ng = 900 rpm
-
-
-================================================================================
-TEMA 12: ÁNGULO ELÉCTRICO VS. ÁNGULO MECÁNICO
-================================================================================
-
-RELACIÓN FUNDAMENTAL:
-θ_E = p · θ_G
-
-Donde:
-- θ_E: ángulo eléctrico (en radianes o grados eléctricos)
-- θ_G: ángulo mecánico (en radianes o grados mecánicos)
-- p: número de pares de polos
-
-[DESCRIPCIÓN GRÁFICA - p = 1 (Diapositivas 120-122)]:
-Con 1 par de polos (2 polos):
-- 1 ciclo eléctrico (360°E) = 1 ciclo mecánico (360°G).
-- θ_E = θ_G.
-- El campo giratorio da UNA vuelta completa (360°G) por cada ciclo eléctrico (360°E).
-- Se muestra la bobina U con una espira y el campo φ_g girando.
-- Cuando i_u(t) alcanza su máximo, el campo φ_g apunta en la dirección de la bobina U.
-- Cuando i_u(t) = 0, el campo φ_g apunta en la dirección de 90° respecto a la bobina U.
-
-[DESCRIPCIÓN GRÁFICA - p = 2 (Diapositivas 123-126)]:
-Con 2 pares de polos (4 polos):
-- Dos bobinas por fase (u11-u12 y u21-u22).
-- 2 ciclos eléctricos (720°E) = 1 ciclo mecánico (360°G).
-- θ_E = 2·θ_G.
-- El campo giratorio da UNA vuelta mecánica completa (360°G) por cada DOS ciclos eléctricos.
-- CONCLUSIÓN VISUAL: a mayor número de pares de polos, el campo giratorio es más "lento" mecánicamente por cada ciclo eléctrico. Esto justifica la fórmula ng = 60·f/p.
-
-
-================================================================================
-TEMA 13: ANÁLISIS MATEMÁTICO DEL CAMPO MAGNÉTICO GIRATORIO
-================================================================================
-
-CORRIENTES Y FLUJOS DEL DEVANADO TRIFÁSICO:
-En la zona lineal de la curva de magnetización: φ ≈ K·i (flujo proporcional a la corriente)
-
-Las corrientes trifásicas balanceadas son:
-i_u(t) = Im·sin(ωt)          → φ_u(t) = K·Im·sin(p·ωr·t)
-i_v(t) = Im·sin(ωt - 2π/3)  → φ_v(t) = K·Im·sin(p·ωr·t - 2π/3)
-i_w(t) = Im·sin(ωt + 2π/3)  → φ_w(t) = K·Im·sin(p·ωr·t + 2π/3)
-
-Donde ωr es la frecuencia angular mecánica del campo giratorio.
-
-FLUJO RESULTANTE EN UNA DIRECCIÓN ARBITRARIA α:
-El flujo de campo magnético equivalente φ_g a un ángulo α arbitrario del estator:
-φ_g(α,t) = φ_u·cos(α) + φ_v·cos(α - 2π/3) + φ_w·cos(α + 2π/3)
-
-Sustituyendo y usando identidades trigonométricas:
-cos(β ± γ) = cos(β)·cos(γ) ∓ sin(β)·sin(γ)
-sin(β ± γ) = sin(β)·cos(γ) ± sin(γ)·cos(β)
-
-SE OBTIENE QUE:
-φ_g(α,t) = (3/2)·K·Im·sin(ωr·t - α) = φm·sin(ωr·t - α)
-
-INTERPRETACIÓN FÍSICA FUNDAMENTAL:
-- La expresión φ_g = φm·sin(ωr·t - α) describe una ONDA SINUSOIDAL que se propaga en la dirección α.
-- La amplitud φm = (3/2)·K·Im es CONSTANTE (no varía con el tiempo ni con la posición).
-- La velocidad angular de rotación del campo es ωr (frecuencia mecánica del campo giratorio).
-- El campo tiene magnitud CONSTANTE y GIRA a velocidad uniforme.
-
-DEMOSTRACIÓN NUMÉRICA (Diapositiva 132):
-Para ωr·t = 0:
-  φ_g = φm·sin(-α): para α=0 → φ_g=0; para α=-π/2 → φ_g = φm; para α=π/2 → φ_g=-φm
-
-Para ωr·t = π/2:
-  φ_g = φm·sin(π/2 - α): para α=0 → φ_g=φm; para α=-π/2 → φ_g=0; para α=π/2 → φ_g=0
-
-CONCLUSIÓN: El campo magnético resultante de las tres bobinas trifásicas es un campo giratorio de amplitud constante. Esto es el principio fundamental del funcionamiento del motor de inducción.
-
-
-================================================================================
-TEMA 14: ROTOR JAULA DE ARDILLA - ESTRUCTURA
-================================================================================
-
-TIPOS DE ROTORES:
-Existen dos tipos de rotores para las máquinas de inducción:
-1. Rotor Jaula de Ardilla (squirrel cage)
-2. Rotor Devanado (wound rotor)
-
-VENTAJAS DEL ROTOR JAULA DE ARDILLA:
-- No requiere escobillas ni anillos rozantes ni colector.
-- No utiliza conductores flexibles ni aislamiento eléctrico.
-- Es muy robusto, económico y estable.
-- Menor mantenimiento mecánico.
-- Mejor factor de potencia y mayor eficiencia que el rotor devanado.
-
-CONSTRUCCIÓN DEL ROTOR JAULA DE ARDILLA:
-El rotor contiene un devanado de armadura formado por:
-- BARRAS de aluminio o cobre instaladas en las ranuras del núcleo ferromagnético del rotor.
-- ANILLOS DE CORTOCIRCUITO: dos anillos en los extremos del rotor que unen eléctricamente todas las barras, cerrando el circuito.
-- El conjunto barra-anillo forma la "jaula" característica (parecida a la rueda de un hámster).
-- El NÚCLEO FERROMAGNÉTICO LAMINADO rodea el devanado. NO hay aislamiento eléctrico entre el cobre/aluminio y el hierro.
-- El devanado se integra al núcleo mediante un proceso de FUNDICIÓN E INYECCIÓN por inyección de aluminio fundido.
-
-BARRAS INCLINADAS:
-Se ha demostrado que construir las barras INCLINADAS (en ángulo respecto a los anillos de cortocircuito) reduce sustancialmente el RUIDO y las VIBRACIONES del rotor en operación.
-
-[DESCRIPCIÓN GRÁFICA - ESTRUCTURA DEL ROTOR (Diapositivas 138-142)]:
-- Vista explodida: núcleo ferromagnético laminado con ranuras, barras conductoras instaladas en las ranuras, anillos de cortocircuito en ambos extremos.
-- Las barras son visibles como elementos cilíndricos longitudinales.
-- Los anillos de cortocircuito son los elementos circulares en los extremos.
-- El conjunto forma la estructura característica de "jaula de ardilla".
-- En algunos diseños, las barras están ligeramente inclinadas respecto al eje del rotor.
-
-
-================================================================================
-TEMA 15: VOLTAJE INDUCIDO EN EL CIRCUITO DE ARMADURA DEL ROTOR
-================================================================================
-
-PRINCIPIO DE OPERACIÓN:
-Al conectar el devanado del estator (inductor) a la fuente trifásica de frecuencia f, se crea el campo magnético giratorio a velocidad ng (rpm).
-ng = 60·f / p
-
-El campo magnético giratorio se establece a través del material ferromagnético del estator Y del rotor.
-
-FLUJO DE CAMPO MAGNÉTICO GIRATORIO POR POLO (φ_g):
-El análisis de la inducción en el rotor usa el flujo por polo:
-φ_g = B_g · Se
-
-Donde Se es el área efectiva de un polo en la superficie del entrehierro.
-
-CIRCUITO DE ARMADURA - BARRAS DEL ROTOR (Diapositivas 150-152):
-[DESCRIPCIÓN GRÁFICA - JAULA DE ARDILLA "ABIERTA"]:
-Para analizar el voltaje inducido, se "abre" la jaula de ardilla (se retiran los anillos de cortocircuito):
-- El estator trifásico está representado con sus vectores de corriente I_W, I_U, I_V.
-- El campo magnético giratorio B_g tiene un polo Norte (N) y un polo Sur (S).
-- Las ZONAS NEUTRAS son las posiciones donde el campo magnético es perpendicular a las barras (flujo nulo, voltaje inducido máximo).
-- El rotor tiene barras numeradas del 1 al 12.
-- Las barras en la zona de máximo campo tienen voltaje inducido máximo (zona marcada con puntos = corriente saliendo, zona marcada con cruces = corriente entrando).
-- Las barras en la zona neutra tienen voltaje inducido nulo.
-
-VOLTAJE INDUCIDO POR BARRA:
-El circuito formado por dos barras opuestas (ej. barras 1 y 7) tiene un voltaje inducido e_r(t):
-e_r(t) = -d/dt[φ_r(t)] = φ_g·(ωg - ωr)·sin[(ωg - ωr)·t]
-
-Donde ωg es la velocidad angular del campo y ωr es la velocidad del rotor.
-
-PARA p PARES DE POLOS Y Z CONDUCTORES:
-Er = K·φ_g·(ωg - ωr)
-
-Donde K = Z·p/2 representa los factores constructivos de la máquina.
-
-GRÁFICA DE VOLTAJE INDUCIDO VS. VELOCIDAD (Diapositiva 155):
-[DESCRIPCIÓN]:
-- Eje Y: Voltaje inducido Er (y su valor con rotor bloqueado Er0).
-- Eje X: Velocidad del rotor nr, con referencia en ng (velocidad sincrónica).
-- Línea recta decreciente desde Er0 (cuando nr = 0, rotor bloqueado) hasta Er ≈ 0 (cuando nr ≈ ng, vacío).
-- CONCLUSIÓN: El voltaje inducido es proporcional a la diferencia de velocidades (ng - nr). A mayor deslizamiento, mayor voltaje inducido en el rotor.
-
-
-================================================================================
-TEMA 16: DISTRIBUCIÓN DE CORRIENTES INDUCIDAS EN LA ARMADURA
-================================================================================
-
-[DESCRIPCIÓN GRÁFICA - CORRIENTES INDUCIDAS (Diapositivas 157-163)]:
-Secuencia de diapositivas que muestra la distribución de corrientes en el rotor con la jaula CERRADA (con anillos de cortocircuito):
-
-DIAPOSITIVA 157: Jaula abierta con voltajes inducidos e_r(t) en las barras. Las barras 1-6 (zona N) tienen polaridad positiva (círculo con punto = corriente saliendo), las barras 7-12 (zona S) tienen polaridad negativa (círculo con cruz = corriente entrando).
-
-DIAPOSITIVA 158: Al cerrar los anillos de cortocircuito, las corrientes i_r(t) fluyen por cada barra. Se muestra la distribución de corrientes a través de los anillos de cortocircuito en los extremos del rotor.
-
-DIAPOSITIVAS 159-163: Rotación del campo magnético giratorio. A medida que el campo gira, la distribución de corrientes en las barras rota SOLIDARIAMENTE con el campo, manteniéndose siempre la misma distribución relativa respecto al campo magnético.
-
-GENERACIÓN DE PAR MECÁNICO:
-Las corrientes en las barras del rotor interactúan con el campo magnético (Fuerza de Lorentz: F = I·L×B):
-- Las barras con corriente en zona de campo N → fuerza en una dirección.
-- Las barras con corriente en zona de campo S → fuerza en la dirección opuesta.
-- El resultado es un PAR MECÁNICO neto que hace girar el rotor en la MISMA DIRECCIÓN que el campo magnético giratorio.
-- El rotor NO puede alcanzar la velocidad del campo (velocidad sincrónica) porque si lo hiciera, no habría voltaje inducido, no habría corriente, no habría fuerza y el rotor desaceleraría.
-
-
-================================================================================
-TEMA 17: CIRCUITO EQUIVALENTE DE LA MÁQUINA DE INDUCCIÓN
-================================================================================
-
-CIRCUITO EQUIVALENTE POR FASE (Diapositiva 166):
-El circuito equivalente del motor de inducción por fase es similar al del transformador, con el estator como primario y el rotor como secundario:
-
-[DESCRIPCIÓN GRÁFICA - CIRCUITO EQUIVALENTE COMPLETO]:
-LADO DEL ESTATOR (Circuito de Excitación):
-  - Fuente de tensión Vs (tensión de fase del estator).
-  - Resistencia Rs: resistencia del devanado del estator.
-  - Reactancia jXs: reactancia de dispersión del devanado del estator.
-  - Rama de magnetización en paralelo: Rms (pérdidas en el hierro) // jXms (magnetización).
-  - FEM del estator: Ems.
-  - Frecuencia eléctrica del circuito del estator: f = ng·p/60.
-
-TRANSFORMADOR IDEAL (acoplamiento magnético):
-  - Relación de transformación: a = Ns/Nr.
-
-LADO DEL ROTOR (Circuito de Armadura):
-  - FEM inducida Emr (función del deslizamiento).
-  - Resistencia Rr: resistencia de las barras del rotor.
-  - Reactancia jXr: reactancia de dispersión del rotor.
-  - Frecuencia eléctrica del circuito del rotor: fr = (ng - nr)·p/60 = s·f.
-
-ANÁLISIS DEL CIRCUITO DEL ROTOR (Diapositiva 172):
-Ley de voltajes en el circuito de armadura:
-  Emr = Ir·(Rr + jXr) = K1·φ_g·(ng - nr)
-
-Con las expresiones del deslizamiento:
-  s·Emr0 = Ir·(Rr + js·Xr0)
-
-Dividiendo entre s:
-  Emr0 = Ir·(Rr/s + jXr0)
-
-RESISTENCIA DIVIDIDA (Diapositivas 174-175):
-La resistencia Rr/s puede dividirse en DOS PARTES:
-Rr/s = Rr + Rr·(1-s)/s
-
-- Rr: Representa las PÉRDIDAS EN EL COBRE del rotor (calor disipado en las barras).
-- Rr·(1-s)/s: Representa la POTENCIA MECÁNICA DESARROLLADA en el eje del motor.
-
-[DESCRIPCIÓN GRÁFICA - CIRCUITO CON Rr/s DIVIDIDA (Diapositiva 175)]:
-Circuito del rotor referido al estator con la resistencia dividida:
-- Impedancias Rs + jXs en serie con la fuente.
-- Rama de magnetización Rms // jXms.
-- Rama del rotor: jXr0 en serie con [Rr + Rr·(1-s)/s].
-- La resistencia Rr·(1-s)/s tiene una etiqueta explícita: "Potencia mecánica desarrollada en el eje".
-- La resistencia Rr tiene etiqueta: "Pérdidas en el cobre del rotor".
-
-CIRCUITO EQUIVALENTE REFERIDO AL ESTATOR (Diapositiva 176):
-Usando la relación de transformación a = Ns/Nr, se transfieren los parámetros del rotor al lado del estator:
-  X'r0 = a²·Xr
-  E'mr0 = a·Emr0
-  R'r = a²·Rr
-  I'r = Ir/a
-
-El circuito resultante opera completamente a la frecuencia del estator (f), lo que facilita el análisis.
-
-
-================================================================================
-TEMA 18: DESLIZAMIENTO (SLIP)
-================================================================================
-
-DEFINICIÓN:
-El Deslizamiento (s) describe la diferencia relativa entre la velocidad angular del campo magnético giratorio (ng) y la velocidad del rotor (nr):
-
-s = (ng - nr) / ng
-
-CASOS PARTICULARES:
-- s = 1: Rotor BLOQUEADO (nr = 0). Ocurre en el arranque o cuando el rotor está frenado mientras se alimenta el devanado.
-- s ≈ 0: Operación en VACÍO (nr ≈ ng). El rotor casi alcanza la velocidad sincrónica.
-- 0 < s ≤ 1: MOTOR de inducción (rotor más lento que el campo).
-- s < 0: GENERADOR de inducción (rotor más rápido que el campo, por fuerza externa).
-
-VELOCIDAD DEL ROTOR:
-nr = ng·(1 - s)
-
-FRECUENCIA ELÉCTRICA DEL CIRCUITO DE ARMADURA (Diapositiva 168):
-La frecuencia fr de las variables eléctricas del rotor depende del deslizamiento:
-fr = (ng - nr)·p / 60 = s · f
-
-GRÁFICA fr vs. VELOCIDAD:
-[DESCRIPCIÓN]: Gráfica de frecuencia fr vs. velocidad nr del rotor.
-- Eje Y: Frecuencia fr, con referencia f (frecuencia del estator).
-- Eje X: Velocidad nr con referencias: 0 (rotor bloqueado) y ng (velocidad nominal / vacío).
-- Línea recta DECRECIENTE: fr = f cuando nr = 0 (s=1), disminuye linealmente hasta fr ≈ 0 cuando nr ≈ ng (s≈0).
-
-VOLTAJE INDUCIDO EN FUNCIÓN DEL DESLIZAMIENTO (Diapositiva 169):
-Er = K·φ_g·(ωg - ωr) = s·Er0
-
-Donde Er0 es el voltaje inducido con el rotor bloqueado (s=1).
-GRÁFICA Er vs. VELOCIDAD: Similar a la de frecuencia, línea recta decreciente desde Er0 a 0 cuando el rotor se acerca a ng.
-
-REACTANCIA DEL CIRCUITO DE ARMADURA (Diapositiva 170):
-Xr = 2π·L·fr = 2π·L·s·f = s·Xr0
-
-Donde Xr0 es la reactancia con el rotor bloqueado.
-GRÁFICA Xr vs. VELOCIDAD: Idéntica al comportamiento de fr y Er (línea decreciente).
-
-RESISTENCIA DEL CIRCUITO DE ARMADURA (Diapositiva 171):
-A diferencia de fr, Er y Xr, la resistencia Rr NO tiene una dependencia tan directa con el deslizamiento.
-- Se espera que los efectos piel y de proximidad puedan generar pequeños cambios.
-- Para el análisis estándar, se asume Rr = constante.
-GRÁFICA Rr vs. VELOCIDAD: Línea aproximadamente HORIZONTAL (constante para cualquier velocidad).
-
-
-================================================================================
-TEMA 19: PLACAS DE DATOS DE MOTORES DE INDUCCIÓN
-================================================================================
-
-Las placas de datos (name plates) de los motores de inducción contienen la información técnica necesaria para su instalación y operación correcta.
-
-PARÁMETROS TÍPICOS EN UNA PLACA DE DATOS:
-[DESCRIPCIÓN GRÁFICA - PLACAS DE DATOS (Diapositivas 178-192)]:
-Las diapositivas muestran múltiples ejemplos de placas de datos reales de diferentes fabricantes y potencias. Los parámetros que típicamente aparecen son:
-
-1. POTENCIA NOMINAL (kW o HP): Potencia mecánica entregada en el eje en condición nominal.
-2. VOLTAJE NOMINAL (V): Tensión de línea para la que está diseñado el motor (ej. 220/380V, 380/660V).
-3. CORRIENTE NOMINAL (A): Corriente de línea en condición nominal.
-4. FRECUENCIA (Hz): Frecuencia de la red eléctrica (50 Hz o 60 Hz).
-5. VELOCIDAD NOMINAL (rpm): Velocidad del rotor a plena carga (ligeramente menor que ng por el deslizamiento nominal).
-6. FACTOR DE POTENCIA (cosφ): Factor de potencia nominal.
-7. EFICIENCIA (η%): Eficiencia del motor en condición nominal.
-8. CLASE DE AISLAMIENTO: Temperatura máxima de operación del aislamiento (B, F, H).
-9. GRADO DE PROTECCIÓN (IP): Nivel de protección contra sólidos y líquidos (ej. IP55).
-10. CONEXIÓN: Triángulo (Δ) o Estrella (Y) según el voltaje de la red.
-11. NÚMERO DE FASES: 3 (trifásico) o 1 (monofásico).
-12. NÚMERO DE POLOS: Define la velocidad sincrónica.
-13. CLASE DE SERVICIO: S1 (continuo), S2 (temporal), etc.
-14. MASA (kg): Peso del motor.
-15. NORMA DE FABRICACIÓN: IEC, NEMA, etc.
-
-CONEXIONES TRIÁNGULO Y ESTRELLA (Diapositiva 178):
-[DESCRIPCIÓN GRÁFICA]:
-- Bornera con 6 terminales: U1, V1, W1 (extremos de inicio) y U2, V2, W2 (extremos de fin).
-- CONEXIÓN ESTRELLA (Y): U2, V2, W2 unidos en un punto común (neutro). Se usa para el voltaje mayor indicado en la placa (ej. 380V).
-- CONEXIÓN TRIÁNGULO (Δ): U1 conectado a W2, V1 conectado a U2, W1 conectado a V2. Se usa para el voltaje menor indicado en la placa (ej. 220V).
-- Se muestran los puentes de conexión en la bornera para cada configuración.
-
-
-================================================================================
-FÓRMULAS CONSOLIDADAS - REFERENCIA RÁPIDA PARA LA IA
-================================================================================
-
-TRANSFORMADOR:
-  Relación de transformación:       a = N1/N2 = Em1/Em2 = I2/I2' = V1/V2 (ideal)
-  Impedancia nominal primaria:      Zn1 = Vn1/In1
-  Impedancia nominal secundaria:    Zn2 = Vn2/In2
-  Relación impedancias:             Zn1 = a² × Zn2
-
-ENSAYO DE CORTOCIRCUITO:
-  Impedancia CC:                    Zcc1 = Vcc1/Icc1
-  Resistencia equivalente:          Re1 = Pcc1/Icc1²
-  Reactancia dispersión equiv.:     Xe1 = sqrt(Zcc1² - Re1²)
-  Distribución: X1 = Xe1/2;        X2 = Xe1/(2a²)
-  Impedancia porcentual:            Zcc(%) = Zcc1/Zn1 = Vcc1/Vn1
-
-ENSAYO DE VACÍO:
-  Resistencia magnética:            Rm1 = V01²/P01
-  Potencia reactiva vacío:          Q01 = sqrt((V01·I01)² - P01²)
-  Reactancia magnetizante:          Xm1 = V01²/Q01
-
-REGULACIÓN DE VOLTAJE:
-  Definición:                       ΔVn = (V02 - Vn2)/Vn2
-  Carga R-L (inductiva):            V02 = sqrt[(V2cosθ + Re2·I2)² + (V2sinθ + Xe2·I2)²]  → ΔV > 0
-  Carga resistiva (θ=0):            V02 = sqrt[(V2 + Re2·I2)² + (Xe2·I2)²]              → ΔV > 0 (pequeño)
-  Carga capacitiva:                 V02 = sqrt[(Re2·I2)² + (-V2 + Xe2·I2)²]              → ΔV < 0
-
-EFICIENCIA:
-  Definición:                       η = P2/P1 = P2/(P2 + Pc + Ph)
-  Pérdidas cobre (variables):       Pc = Re2·I2²
-  Pérdidas hierro (constantes):     Ph = P01 (del ensayo de vacío)
-  Máxima eficiencia cuando:         Pc = Ph → I2_ηmax = sqrt(Ph/Re2)
-  Fórmula completa:                 η = (V2·I2·cosθ)/(V2·I2·cosθ + Re2·I2² + Ph)
-
-CAMPO MAGNÉTICO GIRATORIO:
-  Flujo resultante:                 φ_g = (3/2)·K·Im·sin(ωr·t - α) = φm·sin(ωr·t - α)
-  Velocidad sincrónica:             ng = 60·f/p   (rpm)
-  Ángulo eléctrico vs. mecánico:    θ_E = p·θ_G
-
-DESLIZAMIENTO:
-  Definición:                       s = (ng - nr)/ng
-  Velocidad del rotor:              nr = ng·(1-s)
-  Frecuencia del rotor:             fr = s·f
-  Voltaje inducido en rotor:        Er = s·Er0
-  Reactancia del rotor:             Xr = s·Xr0
-  Resistencia dividida:             Rr/s = Rr + Rr·(1-s)/s
-    (Rr = pérdidas cobre rotor;     Rr·(1-s)/s = potencia mecánica en el eje)
-
-VOLTAJE INDUCIDO EN EL ROTOR:
-  General:                          Er = K·φ_g·(ωg - ωr)
-  Bloqueado (s=1):                  Er0 = K·φ_g·ωg
-
-
-################################################################################
-#   FIN DEL DOCUMENTO                                                          #
-#   193 diapositivas procesadas. Contenido: Regulación de Voltaje,           #
-#   Eficiencia, Máquinas de Inducción, Campo Magnético Giratorio,             #
-#   Rotor Jaula de Ardilla, Circuito Equivalente y Deslizamiento.             #
-################################################################################
+INFORMACIÓN DE APOYO PARA LA IA (CONOCIMIENTO GENERAL COMPLEMENTARIO)
+
+Máquina de corriente directa (DC):
+- Convierte energía mecánica en eléctrica (generador) o eléctrica en mecánica (motor).
+- Partes típicas: estator o carcasa, polos principales, devanado de excitación, armadura o rotor, conmutador/colector, escobillas, eje, rodamientos, ventilación y caja de bornes.
+- El conmutador realiza la rectificación mecánica en motores/generadores DC con escobillas.
+- La zona neutra es la región donde la fem inducida es idealmente nula y la conmutación es más segura.
+
+Devanado de excitación:
+- Shunt: campo en paralelo; suele dar mejor regulación de velocidad en motores DC.
+- Serie: campo en serie; alto par de arranque, pero regulación menos estable.
+- Compound: combina ambos; puede ser aditivo o sustractivo según el sentido del flujo auxiliar.
+- Imanes permanentes: simplifican el diseño, pero limitan el control del flujo.
+
+Reacción de armadura:
+- La corriente de armadura modifica el flujo principal.
+- Efectos: distorsión del campo, desplazamiento de la zona neutra, chispeo en el colector, peor conmutación.
+- Mitigación: desplazamiento de escobillas, interpolos y devanados de compensación.
+
+Conmutación y voltaje inducido:
+- En una sola espira, la fem alterna cambia de signo con la rotación.
+- El conmutador invierte la conexión de la espira al pasar por la zona neutra y produce una salida unidireccional pulsante.
+- Más bobinas y más delgas reducen el rizado de salida.
+
+Accionamiento de máquinas eléctricas:
+- Un sistema de control suele dividirse en mando, potencia, sensores, protección, actuadores e interfaz hombre-máquina.
+- Lógica cableada: basada en relés, contactores y temporizadores.
+- Lógica programada: basada en PLC, microcontroladores o computadores industriales.
+- El contactor es un interruptor electromagnético de potencia, diseñado para conmutar cargas altas con seguridad.
+- El relé térmico protege contra sobrecargas; el diferencial protege a las personas; el guardamotor combina funciones de protección.
+
+Arranque de motores:
+- Arranque directo: simple, pero con corriente de arranque alta.
+- Estrella-triángulo: reduce tensión de arranque y, por tanto, corriente y par.
+- Arrancador suave: regula la tensión con semiconductores para un arranque progresivo.
+- Inversión de giro: cambia el sentido de rotación alterando el orden de fase.
